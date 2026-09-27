@@ -1,0 +1,362 @@
+[
+ {
+  "file": "figures/costgate_01.png",
+  "report": "out/costgate.html",
+  "report_title": "비용 상태 스위치 결과",
+  "section": "거래당 gross 엣지(bps) — 1R 크기 3분위별, 세로 눈금 = 거래당 비용",
+  "caption": "신호별 거래당 gross 엣지와 비용 (bps)",
+  "w": 1002,
+  "h": 665
+ },
+ {
+  "file": "figures/fvg_gate_01.png",
+  "report": "out/fvg_gate.html",
+  "report_title": "1R 게이트 안정성",
+  "section": "연도 × 게이트 — 판정 축",
+  "caption": "",
+  "w": 910,
+  "h": 406
+ },
+ {
+  "file": "figures/fvg_gate_02.png",
+  "report": "out/fvg_gate.html",
+  "report_title": "1R 게이트 안정성",
+  "section": "월별 누적 순R — 한 방향으로 쌓이는가",
+  "caption": "",
+  "w": 910,
+  "h": 329
+ },
+ {
+  "file": "figures/fvg_gate_03.png",
+  "report": "out/fvg_gate.html",
+  "report_title": "1R 게이트 안정성",
+  "section": "심볼별 · 홀드아웃",
+  "caption": "",
+  "w": 910,
+  "h": 290
+ },
+ {
+  "file": "figures/fvg_levers_01.png",
+  "report": "out/fvg_levers.html",
+  "report_title": "FVG 1R 레버",
+  "section": "게이트 사다리 — 기계는 정확히 예측대로 돈다",
+  "caption": "",
+  "w": 890,
+  "h": 319
+ },
+ {
+  "file": "figures/fvg_levers_02.png",
+  "report": "out/fvg_levers.html",
+  "report_title": "FVG 1R 레버",
+  "section": "1R 을 키우면 엣지도 줄어드는가 — 아니다",
+  "caption": "",
+  "w": 890,
+  "h": 328
+ },
+ {
+  "file": "figures/fvg_levers_03.png",
+  "report": "out/fvg_levers.html",
+  "report_title": "FVG 1R 레버",
+  "section": "홀드아웃 붕괴 — 여기서 끝난다",
+  "caption": "",
+  "w": 890,
+  "h": 348
+ },
+ {
+  "file": "figures/fvg_sweep_01.png",
+  "report": "out/fvg_sweep.html",
+  "report_title": "FVG 관통과 반등",
+  "section": "1단계 — 관통 깊이별 회복률 (기술통계, 판정 없음)",
+  "caption": "",
+  "w": 890,
+  "h": 338
+ },
+ {
+  "file": "figures/fvg_sweep_02.png",
+  "report": "out/fvg_sweep.html",
+  "report_title": "FVG 관통과 반등",
+  "section": "엣지 vs 비용 — 막대가 눈금에 닿아야 거래가 된다",
+  "caption": "",
+  "w": 890,
+  "h": 386
+ },
+ {
+  "file": "figures/tsmom_anchor_01.png",
+  "report": "out/tsmom_anchor.html",
+  "report_title": "체결 시각 지도",
+  "section": "1. 주 168개 시각의 샤프 (ET)",
+  "caption": "주 168개 체결 시각(ET)별 샤프 — 금 16:00 ET 와 현행 표시",
+  "w": 942,
+  "h": 418
+ },
+ {
+  "file": "figures/tsmom_coins_01.png",
+  "report": "out/tsmom_coins.html",
+  "report_title": "코인별 추세 수익과 변동성",
+  "section": "1. 변동성과 연수익",
+  "caption": "코인 변동성 대 코인별 추세 연수익",
+  "w": 942,
+  "h": 495
+ },
+ {
+  "file": "figures/tsmom_coins_02.png",
+  "report": "out/tsmom_coins.html",
+  "report_title": "코인별 추세 수익과 변동성",
+  "section": "2. 변동성과 샤프 (위험 1단위당 수익)",
+  "caption": "코인 변동성 대 코인별 샤프",
+  "w": 942,
+  "h": 495
+ },
+ {
+  "file": "figures/tsmom_compound_01.png",
+  "report": "out/tsmom_compound.html",
+  "report_title": "복리 주기",
+  "section": "1. 누적 자산 (로그 축)",
+  "caption": "갱신 주기별 누적 자산 (로그 축) — 역변동성 · G 0.75",
+  "w": 942,
+  "h": 394
+ },
+ {
+  "file": "figures/tsmom_compound_02.png",
+  "report": "out/tsmom_compound.html",
+  "report_title": "복리 주기",
+  "section": "2. 실효 G — 명목 ÷ 지금 자산",
+  "caption": "갱신 주기별 실효 G (명목 ÷ 지금 자산) — 매주는 늘 0.75",
+  "w": 942,
+  "h": 328
+ },
+ {
+  "file": "figures/tsmom_compound_03.png",
+  "report": "out/tsmom_compound.html",
+  "report_title": "복리 주기",
+  "section": "3. 매주 대비 — 같은 5년 경로에서 짝 비교",
+  "caption": "매주 갱신 대비 연복리 차이 — 부트스트랩 중앙값과 5 ~ 95%",
+  "w": 860,
+  "h": 303
+ },
+ {
+  "file": "figures/tsmom_compound_04.png",
+  "report": "out/tsmom_compound.html",
+  "report_title": "복리 주기",
+  "section": "7. 복리와 변동성 끌림",
+  "caption": "G 별 산술 연수익과 연복리 — 차이가 변동성 끌림",
+  "w": 760,
+  "h": 356
+ },
+ {
+  "file": "figures/tsmom_decomp_01.png",
+  "report": "out/tsmom_decomp.html",
+  "report_title": "시계열 추세 수익 분해",
+  "section": "1. 코인은 얼마나 같이 움직이나",
+  "caption": "주마다 오른 코인 비율의 분포",
+  "w": 942,
+  "h": 392
+ },
+ {
+  "file": "figures/tsmom_decomp_02.png",
+  "report": "out/tsmom_decomp.html",
+  "report_title": "시계열 추세 수익 분해",
+  "section": "3. 누적으로 보면",
+  "caption": "주간 수익 누적 합 — 시장 방향, 코인 선별, 비용",
+  "w": 942,
+  "h": 448
+ },
+ {
+  "file": "figures/tsmom_decomp_03.png",
+  "report": "out/tsmom_decomp.html",
+  "report_title": "시계열 추세 수익 분해",
+  "section": "4. 연도별",
+  "caption": "연도별 분해 — 시장 방향 대 코인 선별",
+  "w": 942,
+  "h": 418
+ },
+ {
+  "file": "figures/tsmom_gapentry_01.png",
+  "report": "out/tsmom_gapentry.html",
+  "report_title": "금 신호 · 주말갭 지정가",
+  "section": "1. 누적 자산 (로그 축)",
+  "caption": "누적 자산(로그 축) — 현행 V0 · V1 · V2 · V3m · V3e",
+  "w": 942,
+  "h": 471
+ },
+ {
+  "file": "figures/tsmom_gapentry_02.png",
+  "report": "out/tsmom_gapentry.html",
+  "report_title": "금 신호 · 주말갭 지정가",
+  "section": "3. V3 − V2 는 어디서 나오나",
+  "caption": "V3 − V2 주간 차이의 출처 — 지정가 체결 이득과 패스 손실 (bps/주)",
+  "w": 820,
+  "h": 366
+ },
+ {
+  "file": "figures/tsmom_gapentry_03.png",
+  "report": "out/tsmom_gapentry.html",
+  "report_title": "금 신호 · 주말갭 지정가",
+  "section": "4. 역선택 — 채워진 주 vs 안 채워진 주",
+  "caption": "역선택 — 유리한 갭에서 지정가가 채워진 주와 안 채워진 주의 새 방향 수익",
+  "w": 760,
+  "h": 391
+ },
+ {
+  "file": "figures/tsmom_gapentry_04.png",
+  "report": "out/tsmom_gapentry.html",
+  "report_title": "금 신호 · 주말갭 지정가",
+  "section": "6. 왜 꼭 1주인가 — 리밸런스 주기",
+  "caption": "리밸런스 주기별 샤프 — 시작일·요일 평균과 범위, 수수료 전",
+  "w": 760,
+  "h": 380
+ },
+ {
+  "file": "figures/tsmom_hold_01.png",
+  "report": "out/tsmom_hold.html",
+  "report_title": "시계열 추세 뒤집기 보류",
+  "section": "1. 누적 자산 (로그 축)",
+  "caption": "누적 자산(로그 축) — 기준 대 뒤집기 보류 k 0.5 · 1 · 2",
+  "w": 942,
+  "h": 459
+ },
+ {
+  "file": "figures/tsmom_hold_02.png",
+  "report": "out/tsmom_hold.html",
+  "report_title": "시계열 추세 뒤집기 보류",
+  "section": "3. 왜 — 뒤집힌 직후 1주의 가치 (사후 서술)",
+  "caption": "뒤집힌 직후 1주 수익 — 뒤집힌 주의 역행 크기(ATR)별",
+  "w": 942,
+  "h": 429
+ },
+ {
+  "file": "figures/tsmom_optg_01.png",
+  "report": "out/tsmom_optg.html",
+  "report_title": "매월 갱신 최적 G",
+  "section": "1. G 별 연복리",
+  "caption": "G 별 연복리 — 매월 갱신 역사 · 부트스트랩 중앙, 매주 갱신, 샤프 0.3 이라면",
+  "w": 942,
+  "h": 428
+ },
+ {
+  "file": "figures/tsmom_optg_02.png",
+  "report": "out/tsmom_optg.html",
+  "report_title": "매월 갱신 최적 G",
+  "section": "2. G 별 최대낙폭 (장중 포함)",
+  "caption": "G 별 최대낙폭 — 매월 갱신 역사 · 부트스트랩 중앙과 95번째 백분위",
+  "w": 942,
+  "h": 342
+ },
+ {
+  "file": "figures/tsmom_optg_03.png",
+  "report": "out/tsmom_optg.html",
+  "report_title": "매월 갱신 최적 G",
+  "section": "3. 최적 G 는 얼마나 확실한가",
+  "caption": "경로마다 연복리가 가장 큰 G 의 분포 — 5 · 25 · 50 · 75 · 95%",
+  "w": 880,
+  "h": 296
+ },
+ {
+  "file": "figures/tsmom_sizing_01.png",
+  "report": "out/tsmom_sizing.html",
+  "report_title": "사이징과 레버리지",
+  "section": "1. G 별 최대낙폭 — 청산보다 낙폭이 먼저 막는다",
+  "caption": "G 별 최대낙폭 — 역사 경로와 5년 부트스트랩 중앙값 · 95번째 백분위",
+  "w": 942,
+  "h": 394
+ },
+ {
+  "file": "figures/tsmom_sizing_02.png",
+  "report": "out/tsmom_sizing.html",
+  "report_title": "사이징과 레버리지",
+  "section": "2. G 별 연복리 — 더 걸면 오히려 준다",
+  "caption": "G 별 연복리 — 역사 경로, 부트스트랩 중앙값, 샤프 0.3 시나리오",
+  "w": 942,
+  "h": 372
+ },
+ {
+  "file": "figures/tsmom_sizing_03.png",
+  "report": "out/tsmom_sizing.html",
+  "report_title": "사이징과 레버리지",
+  "section": "3. G 별 누적 자산 (로그 축)",
+  "caption": "G 별 누적 자산 (로그 축) — 0.2 · 0.4 · 1 · 2",
+  "w": 942,
+  "h": 394
+ },
+ {
+  "file": "figures/weekly_tgif_01.png",
+  "report": "out/weekly_tgif.html",
+  "report_title": "주봉 캔들 · TGIF 검정",
+  "section": "A. 주봉 캔들 — 전주 캔들로 이번 주 맞히기",
+  "caption": "규칙별 순 샤프 — 발견 구간 대 확인 구간",
+  "w": 942,
+  "h": 392
+ },
+ {
+  "file": "figures/weekly_tgif_02.png",
+  "report": "out/weekly_tgif.html",
+  "report_title": "주봉 캔들 · TGIF 검정",
+  "section": "B. TGIF — 월 혼조 · 화·수 약상승 · 목 큰 하락 · 금 소폭 상승 (그리고 역방향)",
+  "caption": "TGIF — 목요일·금요일 조건부 평균(σ) 대 다른 요일 위약",
+  "w": 942,
+  "h": 327
+ },
+ {
+  "file": "figures/weekly_tgif_03.png",
+  "report": "out/weekly_tgif.html",
+  "report_title": "주봉 캔들 · TGIF 검정",
+  "section": "요일 효과 자체 (조건 없음)",
+  "caption": "요일별 평균 수익 (σ 단위, 조건 없음)",
+  "w": 942,
+  "h": 382
+ },
+ {
+  "file": "figures/wgap_01.png",
+  "report": "out/wgap.html",
+  "report_title": "주말 갭 · 4H 정렬 · CISD",
+  "section": "메운 뒤 어디로 가나 — 금 종가(F)에서 한 갭 더 vs 월 개장가(O)",
+  "caption": "메운 뒤 1:1 레이스 결과 — 반전 먼저 대 연속 먼저",
+  "w": 1002,
+  "h": 535
+ },
+ {
+  "file": "figures/legacy_curves_01.png",
+  "report": "out/legacy_curves.html",
+  "report_title": "예전 신호 변곡점",
+  "section": "",
+  "caption": "변곡점 타임라인",
+  "w": 0,
+  "h": 0
+ },
+ {
+  "file": "figures/legacy_curves_02.png",
+  "report": "out/legacy_curves.html",
+  "report_title": "예전 신호 변곡점",
+  "section": "",
+  "caption": "신호별 누적 R",
+  "w": 0,
+  "h": 0
+ },
+ {
+  "file": "figures/fvg_universe47_01.png",
+  "report": "out/fvg_universe47.html",
+  "report_title": "FVG 47심볼 재검사",
+  "section": "연도별 순R — 4h (칸 아래 숫자 = 거래 수)",
+  "caption": "연도별 순R — 4h (칸 아래 숫자 = 거래 수)",
+  "w": 1068,
+  "h": 144
+ },
+ {
+  "file": "figures/fvg_universe47_02.png",
+  "report": "out/fvg_universe47.html",
+  "report_title": "FVG 47심볼 재검사",
+  "section": "연도별 순R — 1h",
+  "caption": "연도별 순R — 1h",
+  "w": 528,
+  "h": 540
+ },
+ {
+  "file": "figures/fvg_universe47_03.png",
+  "report": "out/fvg_universe47.html",
+  "report_title": "FVG 47심볼 재검사",
+  "section": "4h↔1h 연도별 순R 상관",
+  "caption": "4h↔1h 연도별 순R 상관",
+  "w": 528,
+  "h": 540
+ }
+]

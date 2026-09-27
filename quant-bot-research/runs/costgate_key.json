@@ -1,0 +1,109 @@
+{
+ "verdict": {
+  "lvl_break": {
+   "c1": false,
+   "c2": false,
+   "c3": false,
+   "c4": false,
+   "passed": false
+  },
+  "htf_fib_base": {
+   "c1": false,
+   "c2": false,
+   "c3": true,
+   "c4": false,
+   "passed": false
+  },
+  "atr_top10": {
+   "c1": false,
+   "c2": false,
+   "c3": false,
+   "c4": true,
+   "passed": false
+  },
+  "bigbar_choch": {
+   "c1": false,
+   "c2": false,
+   "c3": false,
+   "c4": false,
+   "passed": false
+  },
+  "liq_rev": {
+   "c1": false,
+   "c2": false,
+   "c3": true,
+   "c4": true,
+   "passed": false
+  },
+  "liq_cont_top1": {
+   "c1": false,
+   "c2": false,
+   "c3": false,
+   "c4": true,
+   "passed": false
+  },
+  "fvg_1h": {
+   "c1": false,
+   "c2": false,
+   "c3": false,
+   "c4": false,
+   "passed": false
+  },
+  "fvg_4h": {
+   "c1": false,
+   "c2": false,
+   "c3": true,
+   "c4": true,
+   "passed": false
+  },
+  "fvg_4h_g150": {
+   "c1": false,
+   "c2": false,
+   "c3": false,
+   "c4": true,
+   "passed": false
+  },
+  "trend_fvg_15m": {
+   "c1": false,
+   "c2": false,
+   "c3": true,
+   "c4": false,
+   "passed": false
+  },
+  "trend_fvg_1h": {
+   "c1": false,
+   "c2": false,
+   "c3": false,
+   "c4": false,
+   "passed": false
+  },
+  "sweep_choch": {
+   "c1": false,
+   "c2": false,
+   "c3": false,
+   "c4": false,
+   "passed": false
+  },
+  "choch_15m": {
+   "c1": false,
+   "c2": false,
+   "c3": false,
+   "c4": false,
+   "passed": false
+  },
+  "weekend_gap": {
+   "c1": false,
+   "c2": false,
+   "c3": false,
+   "c4": true,
+   "passed": false
+  },
+  "pain_tail": {
+   "c1": false,
+   "c2": false,
+   "c3": false,
+   "c4": false,
+   "passed": false
+  }
+ }
+}

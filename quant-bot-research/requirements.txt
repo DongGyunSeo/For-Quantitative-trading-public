@@ -1,0 +1,6 @@
+# Python 3.11
+pandas==3.0.2
+numpy==2.4.4
+pytest
+matplotlib==3.10.*   # examples/legacy_changepoint.py · legacy_report.py 만
+requests             # tools/okx_collect.py 만

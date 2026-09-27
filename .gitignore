@@ -1,0 +1,43 @@
+# ── 학습된 모델 (train_entry.py 로 재생성) ─────────────────────
+entry_model*.json
+*.pkl
+
+# ── 가격 데이터 캐시 ────────────────────────────────────────
+cache/
+cache_5m/
+cache_5m_oos/
+*_5m_futures.csv
+*_5m_spot.csv
+
+# ── 나스닥 원천/가공 데이터 (GitHub 100MB 파일 한도 근접) ─────
+nasdaq_raw.csv
+nasdaq_nqf_*.csv
+
+# ── 수집/학습 데이터셋 ───────────────────────────────────────
+collect_result/
+backtest_result/
+shadow/
+ml_train_*.csv
+tp_train_*.csv
+runner_train_*.csv
+ml_runner*.csv
+
+# ── 러너 결과 ───────────────────────────────────────────────
+runner_ev_*.json
+
+# ── 백업 파일 ───────────────────────────────────────────────
+*.json.bak
+
+# ── Python ─────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# ── IDE ────────────────────────────────────────────────────
+.vscode/
+.idea/
+
+# ── 운영체제 ────────────────────────────────────────────────
+.DS_Store
+Thumbs.db

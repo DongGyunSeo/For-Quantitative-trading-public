@@ -1,0 +1,271 @@
+<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1"><title>1R 게이트 안정성</title>
+<style>
+ :root{color-scheme:light;--surface-0:#f6f5f2;--surface-1:#fcfcfb;--border:#e3e2dd;
+  --text-primary:#0b0b0b;--text-secondary:#52514e;--text-muted:#7a7873;
+  --s1:#2a78d6;--s2:#eb6834;--s3:#7a7873;--neg:#e34948;}
+ @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){color-scheme:dark;
+  --surface-0:#111110;--surface-1:#1a1a19;--border:#33322f;
+  --text-primary:#fff;--text-secondary:#c3c2b7;--text-muted:#928f86;
+  --s1:#3987e5;--s2:#d95926;--s3:#928f86;--neg:#e66767;}}
+ :root[data-theme="dark"]{color-scheme:dark;--surface-0:#111110;--surface-1:#1a1a19;
+  --border:#33322f;--text-primary:#fff;--text-secondary:#c3c2b7;--text-muted:#928f86;
+  --s1:#3987e5;--s2:#d95926;--s3:#928f86;--neg:#e66767;}
+ *{box-sizing:border-box}
+ body{margin:0;background:var(--surface-0);color:var(--text-primary);
+  font:15px/1.6 ui-sans-serif,system-ui,-apple-system,"Apple SD Gothic Neo","Noto Sans KR",sans-serif}
+ .wrap{max-width:980px;margin:0 auto;padding:40px 16px 72px}
+ h1{font-size:clamp(23px,4.5vw,31px);margin:0 0 8px;letter-spacing:-.02em}
+ header p{margin:0;color:var(--text-secondary);max-width:68ch}
+ .verdict{margin:22px 0 0;padding:16px 18px;border-radius:10px;background:var(--surface-1);
+  border:1px solid var(--border);border-left:3px solid var(--neg)}
+ section{margin-top:36px;background:var(--surface-1);border:1px solid var(--border);
+  border-radius:12px;padding:20px 18px}
+ h2{font-size:17px;margin:0 0 4px}
+ .sub{color:var(--text-secondary);font-size:13.5px;margin:0 0 16px;max-width:78ch}
+ .legend{display:flex;flex-wrap:wrap;gap:15px;margin:0 0 12px;font-size:13px;color:var(--text-secondary)}
+ .legend span{display:inline-flex;align-items:center;gap:6px}
+ .sw{width:13px;height:11px;border-radius:2px;display:inline-block}
+ .sw.line{height:3px;width:16px}
+ .chart{position:relative} svg{display:block;width:100%}
+ .tip{position:absolute;pointer-events:none;opacity:0;transition:opacity .08s;background:var(--surface-1);
+  border:1px solid var(--border);border-radius:8px;padding:8px 10px;font-size:12.5px;line-height:1.5;
+  box-shadow:0 6px 20px rgba(0,0,0,.14);white-space:nowrap;z-index:5}
+ table{width:100%;border-collapse:collapse;font-size:13px;margin-top:6px}
+ th,td{text-align:right;padding:7px 8px;border-bottom:1px solid var(--border);font-variant-numeric:tabular-nums}
+ th:first-child,td:first-child{text-align:left;font-variant-numeric:normal}
+ th{color:var(--text-secondary);font-weight:600}
+ tr.hl td{background:color-mix(in srgb,var(--s1) 9%,transparent)}
+ .note{color:var(--text-muted);font-size:12.5px;margin-top:12px}
+ .neg{color:var(--neg)} .pos{color:var(--s1)}
+ .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:4px}
+ .card{background:var(--surface-0);border:1px solid var(--border);border-radius:10px;padding:14px}
+ .card .k{font-size:12.5px;color:var(--text-secondary)}
+ .card .v{font-size:clamp(19px,3.4vw,25px);font-variant-numeric:tabular-nums;letter-spacing:-.02em;margin-top:2px}
+ .card .d{font-size:12px;color:var(--text-muted);margin-top:2px}
+ @media(max-width:640px){.wrap{padding:28px 16px 56px}section{padding:16px 12px}
+  .cards{grid-template-columns:1fr}table{font-size:12px}th,td{padding:6px 4px}}
+</style></head><body><div class="wrap">
+<header>
+ <h1>1R 게이트 150bps — 안정적인가</h1>
+ <p>게이트를 <b>100 / 125 / 150 / 175 / 200 bps</b> 다섯 개로 미리 못 박고,
+    각 구간을 심볼·연도·월·홀드아웃으로 쪼갰다. <b>더 좋은 컷을 찾지 않는다</b> —
+    이미 관측된 150bps 부근이 흔들리는지만 본다.
+    4h FVG · mid 진입 · 손절확장 0 · TP 2R/SL 1R · 10심볼 2021-04~2026-07.</p>
+ <div class="verdict"><b>안정적이지 않다.</b> 판정 축인 <b>연도별 부호가 유지되지 않는다</b> —
+   4h 게이트 150 에서 2021 +0.236 → 2023 +0.111 → 2024 <b>−0.023</b> → 2026 <b>−0.319</b>,
+   그리고 <b>2026 은 다섯 게이트 전부 음수</b>(−0.12 ~ −0.37)다.<br>
+   결정적인 건 <b>같은 레버를 1h 에 걸면 시간 프로파일이 정반대</b>라는 것이다 —
+   연도별 net 상관 <b>−0.93</b>. 4h 는 해가 갈수록 나빠지고 1h 는 좋아진다.
+   실재하는 효과라면 이럴 수 없다. <b>표본 잡음의 서명</b>이다.</div>
+</header>
+
+<section>
+ <h2>연도 × 게이트 — 판정 축</h2>
+ <p class="sub">칸의 값은 순R, 괄호는 거래 수. 파랑 = 양수, 빨강 = 음수.
+    안정적인 효과라면 <b>같은 행(같은 게이트)에서 부호가 유지</b>돼야 한다.</p>
+ <div class="chart" id="c1"><svg id="s1" viewBox="0 0 940 420"></svg><div class="tip" id="t1"></div></div>
+ <p class="note">4h 는 2021~2023 전부 양수 → 2024 이후 흔들리고 2026 전부 음수.
+    1h 는 <b>정확히 반대</b>로 2021~2022 음수 → 2025~2026 양수다.
+    2026 은 7월까지 반년이고 거래도 얇다(4h 게이트150 에서 46건, 1h 는 15건) —
+    <b>그 얇음 자체가 문제의 크기</b>다.</p>
+</section>
+
+<section>
+ <h2>월별 누적 순R — 한 방향으로 쌓이는가</h2>
+ <p class="sub">월 평균 순R 의 누적. 엣지가 실재하면 기울기가 일정해야 한다.</p>
+ <div class="legend">
+   <span><i class="sw line" style="background:var(--s1)"></i>4h · 게이트 150</span>
+   <span><i class="sw line" style="background:var(--s3)"></i>4h · 게이트 100 / 200</span>
+   <span><i class="sw line" style="background:var(--s2)"></i>1h · 게이트 150</span>
+ </div>
+ <div class="chart" id="c2"><svg id="s2" viewBox="0 0 940 340"></svg><div class="tip" id="t2"></div></div>
+ <p class="note">4h 게이트 150 은 2021~2023 에 가파르게 오르다 2024 부터 평평해지고 2026 에 꺾인다.
+   1h 는 3년 가까이 0 근처를 맴돌다 2025~2026 에만 오른다. <b>같은 구간에서 서로 다른 그림</b>이다.</p>
+</section>
+
+<section>
+ <h2>게이트별 요약</h2>
+ <div class="legend"><span>4h FVG · mid</span></div>
+ <table>
+  <thead><tr><th>게이트</th><th>거래수</th><th>1R중앙</th><th>승률</th><th>gross</th>
+   <th>치환대조</th><th>비용</th><th>순R</th><th>순R(월평균)</th><th>t(월)</th><th>양수월</th></tr></thead>
+  <tbody id="tb4"></tbody>
+ </table>
+ <div class="legend" style="margin-top:18px"><span>1h FVG · mid</span></div>
+ <table>
+  <thead><tr><th>게이트</th><th>거래수</th><th>1R중앙</th><th>승률</th><th>gross</th>
+   <th>치환대조</th><th>비용</th><th>순R</th><th>순R(월평균)</th><th>t(월)</th><th>양수월</th></tr></thead>
+  <tbody id="tb1"></tbody>
+ </table>
+ <p class="note"><b>게이트에 단조롭지 않다.</b> 4h 의 월 t 는 1.22 → 1.74 → <b>2.42</b> → 2.02 → <b>0.07</b>.
+   175 에서 200 으로 한 칸 옮기면 무너진다. 안정적인 효과는 이렇게 움직이지 않는다.
+   치환 대조군도 +0.021 ~ −0.023 사이를 오가 부호가 일정하지 않다(추첨 12회).</p>
+</section>
+
+<section>
+ <h2>심볼별 · 홀드아웃</h2>
+ <p class="sub">게이트 150 기준. 위 = 4h, 아래 = 1h.</p>
+ <div class="chart" id="c3"><svg id="s3" viewBox="0 0 940 300"></svg><div class="tip" id="t3"></div></div>
+ <div class="cards">
+  <div class="card"><div class="k">홀드아웃 전 (4h · 150)</div><div class="v pos">+0.1458</div>
+    <div class="d">727건 · t 2.94 · 6/10 심볼</div></div>
+  <div class="card"><div class="k">홀드아웃 12개월 (4h · 150)</div><div class="v neg">−0.1275</div>
+    <div class="d">149건 · t −0.22 · 3/9 심볼</div></div>
+  <div class="card"><div class="k">TF 간 연도 프로파일 상관</div><div class="v neg">−0.93</div>
+    <div class="d">게이트 125 에서도 −0.93</div></div>
+ </div>
+ <p class="note">4h 에서 잘 되는 XRP·BNB·LINK 가 1h 에서는 BNB <b>−0.44</b> 로 뒤집힌다.
+   <b>BTC 는 양쪽 다 음수</b>(4h −0.085 / 1h −0.180) — 가장 유동적인 심볼에서 효과가 없다는 건
+   미시구조가 느슨한 쪽에만 있다는 뜻이고, 그건 보통 좋은 신호가 아니다.
+   심볼별 net 상관은 +0.48 로 연도만큼 어긋나지는 않는다.</p>
+</section>
+
+<section>
+ <h2>판정</h2>
+ <table>
+  <thead><tr><th>확인 항목</th><th style="text-align:left">결과</th></tr></thead>
+  <tbody>
+   <tr><td>연도별 부호 유지</td><td style="text-align:left" class="neg">
+     <b>아니오.</b> 4h 게이트150: 2021~2023 양수, 2024 −0.023, 2026 −0.319. 2026 은 다섯 게이트 전부 음수</td></tr>
+   <tr><td>게이트에 단조</td><td style="text-align:left" class="neg">
+     <b>아니오.</b> 월 t 1.22 / 1.74 / 2.42 / 2.02 / 0.07 — 200 에서 붕괴</td></tr>
+   <tr><td>TF 간 일관</td><td style="text-align:left" class="neg">
+     <b>아니오.</b> 연도별 net 상관 −0.93. 4h 감쇠 / 1h 증가</td></tr>
+   <tr><td>홀드아웃 유지</td><td style="text-align:left" class="neg">
+     <b>아니오.</b> 다섯 게이트 전부 음수 (−0.098 ~ −0.151)</td></tr>
+   <tr><td>심볼 분산</td><td style="text-align:left">
+     4h 7/10 양수지만 BTC·ETH·AVAX·TRX 가 음수. 가장 유동적인 쪽이 안 된다</td></tr>
+  </tbody>
+ </table>
+ <p class="note">“150bps 부근 손익분기” 는 <b>전체 표본을 한 번에 본 평균</b>이었다.
+   쪼개면 유지되지 않는다. 이 관측 위에 셋업을 세우면 안 된다.</p>
+</section>
+<p class="note" style="margin-top:28px">4h 1,772~462건 / 1h 1,241~207건 · 게이트 5개 사전 고정 ·
+ 최적 컷 선택 없음 · 검정 184 통과</p>
+</div>
+<script>
+const D = {"gates": [100, 125, 150, 175, 200], "tf": {"4h": {"rows": [{"gate": 100, "n": 1772, "risk": 149.0, "win": 0.364, "gross": 0.0959, "ctrl": 0.0142, "fee": 0.043, "net": 0.0529, "net_m": 0.0823, "t": 1.22, "nmonth": 64, "posm": 0.5781, "year": {"2021": 0.2009, "2022": 0.1229, "2023": 0.056, "2024": 0.0144, "2025": -0.0433, "2026": -0.1233}, "year_n": {"2021": 282, "2022": 423, "2023": 232, "2024": 310, "2025": 405, "2026": 120}, "sym": {"ADA": 0.0688, "AVAX": -0.0687, "BNB": 0.166, "BTC": -0.0731, "DOGE": 0.0984, "ETH": 0.0147, "LINK": 0.1016, "SOL": 0.1096, "TRX": -0.0542, "XRP": 0.1675}, "hold": {"전": {"n": 1449, "gross": 0.1373, "net": 0.095, "t": 1.03, "pos": 7, "nsym": 10}, "홀드": {"n": 323, "gross": -0.0898, "net": -0.136, "t": 0.37, "pos": 3, "nsym": 10}}}, {"gate": 125, "n": 1241, "risk": 177.0, "win": 0.3763, "gross": 0.1338, "ctrl": 0.0197, "fee": 0.0358, "net": 0.098, "net_m": 0.1303, "t": 1.74, "nmonth": 63, "posm": 0.619, "year": {"2021": 0.2741, "2022": 0.1643, "2023": 0.0725, "2024": 0.0656, "2025": 0.0343, "2026": -0.2716}, "year_n": {"2021": 208, "2022": 300, "2023": 165, "2024": 208, "2025": 286, "2026": 74}, "sym": {"ADA": 0.1212, "AVAX": -0.0598, "BNB": 0.2501, "BTC": -0.0422, "DOGE": 0.1543, "ETH": -0.0312, "LINK": 0.2758, "SOL": 0.1476, "TRX": -0.0977, "XRP": 0.1942}, "hold": {"전": {"n": 1028, "gross": 0.1848, "net": 0.1497, "t": 1.81, "pos": 7, "nsym": 10}, "홀드": {"n": 213, "gross": -0.1127, "net": -0.1514, "t": 0.17, "pos": 4, "nsym": 9}}}, {"gate": 150, "n": 876, "risk": 205.0, "win": 0.3744, "gross": 0.1301, "ctrl": -0.0232, "fee": 0.0308, "net": 0.0993, "net_m": 0.2252, "t": 2.42, "nmonth": 62, "posm": 0.629, "year": {"2021": 0.2357, "2022": 0.2004, "2023": 0.1105, "2024": -0.0233, "2025": 0.0676, "2026": -0.3189}, "year_n": {"2021": 151, "2022": 212, "2023": 113, "2024": 141, "2025": 213, "2026": 46}, "sym": {"ADA": 0.1702, "AVAX": -0.1039, "BNB": 0.2747, "BTC": -0.0848, "DOGE": 0.061, "ETH": 0.0158, "LINK": 0.2524, "SOL": 0.1881, "TRX": -0.2582, "XRP": 0.3092}, "hold": {"전": {"n": 727, "gross": 0.1761, "net": 0.1458, "t": 2.94, "pos": 6, "nsym": 10}, "홀드": {"n": 149, "gross": -0.094, "net": -0.1275, "t": -0.22, "pos": 3, "nsym": 9}}}, {"gate": 175, "n": 634, "risk": 229.0, "win": 0.3691, "gross": 0.1167, "ctrl": 0.0077, "fee": 0.0273, "net": 0.0894, "net_m": 0.2072, "t": 2.02, "nmonth": 61, "posm": 0.5574, "year": {"2021": 0.2732, "2022": 0.0947, "2023": 0.1434, "2024": -0.0458, "2025": 0.0879, "2026": -0.3649}, "year_n": {"2021": 117, "2022": 147, "2023": 82, "2024": 105, "2025": 156, "2026": 27}, "sym": {"ADA": 0.2018, "AVAX": -0.0936, "BNB": 0.3859, "BTC": -0.0296, "DOGE": 0.048, "ETH": -0.0299, "LINK": 0.2343, "SOL": 0.036, "TRX": -0.2276, "XRP": 0.3323}, "hold": {"전": {"n": 531, "gross": 0.1525, "net": 0.1257, "t": 2.35, "pos": 7, "nsym": 10}, "홀드": {"n": 103, "gross": -0.068, "net": -0.0975, "t": -0.07, "pos": 4, "nsym": 9}}}, {"gate": 200, "n": 462, "risk": 253.0, "win": 0.3485, "gross": 0.0584, "ctrl": 0.021, "fee": 0.0249, "net": 0.0336, "net_m": 0.0077, "t": 0.07, "nmonth": 57, "posm": 0.4912, "year": {"2021": 0.1441, "2022": 0.0606, "2023": 0.1059, "2024": -0.2814, "2025": 0.1496, "2026": -0.3616}, "year_n": {"2021": 89, "2022": 105, "2023": 61, "2024": 74, "2025": 115, "2026": 18}, "sym": {"ADA": 0.0673, "AVAX": -0.1031, "BNB": -0.1041, "BTC": -0.3359, "DOGE": 0.1489, "ETH": -0.0569, "LINK": 0.0614, "SOL": 0.0489, "TRX": -0.2098, "XRP": 0.2679}, "hold": {"전": {"n": 386, "gross": 0.0648, "net": 0.0402, "t": 0.25, "pos": 5, "nsym": 10}, "홀드": {"n": 76, "gross": 0.0263, "net": -0.0001, "t": -0.25, "pos": 5, "nsym": 9}}}], "cum": {"100": {"m": [24256, 24257, 24258, 24259, 24260, 24261, 24262, 24263, 24264, 24265, 24266, 24267, 24268, 24269, 24270, 24271, 24272, 24273, 24274, 24275, 24276, 24277, 24278, 24279, 24280, 24281, 24282, 24283, 24284, 24285, 24286, 24287, 24288, 24289, 24290, 24291, 24292, 24293, 24294, 24295, 24296, 24297, 24298, 24299, 24300, 24301, 24302, 24303, 24304, 24305, 24306, 24307, 24308, 24309, 24310, 24311, 24312, 24313, 24314, 24315, 24316, 24317, 24318, 24319], "v": [0.4561, 0.6173, 0.6548, 0.571, 1.086, 1.429, 1.6481, 1.7031, 2.154, 2.5582, 2.4346, 2.5055, 2.2719, 2.4478, 2.3398, 2.8396, 2.7901, 2.9151, 3.6753, 3.8679, 4.2428, 4.7498, 5.134, 5.222, 5.0818, 4.007, 3.8196, 3.8228, 3.0908, 3.0443, 3.1228, 3.1283, 3.2634, 2.9672, 3.5629, 3.5882, 4.0501, 4.5081, 3.7021, 3.0139, 2.8083, 2.1507, 4.123, 4.2086, 4.8767, 4.8796, 4.3972, 4.6566, 5.5344, 4.9753, 4.8876, 4.7726, 4.6533, 4.4209, 4.25, 4.2037, 3.9074, 4.197, 3.962, 2.8976, 2.3953, 2.6719, 3.2965, 5.2652]}, "150": {"m": [24256, 24257, 24258, 24259, 24260, 24261, 24262, 24263, 24264, 24265, 24266, 24267, 24268, 24269, 24270, 24271, 24272, 24273, 24274, 24275, 24276, 24277, 24278, 24279, 24280, 24282, 24283, 24284, 24285, 24286, 24287, 24288, 24289, 24290, 24291, 24292, 24293, 24294, 24295, 24296, 24297, 24298, 24299, 24300, 24301, 24302, 24303, 24304, 24305, 24306, 24307, 24308, 24309, 24310, 24311, 24312, 24313, 24314, 24315, 24316, 24317, 24318], "v": [1.9761, 1.946, 2.1157, 2.1253, 2.3432, 2.6907, 3.019, 2.9209, 3.3724, 4.0965, 3.9779, 3.8906, 3.8593, 3.9858, 4.0381, 4.4277, 4.8974, 4.6111, 6.2162, 6.7754, 7.746, 8.1266, 8.5949, 8.9536, 9.0036, 9.0666, 8.8578, 8.1857, 10.1628, 10.6325, 10.6912, 10.8128, 10.0059, 10.777, 10.5282, 11.3507, 11.6803, 11.2507, 10.4289, 10.124, 9.0786, 11.0568, 11.3132, 11.9384, 11.7615, 11.1319, 11.4302, 12.453, 14.4302, 14.5968, 15.3654, 15.1146, 14.0691, 14.2816, 14.3728, 14.1482, 13.5369, 12.9736, 11.9357, 11.8228, 13.7962, 13.9648]}, "200": {"m": [24257, 24258, 24259, 24260, 24261, 24262, 24263, 24264, 24265, 24266, 24267, 24268, 24269, 24270, 24271, 24272, 24273, 24274, 24275, 24276, 24277, 24278, 24279, 24280, 24282, 24283, 24284, 24286, 24287, 24288, 24289, 24290, 24291, 24292, 24293, 24294, 24295, 24296, 24297, 24299, 24300, 24301, 24302, 24303, 24304, 24306, 24307, 24308, 24309, 24310, 24311, 24312, 24313, 24314, 24315, 24316, 24318], "v": [-1.0269, -0.739, -0.8658, -1.3973, -1.0199, -0.7942, -0.6201, 0.0273, 0.7193, -0.0595, -0.3385, -0.3616, -0.385, -0.7463, -0.6482, -0.1707, -0.1087, 1.1261, 2.109, 4.0917, 4.945, 5.4182, 5.6458, 6.2896, 6.1219, 5.8495, 4.9593, 3.9205, 4.6107, 4.4384, 3.4076, 2.3759, 1.5786, 2.4358, 2.9093, 2.4797, 1.4511, 0.5313, -0.5082, -0.0311, 0.3319, -0.0967, -1.1298, -1.0597, 0.2815, 1.2624, 3.2463, 3.1417, 2.1035, 2.5815, 3.0557, 2.5888, 1.5558, 0.5272, -0.5108, -0.54, 0.4409]}}}, "1h": {"rows": [{"gate": 100, "n": 1241, "risk": 134.0, "win": 0.3626, "gross": 0.0886, "ctrl": 0.0022, "fee": 0.047, "net": 0.0416, "net_m": 0.0885, "t": 1.38, "nmonth": 64, "posm": 0.5469, "year": {"2021": 0.1114, "2022": -0.0207, "2023": 0.0116, "2024": 0.0997, "2025": 0.0038, "2026": 0.1174}, "year_n": {"2021": 210, "2022": 321, "2023": 188, "2024": 223, "2025": 217, "2026": 82}, "sym": {"ADA": 0.1574, "AVAX": -0.1318, "BNB": -0.1106, "BTC": 0.1628, "DOGE": 0.0435, "ETH": 0.2433, "LINK": 0.028, "SOL": 0.2792, "TRX": -0.5734, "XRP": -0.0085}, "hold": {"전": {"n": 1068, "gross": 0.0908, "net": 0.0446, "t": 0.78, "pos": 6, "nsym": 10}, "홀드": {"n": 173, "gross": 0.0751, "net": 0.0229, "t": 0.83, "pos": 7, "nsym": 10}}}, {"gate": 125, "n": 739, "risk": 163.0, "win": 0.3789, "gross": 0.138, "ctrl": 0.0156, "fee": 0.0382, "net": 0.0998, "net_m": 0.1703, "t": 1.94, "nmonth": 61, "posm": 0.5902, "year": {"2021": 0.0632, "2022": 0.005, "2023": 0.0903, "2024": 0.1275, "2025": 0.136, "2026": 0.5056}, "year_n": {"2021": 128, "2022": 178, "2023": 110, "2024": 152, "2025": 138, "2026": 33}, "sym": {"ADA": 0.1187, "AVAX": -0.1348, "BNB": -0.376, "BTC": 0.0386, "DOGE": 0.1819, "ETH": 0.3807, "LINK": 0.1861, "SOL": 0.2979, "TRX": -0.5158, "XRP": 0.1149}, "hold": {"전": {"n": 654, "gross": 0.1116, "net": 0.0738, "t": 1.08, "pos": 7, "nsym": 10}, "홀드": {"n": 85, "gross": 0.3412, "net": 0.3004, "t": 1.41, "pos": 7, "nsym": 9}}}, {"gate": 150, "n": 450, "risk": 192.0, "win": 0.3689, "gross": 0.1089, "ctrl": 0.0074, "fee": 0.0325, "net": 0.0764, "net_m": 0.1836, "t": 1.73, "nmonth": 59, "posm": 0.5254, "year": {"2021": -0.0078, "2022": -0.064, "2023": 0.0066, "2024": 0.104, "2025": 0.251, "2026": 0.7667}, "year_n": {"2021": 79, "2022": 102, "2023": 76, "2024": 103, "2025": 75, "2026": 15}, "sym": {"ADA": 0.2827, "AVAX": -0.0058, "BNB": -0.4357, "BTC": -0.1801, "DOGE": 0.2164, "ETH": 0.2675, "LINK": 0.0784, "SOL": 0.2383, "TRX": -0.905, "XRP": 0.0455}, "hold": {"전": {"n": 416, "gross": 0.0697, "net": 0.0372, "t": 0.82, "pos": 5, "nsym": 10}, "홀드": {"n": 34, "gross": 0.5882, "net": 0.5569, "t": 1.97, "pos": 7, "nsym": 8}}}, {"gate": 175, "n": 300, "risk": 218.0, "win": 0.37, "gross": 0.1133, "ctrl": -0.0143, "fee": 0.0285, "net": 0.0848, "net_m": 0.2259, "t": 1.82, "nmonth": 54, "posm": 0.4815, "year": {"2021": 0.0898, "2022": 0.0033, "2023": 0.1462, "2024": -0.0577, "2025": 0.2061, "2026": null}, "year_n": {"2021": 51, "2022": 61, "2023": 57, "2024": 71, "2025": 56, "2026": 4}, "sym": {"ADA": 0.3381, "AVAX": 0.1037, "BNB": null, "BTC": -0.1347, "DOGE": 0.0257, "ETH": 0.0295, "LINK": 0.1723, "SOL": 0.2748, "TRX": -0.8539, "XRP": 0.3064}, "hold": {"전": {"n": 283, "gross": 0.0742, "net": 0.0455, "t": 0.93, "pos": 7, "nsym": 10}, "홀드": null}}, {"gate": 200, "n": 207, "risk": 237.0, "win": 0.3865, "gross": 0.1643, "ctrl": -0.0491, "fee": 0.0251, "net": 0.1391, "net_m": 0.1951, "t": 1.4, "nmonth": 48, "posm": 0.5208, "year": {"2021": 0.0713, "2022": 0.192, "2023": 0.123, "2024": 0.0918, "2025": 0.2412}, "year_n": {"2021": 41, "2022": 37, "2023": 40, "2024": 51, "2025": 38}, "sym": {"ADA": 0.2818, "AVAX": 0.2602, "BNB": null, "BTC": null, "DOGE": 0.1543, "ETH": 0.127, "LINK": 0.2811, "SOL": 0.2056, "TRX": -0.7753, "XRP": 0.2011}, "hold": {"전": {"n": 200, "gross": 0.145, "net": 0.1196, "t": 1.34, "pos": 8, "nsym": 10}, "홀드": null}}], "cum": {"100": {"m": [24256, 24257, 24258, 24259, 24260, 24261, 24262, 24263, 24264, 24265, 24266, 24267, 24268, 24269, 24270, 24271, 24272, 24273, 24274, 24275, 24276, 24277, 24278, 24279, 24280, 24281, 24282, 24283, 24284, 24285, 24286, 24287, 24288, 24289, 24290, 24291, 24292, 24293, 24294, 24295, 24296, 24297, 24298, 24299, 24300, 24301, 24302, 24303, 24304, 24305, 24306, 24307, 24308, 24309, 24310, 24311, 24312, 24313, 24314, 24315, 24316, 24317, 24318, 24319], "v": [0.6293, 1.0884, 1.106, 1.057, 1.2631, 1.2202, 1.4944, 1.8685, 1.7807, 1.8561, 1.217, 1.4527, 0.6826, 0.4014, 0.3974, 0.9462, 1.3972, 1.4207, 0.9083, 0.869, 1.3266, 1.2774, 1.5573, 1.9, 2.0515, 3.0089, 2.7845, 2.4887, 2.4468, 2.8885, 2.5854, 2.5394, 2.5606, 3.3936, 2.8458, 2.7325, 3.0651, 3.0106, 2.5221, 2.3715, 2.6354, 1.5674, 2.3256, 2.853, 2.8887, 2.634, 2.3387, 2.6613, 2.9844, 3.8172, 3.5664, 3.7129, 3.9168, 3.1901, 2.7829, 3.8153, 3.6, 3.8072, 4.19, 4.3378, 3.9471, 2.8715, 3.6988, 5.6613]}, "150": {"m": [24256, 24257, 24258, 24259, 24260, 24261, 24262, 24263, 24264, 24265, 24266, 24267, 24268, 24269, 24270, 24271, 24272, 24273, 24274, 24275, 24276, 24277, 24278, 24279, 24280, 24281, 24282, 24283, 24284, 24286, 24287, 24288, 24289, 24290, 24291, 24292, 24293, 24294, 24295, 24296, 24297, 24298, 24299, 24300, 24301, 24302, 24303, 24304, 24305, 24306, 24308, 24309, 24310, 24311, 24312, 24313, 24314, 24316, 24318], "v": [0.7712, 0.4845, 0.4492, 0.1606, -0.1214, -0.1527, -0.0562, 0.4124, 0.4705, 0.7215, -0.321, -0.6085, -1.6535, -2.3169, -2.1523, -2.1889, -0.9673, -1.5051, -1.0259, -0.886, 0.591, 0.7586, -0.2804, -0.0621, 0.2431, 2.2225, 2.3168, 1.8848, 1.5987, 1.3068, 1.0891, 0.8047, 2.1793, 1.1498, 0.8668, 1.1855, 1.6489, 1.1131, 1.0756, 0.5868, -0.4541, 0.009, 0.984, 1.1553, 1.0232, 0.4521, 1.2268, 1.3991, 3.3776, 4.1509, 4.6182, 3.5723, 3.2919, 5.2692, 6.4937, 8.4688, 9.1499, 8.8574, 10.8346]}, "200": {"m": [24256, 24257, 24258, 24259, 24260, 24261, 24262, 24263, 24264, 24265, 24266, 24267, 24268, 24269, 24270, 24271, 24272, 24273, 24274, 24275, 24276, 24277, 24278, 24279, 24280, 24282, 24283, 24284, 24287, 24288, 24289, 24290, 24291, 24292, 24294, 24295, 24296, 24299, 24300, 24301, 24302, 24303, 24304, 24305, 24306, 24308, 24310, 24312], "v": [0.9768, -0.0555, 0.1183, 0.0875, -0.3407, -0.1649, -0.3367, 1.6456, 1.2195, 3.205, 2.1709, 2.642, 1.6078, 0.577, 1.9562, 0.9249, 2.9076, 2.8784, 3.3576, 3.2378, 4.2159, 3.1801, 2.1411, 3.1227, 3.3957, 3.874, 4.3616, 4.329, 3.8978, 4.3715, 6.3591, 5.3297, 4.5725, 5.2161, 4.1807, 5.1574, 4.5545, 5.4071, 6.1893, 5.9146, 5.3203, 5.4974, 5.9765, 7.9584, 8.4311, 7.3948, 7.3845, 9.3657]}}}}, "agree": {"125": {"year_corr": -0.931, "year_n": 6, "sym_corr": 0.237, "sym_n": 10}, "150": {"year_corr": -0.936, "year_n": 6, "sym_corr": 0.478, "sym_n": 10}}};
+const NS="http://www.w3.org/2000/svg";
+const el=(t,a)=>{const e=document.createElementNS(NS,t);for(const k in a)e.setAttribute(k,a[k]);return e;};
+const cv=n=>getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+function tip(box,t,x,y,html){t.innerHTML=html;t.style.opacity=1;
+  const r=box.getBoundingClientRect(),w=t.offsetWidth;
+  t.style.left=Math.max(4,Math.min(r.width-w-4,x-w/2))+"px";t.style.top=(y-t.offsetHeight-10)+"px";}
+function hov(n,box,tp,html){
+  n.addEventListener("pointerenter",e=>tip(box,tp,e.offsetX,e.offsetY,html));
+  n.addEventListener("pointerleave",()=>tp.style.opacity=0);}
+const YRS=[2021,2022,2023,2024,2025,2026];
+
+/* 1. 히트맵 */
+(function(){
+ const s=document.getElementById("s1"),W=940,H=420,L=74,R=18,T=30;
+ const panelH=(H-T-24)/2, iw=W-L-R;
+ ["4h","1h"].forEach((tf,pi)=>{
+  const rows=D.tf[tf].rows, y0=T+pi*(panelH+24);
+  const rh=(panelH-26)/rows.length, cw=iw/YRS.length;
+  const lab=el("text",{x:L,y:y0-8,"font-size":13,fill:cv("--text-primary"),"font-weight":600});
+  lab.textContent=`${tf} FVG`; s.appendChild(lab);
+  YRS.forEach((yr,j)=>{
+   const t=el("text",{x:L+j*cw+cw/2,y:y0+10,"text-anchor":"middle","font-size":11,
+     fill:cv("--text-muted")}); t.textContent=yr; s.appendChild(t);});
+  const box=document.getElementById("c1"),tp=document.getElementById("t1");
+  rows.forEach((r,i)=>{
+   const ry=y0+18+i*rh;
+   const lb=el("text",{x:L-10,y:ry+rh/2+4,"text-anchor":"end","font-size":11.5,
+     fill:cv("--text-secondary")}); lb.textContent=r.gate+"bps"; s.appendChild(lb);
+   YRS.forEach((yr,j)=>{
+    const v=r.year[yr], n=r.year_n[yr]||0;
+    const x=L+j*cw;
+    if(v==null){
+     const c=el("rect",{x:x+1,y:ry+1,width:cw-2,height:rh-2,rx:2,fill:cv("--border"),opacity:.4});
+     s.appendChild(c); return;}
+    const mag=Math.min(Math.abs(v)/0.35,1);
+    const c=el("rect",{x:x+1,y:ry+1,width:cw-2,height:rh-2,rx:2,
+      fill:v>=0?cv("--s1"):cv("--neg"),opacity:0.15+0.75*mag});
+    hov(c,box,tp,`<b>${tf} · 게이트 ${r.gate}bps · ${yr}</b><br>
+      순R <b>${v>=0?"+":""}${v.toFixed(4)}</b> · ${n}건`);
+    s.appendChild(c);
+    const t=el("text",{x:x+cw/2,y:ry+rh/2+4,"text-anchor":"middle","font-size":11,
+      fill:mag>0.45?"#fff":cv("--text-primary"),"font-variant-numeric":"tabular-nums"});
+    t.textContent=(v>=0?"+":"")+v.toFixed(2); s.appendChild(t);
+   });});
+ });
+})();
+
+/* 2. 월별 누적 */
+(function(){
+ const s=document.getElementById("s2"),W=940,H=340,L=58,R=118,T=16,B=46;
+ const iw=W-L-R, ih=H-T-B;
+ const series=[["4h",100,cv("--s3"),.55],["4h",150,cv("--s1"),1],["4h",200,cv("--s3"),.55],
+               ["1h",150,cv("--s2"),1]];
+ let mn=0,mx=0,ms=1e9,me=-1e9;
+ series.forEach(([tf,g])=>{const c=D.tf[tf].cum[g];
+  c.v.forEach(v=>{mn=Math.min(mn,v);mx=Math.max(mx,v)});
+  ms=Math.min(ms,c.m[0]);me=Math.max(me,c.m[c.m.length-1]);});
+ const px=m=>L+(m-ms)/(me-ms)*iw, py=v=>T+(mx*1.08-v)/((mx-mn)*1.16||1)*ih;
+ for(let v=Math.ceil(mn);v<=mx;v+=2){
+  s.appendChild(el("line",{x1:L,x2:W-R,y1:py(v),y2:py(v),stroke:cv("--border"),"stroke-width":1}));
+  const t=el("text",{x:L-8,y:py(v)+4,"text-anchor":"end","font-size":11,fill:cv("--text-muted")});
+  t.textContent=v.toFixed(0); s.appendChild(t);}
+ s.appendChild(el("line",{x1:L,x2:W-R,y1:py(0),y2:py(0),stroke:cv("--text-muted"),"stroke-width":1.4}));
+ YRS.forEach(y=>{const m=y*12+1; if(m<ms||m>me)return;
+  s.appendChild(el("line",{x1:px(m),x2:px(m),y1:T,y2:H-B,stroke:cv("--border"),"stroke-width":1}));
+  const t=el("text",{x:px(m),y:H-B+18,"text-anchor":"middle","font-size":11,fill:cv("--text-muted")});
+  t.textContent=y; s.appendChild(t);});
+ const box=document.getElementById("c2"),tp=document.getElementById("t2");
+ series.forEach(([tf,g,col,op])=>{
+  const c=D.tf[tf].cum[g];
+  s.appendChild(el("path",{d:c.m.map((m,i)=>`${i?"L":"M"}${px(m)},${py(c.v[i])}`).join(" "),
+    fill:"none",stroke:col,"stroke-width":op===1?2.6:1.8,opacity:op,"stroke-linejoin":"round"}));
+  const last=c.v.length-1;
+  const lt=el("text",{x:W-R+7,y:py(c.v[last])+4,"font-size":11.5,fill:col,
+    "font-weight":op===1?600:400});
+  lt.textContent=`${tf} · ${g}bps`; s.appendChild(lt);
+  const hitr=el("rect",{x:L,y:T,width:iw,height:ih,fill:"transparent"});
+ });
+ const ax=el("text",{x:L+iw/2,y:H-4,"text-anchor":"middle","font-size":11.5,fill:cv("--text-secondary")});
+ ax.textContent="월 평균 순R 의 누적"; s.appendChild(ax);
+})();
+
+/* 3. 심볼별 */
+(function(){
+ const s=document.getElementById("s3"),W=940,H=300,L=52,R=18,T=26,B=40;
+ const SY=["BTC","ETH","SOL","XRP","BNB","DOGE","ADA","LINK","AVAX","TRX"];
+ const iw=W-L-R, ih=H-T-B, bw=iw/SY.length;
+ const r4=D.tf["4h"].rows.find(r=>r.gate===150), r1=D.tf["1h"].rows.find(r=>r.gate===150);
+ const lo=-1.0, hi=0.6, py=v=>T+(hi-Math.max(lo,Math.min(hi,v)))/(hi-lo)*ih;
+ for(let v=-1.0;v<=0.601;v+=0.2){
+  s.appendChild(el("line",{x1:L,x2:W-R,y1:py(v),y2:py(v),stroke:cv("--border"),"stroke-width":1}));
+  const t=el("text",{x:L-8,y:py(v)+4,"text-anchor":"end","font-size":10.5,fill:cv("--text-muted")});
+  t.textContent=v.toFixed(1); s.appendChild(t);}
+ s.appendChild(el("line",{x1:L,x2:W-R,y1:py(0),y2:py(0),stroke:cv("--text-muted"),"stroke-width":1.4}));
+ const box=document.getElementById("c3"),tp=document.getElementById("t3");
+ SY.forEach((sy,i)=>{
+  [[r4,cv("--s1"),0.12,"4h"],[r1,cv("--s2"),0.52,"1h"]].forEach(([r,col,off,nm])=>{
+   const v=r.sym[sy];
+   if(v==null) return;
+   const x0=L+i*bw+bw*off, w=bw*0.34;
+   const rect=el("rect",{x:x0,y:Math.min(py(v),py(0)),width:w,
+     height:Math.max(Math.abs(py(v)-py(0)),1.5),rx:2,fill:v>=0?col:cv("--neg"),opacity:.9});
+   hov(rect,box,tp,`<b>${sy} · ${nm} 게이트150</b><br>순R <b>${v>=0?"+":""}${v.toFixed(4)}</b>`);
+   s.appendChild(rect);});
+  const t=el("text",{x:L+i*bw+bw/2,y:H-B+16,"text-anchor":"middle","font-size":11,
+    fill:cv("--text-muted")}); t.textContent=sy; s.appendChild(t);});
+ const lg=el("text",{x:L,y:T-8,"font-size":11.5,fill:cv("--text-secondary")});
+ lg.textContent="왼쪽 막대 = 4h · 오른쪽 막대 = 1h (게이트 150bps)"; s.appendChild(lg);
+})();
+
+function rowsHtml(tf){
+ return D.tf[tf].rows.map(r=>{
+  const f=v=>`<td class="${v>0?"pos":"neg"}">${v>=0?"+":""}${v.toFixed(4)}</td>`;
+  return `<tr class="${r.gate===150?"hl":""}"><td>${r.gate}</td><td>${r.n.toLocaleString()}</td>
+   <td>${r.risk}</td><td>${(r.win*100).toFixed(1)}%</td>${f(r.gross)}
+   <td>${r.ctrl==null?"—":(r.ctrl>=0?"+":"")+r.ctrl.toFixed(4)}</td>
+   <td>${r.fee.toFixed(4)}</td>${f(r.net)}${f(r.net_m)}
+   <td class="${Math.abs(r.t)>2?"pos":"neg"}">${r.t.toFixed(2)}</td>
+   <td>${(r.posm*100).toFixed(0)}%</td></tr>`;}).join("");
+}
+document.getElementById("tb4").innerHTML=rowsHtml("4h");
+document.getElementById("tb1").innerHTML=rowsHtml("1h");
+</script></body></html>

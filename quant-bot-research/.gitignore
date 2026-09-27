@@ -1,0 +1,24 @@
+# 원자료 (OKX 5분봉) — 커밋하지 않는다. 받는 법: docs/DATA.md
+cache_okx/
+cache_all/
+okx_data/
+logs/
+
+# 큰 중간 산출물 — 스크립트로 재생성
+runs/legacy/
+runs/tsmom_size/*.npy
+runs/tsmom_anchor/
+runs/tsmom_gap/
+runs/wgap/
+runs/weekly/
+runs/*.pkl
+runs/u47_trades_era.csv
+results_fvg_excursion.csv
+
+# 보고서 입력 (526KB) — 상위 .gitignore 의 *.pkl 규칙보다 우선
+!runs/tsmom_size/weights.pkl
+
+# Python
+__pycache__/
+.pytest_cache/
+*.pyc

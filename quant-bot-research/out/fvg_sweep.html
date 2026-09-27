@@ -1,0 +1,242 @@
+<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1"><title>FVG 관통과 반등</title>
+<style>
+ :root{color-scheme:light;--surface-0:#f6f5f2;--surface-1:#fcfcfb;--border:#e3e2dd;
+  --text-primary:#0b0b0b;--text-secondary:#52514e;--text-muted:#7a7873;
+  --s1:#2a78d6;--s2:#eb6834;--s3:#7a7873;--neg:#e34948;}
+ @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){color-scheme:dark;
+  --surface-0:#111110;--surface-1:#1a1a19;--border:#33322f;
+  --text-primary:#fff;--text-secondary:#c3c2b7;--text-muted:#928f86;
+  --s1:#3987e5;--s2:#d95926;--s3:#928f86;--neg:#e66767;}}
+ :root[data-theme="dark"]{color-scheme:dark;--surface-0:#111110;--surface-1:#1a1a19;
+  --border:#33322f;--text-primary:#fff;--text-secondary:#c3c2b7;--text-muted:#928f86;
+  --s1:#3987e5;--s2:#d95926;--s3:#928f86;--neg:#e66767;}
+ *{box-sizing:border-box}
+ body{margin:0;background:var(--surface-0);color:var(--text-primary);
+  font:15px/1.6 ui-sans-serif,system-ui,-apple-system,"Apple SD Gothic Neo","Noto Sans KR",sans-serif}
+ .wrap{max-width:960px;margin:0 auto;padding:40px 16px 72px}
+ h1{font-size:clamp(23px,4.5vw,31px);margin:0 0 8px;letter-spacing:-.02em}
+ header p{margin:0;color:var(--text-secondary);max-width:68ch}
+ .verdict{margin:22px 0 0;padding:16px 18px;border-radius:10px;background:var(--surface-1);
+  border:1px solid var(--border);border-left:3px solid var(--neg)}
+ section{margin-top:36px;background:var(--surface-1);border:1px solid var(--border);
+  border-radius:12px;padding:20px 18px}
+ h2{font-size:17px;margin:0 0 4px}
+ .sub{color:var(--text-secondary);font-size:13.5px;margin:0 0 16px;max-width:78ch}
+ .legend{display:flex;flex-wrap:wrap;gap:15px;margin:0 0 12px;font-size:13px;color:var(--text-secondary)}
+ .legend span{display:inline-flex;align-items:center;gap:6px}
+ .sw{width:13px;height:11px;border-radius:2px;display:inline-block}
+ .sw.line{height:3px;width:16px}
+ .chart{position:relative} svg{display:block;width:100%}
+ .tip{position:absolute;pointer-events:none;opacity:0;transition:opacity .08s;background:var(--surface-1);
+  border:1px solid var(--border);border-radius:8px;padding:8px 10px;font-size:12.5px;line-height:1.5;
+  box-shadow:0 6px 20px rgba(0,0,0,.14);white-space:nowrap;z-index:5}
+ table{width:100%;border-collapse:collapse;font-size:13px;margin-top:6px}
+ th,td{text-align:right;padding:7px 8px;border-bottom:1px solid var(--border);font-variant-numeric:tabular-nums}
+ th:first-child,td:first-child{text-align:left;font-variant-numeric:normal}
+ th{color:var(--text-secondary);font-weight:600}
+ tr.hl td{background:color-mix(in srgb,var(--s1) 9%,transparent)}
+ tr.ctl td{background:color-mix(in srgb,var(--s2) 8%,transparent)}
+ .note{color:var(--text-muted);font-size:12.5px;margin-top:12px}
+ .neg{color:var(--neg)} .pos{color:var(--s1)}
+ .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:4px}
+ .card{background:var(--surface-0);border:1px solid var(--border);border-radius:10px;padding:14px}
+ .card .k{font-size:12.5px;color:var(--text-secondary)}
+ .card .v{font-size:clamp(19px,3.4vw,25px);font-variant-numeric:tabular-nums;letter-spacing:-.02em;margin-top:2px}
+ .card .d{font-size:12px;color:var(--text-muted);margin-top:2px}
+ @media(max-width:640px){.wrap{padding:28px 16px 56px}section{padding:16px 12px}
+  .cards{grid-template-columns:1fr}table{font-size:12px}th,td{padding:6px 4px}}
+</style></head><body><div class="wrap">
+<header>
+ <h1>FVG 는 뚫린다 — 그 다음이 문제다</h1>
+ <p>기존 셋업은 <b>"갭 관통 = 손절"</b> 을 전제로 손절을 먼 끝에 둔다.
+    실거래에서는 갭이 뚫린 아래에서 쓸고 CHoCH 가 난 뒤 반등하는 경우가 많다.
+    전제를 먼저 기하로 확인하고, 틀렸다면 대안 진입을 검정했다.
+    10심볼 OKX 5분봉 2021-04 ~ 2026-07.</p>
+ <div class="verdict"><b>전제는 확실히 틀렸다. 그런데 고쳐도 거래가 안 된다.</b><br>
+   4H FVG 의 <b>91.9%</b> 가 7일 안에 먼 끝을 뚫고(12시간 안에 71.9%),
+   뚫린 것의 <b>90.3%</b> 가 가까운 끝까지 돌아온다. 먼 끝 손절은 반등 자리에 정확히 놓여 있다.<br>
+   그런데 같은 크기 <b>가짜 갭도 89.2%</b> 돌아온다 — 되돌림은 FVG 의 성질이 아니다.
+   그리고 "관통 → CHoCH 진입" 으로 바꾸면 <b>FVG 조건이 오히려 해롭다</b>:
+   순수 CHoCH 의 gross +0.0131 이 FVG 를 걸면 <b>−0.0155</b> 로 떨어진다.</div>
+</header>
+
+<section>
+ <h2>1단계 — 관통 깊이별 회복률 (기술통계, 판정 없음)</h2>
+ <p class="sub">갭의 가까운 끝을 처음 터치한 뒤, <b>회복 직전까지</b>의 최대 역행을
+    갭 크기 배수로 잰 것(지평 전체의 최저를 쓰면 며칠간의 드리프트가 깊이로 잡혀
+    "스윕" 과 구분이 안 된다). 막대 = 실측 회복률, 선 = 같은 크기 가짜 갭.</p>
+ <div class="legend">
+   <span><i class="sw" style="background:var(--s1)"></i>실측 회복률 (7일)</span>
+   <span><i class="sw" style="background:var(--s2)"></i>실측 회복률 (12시간)</span>
+   <span><i class="sw line" style="background:var(--s3)"></i>가짜 갭 (7일)</span>
+ </div>
+ <div class="chart" id="c1"><svg id="s1" viewBox="0 0 920 350"></svg><div class="tip" id="t1"></div></div>
+ <div class="cards">
+  <div class="card"><div class="k">7일 안에 먼 끝을 뚫는 비율</div><div class="v">91.9%</div>
+    <div class="d">12시간 안에도 71.9%</div></div>
+  <div class="card"><div class="k">뚫린 뒤 돌아오는 비율</div><div class="v pos">90.3%</div>
+    <div class="d">중앙 회복까지 8~36봉</div></div>
+  <div class="card"><div class="k">가짜 갭의 같은 비율</div><div class="v">89.2%</div>
+    <div class="d">차이 +1.1%p — FVG 고유가 아니다</div></div>
+ </div>
+ <p class="note">깊이 구간 어디에서도 실측−가짜갭 차이가 <b>+0.0~+1.2%p</b> 다.
+    "뚫리고 돌아온다" 는 가격의 성질이지 FVG 의 성질이 아니다.
+    그래서 2단계에는 <b>FVG 맥락이 없는 CHoCH 대조군</b>을 반드시 넣었다.</p>
+</section>
+
+<section>
+ <h2>2단계 — 관통 뒤 CHoCH 진입 (사전등록)</h2>
+ <p class="sub">갭이 먼 끝을 뚫은 뒤 같은 방향 <b>CHoCH 확정 봉</b>에 지정가 진입,
+    손절은 갭 터치~진입 사이의 <b>스윕 극단</b>, TP 2R.
+    한 봉에 여러 FVG 가 같은 신호를 내면 한 번만 센다(1h 에서 중복이 35%였다).
+    주 지표는 <b>4h FVG × CHoCH 15m × 버퍼 0</b>, 판정은 다섯 조건 전부.</p>
+ <table>
+  <thead><tr><th>기준</th><th>결과</th><th></th></tr></thead>
+  <tbody>
+   <tr><td>순R &gt; 0</td><td class="neg">−0.0625</td><td class="neg">미달</td></tr>
+   <tr><td>월 클러스터 t &gt; 2</td><td class="neg">−5.42</td><td class="neg">미달</td></tr>
+   <tr><td>심볼+ ≥ 7/10</td><td class="neg">0/10</td><td class="neg">미달</td></tr>
+   <tr><td>홀드아웃 12개월 양수</td><td class="neg">−0.0829</td><td class="neg">미달</td></tr>
+   <tr><td>대조군 B(순수 CHoCH)를 이길 것</td><td class="neg">gross −0.0155 vs +0.0131</td><td class="neg">역전</td></tr>
+  </tbody>
+ </table>
+ <p class="note">거래 11,989건 · 체결률 99% · 1R 중앙 180bps · 승률 32.2% · 치환 대조군 +0.0003.
+   <b>다섯 기준 전부 미달 — 기각.</b></p>
+</section>
+
+<section>
+ <h2>엣지 vs 비용 — 막대가 눈금에 닿아야 거래가 된다</h2>
+ <p class="sub">막대 = gross R, 세로 눈금 = 그 칸의 수수료 R. <b>9칸 중 하나도 닿지 못한다.</b>
+    위 세 칸은 FVG 맥락이 없는 순수 CHoCH 대조군이다.</p>
+ <div class="legend">
+   <span><i class="sw" style="background:var(--s2)"></i>순수 CHoCH (대조군 B)</span>
+   <span><i class="sw" style="background:var(--s1)"></i>FVG 관통 후 CHoCH</span>
+   <span><i class="sw line" style="background:var(--text-primary);height:11px;width:3px"></i>수수료 R (넘어야 하는 선)</span>
+ </div>
+ <div class="chart" id="c2"><svg id="s2" viewBox="0 0 920 400"></svg><div class="tip" id="t2"></div></div>
+ <table>
+  <thead><tr><th>셋업</th><th>거래수</th><th>1R(bps)</th><th>승률</th><th>gross</th>
+   <th>치환대조</th><th>수수료</th><th>순R</th><th>t(월)</th><th>심볼+</th><th>홀드아웃</th></tr></thead>
+  <tbody id="tb"></tbody>
+ </table>
+ <p class="note"><b>CHoCH 1h 에서는 비용 문제가 사실상 풀린다</b> — 1R 이 292~350bps 로 커져
+   수수료가 0.024~0.029R 까지 내려간다. 그런데 그 칸의 gross 가 +0.001(순수) / −0.022~−0.024(FVG) 다.
+   <b>이제 막는 것은 비용이 아니라 엣지의 부재다.</b></p>
+</section>
+
+<section>
+ <h2>FVG 선의 현재 좌표</h2>
+ <p class="sub">두 셋업이 정반대 이유로 막혀 있다. 표본과 엣지를 동시에 가진 칸이 없다.</p>
+ <table>
+  <thead><tr><th>셋업</th><th>1R</th><th>거래수</th><th>gross</th><th>수수료</th><th>막는 것</th></tr></thead>
+  <tbody>
+   <tr class="hl"><td>FVG mid 진입 · 4h · 게이트 160bps</td><td>219bps</td><td>663</td>
+     <td class="pos">+0.1252</td><td>0.0291</td><td><b>표본</b> (홀드아웃 −0.22)</td></tr>
+   <tr><td>FVG mid 진입 · 4h · 게이트 0</td><td>84bps</td><td>4,481</td>
+     <td class="pos">+0.0609</td><td>0.0994</td><td><b>비용</b></td></tr>
+   <tr class="ctl"><td>FVG 관통 → CHoCH 1h</td><td>346bps</td><td>7,242</td>
+     <td class="neg">−0.0243</td><td>0.0240</td><td><b>엣지</b> (비용은 풀렸다)</td></tr>
+   <tr class="ctl"><td>순수 CHoCH 1h (FVG 무관)</td><td>292bps</td><td>14,415</td>
+     <td>+0.0011</td><td>0.0294</td><td><b>엣지</b></td></tr>
+  </tbody>
+ </table>
+ <p class="note">FVG mid 는 큰 1R 에서 gross +0.125 를 내지만 5.3년에 663건이다.
+   CHoCH 계열은 14,415건까지 표본이 나오지만 gross 가 0 이다.
+   <b>같은 칸에 둘이 함께 있었던 적이 없다.</b></p>
+</section>
+<p class="note" style="margin-top:28px">1단계 4h 16,874건 / 1h 66,915건 · 2단계 9칸 × 10심볼 ·
+ 진입 중복 제거 후 · 검정 184 통과</p>
+</div>
+<script>
+const D = {"exc": {"1h_144": {"bins": [{"name": "갭 절반도 못 옴", "n": 5094, "share": 0.0761, "rec": 0.9996, "fake": null, "bars": 0, "run": null}, {"name": "갭 안에서 반등", "n": 4656, "share": 0.0696, "rec": 0.994, "fake": null, "bars": 0, "run": null}, {"name": "0~0.25 관통", "n": 6873, "share": 0.1027, "rec": 0.9629, "fake": null, "bars": 2, "run": 4.11}, {"name": "0.25~0.5", "n": 5594, "share": 0.0836, "rec": 0.9448, "fake": null, "bars": 2, "run": 5.09}, {"name": "0.5~1.0", "n": 7914, "share": 0.1183, "rec": 0.9303, "fake": null, "bars": 2, "run": 5.48}, {"name": "1~2", "n": 9801, "share": 0.1465, "rec": 0.883, "fake": null, "bars": 3, "run": 6.68}, {"name": "2~4", "n": 9443, "share": 0.1411, "rec": 0.814, "fake": null, "bars": 4, "run": 8.44}, {"name": "4+", "n": 17540, "share": 0.2621, "rec": 0.6451, "fake": null, "bars": 6, "run": 20.6}], "n": 66915, "gap": 25.3, "p_break": 0.851, "p_rec": 0.8201, "p_rec_fake": null}, "1h_2016": {"bins": [{"name": "갭 절반도 못 옴", "n": 1351, "share": 0.0202, "rec": 1.0, "fake": 1.0, "bars": 0, "run": null}, {"name": "갭 안에서 반등", "n": 1237, "share": 0.0185, "rec": 1.0, "fake": 1.0, "bars": 0, "run": null}, {"name": "0~0.25 관통", "n": 7611, "share": 0.1137, "rec": 0.9986, "fake": 0.9985, "bars": 2, "run": 14.24}, {"name": "0.25~0.5", "n": 6271, "share": 0.0937, "rec": 0.9986, "fake": 0.9969, "bars": 2, "run": 17.08}, {"name": "0.5~1.0", "n": 8818, "share": 0.1318, "rec": 0.9971, "fake": 0.995, "bars": 3, "run": 18.33}, {"name": "1~2", "n": 10632, "share": 0.1589, "rec": 0.9937, "fake": 0.988, "bars": 4, "run": 21.6}, {"name": "2~4", "n": 10071, "share": 0.1505, "rec": 0.9843, "fake": 0.9741, "bars": 7, "run": 25.95}, {"name": "4+", "n": 20924, "share": 0.3127, "rec": 0.8455, "fake": 0.8426, "bars": 19, "run": 44.55}], "n": 66915, "gap": 25.3, "p_break": 0.9606, "p_rec": 0.9455, "p_rec_fake": 0.9407}, "4h_144": {"bins": [{"name": "갭 절반도 못 옴", "n": 2613, "share": 0.1549, "rec": 0.9981, "fake": null, "bars": 0, "run": null}, {"name": "갭 안에서 반등", "n": 2092, "share": 0.124, "rec": 0.9852, "fake": null, "bars": 0, "run": null}, {"name": "0~0.25 관통", "n": 1806, "share": 0.107, "rec": 0.881, "fake": null, "bars": 3, "run": 2.71}, {"name": "0.25~0.5", "n": 1312, "share": 0.0778, "rec": 0.846, "fake": null, "bars": 3, "run": 3.06}, {"name": "0.5~1.0", "n": 1861, "share": 0.1103, "rec": 0.8221, "fake": null, "bars": 4, "run": 3.63}, {"name": "1~2", "n": 2240, "share": 0.1327, "rec": 0.7513, "fake": null, "bars": 5, "run": 4.23}, {"name": "2~4", "n": 1984, "share": 0.1176, "rec": 0.685, "fake": null, "bars": 5, "run": 6.45}, {"name": "4+", "n": 2966, "share": 0.1758, "rec": 0.5843, "fake": null, "bars": 6, "run": 16.42}], "n": 16874, "gap": 57.5, "p_break": 0.7186, "p_rec": 0.7391, "p_rec_fake": null}, "4h_2016": {"bins": [{"name": "갭 절반도 못 옴", "n": 672, "share": 0.0398, "rec": 1.0, "fake": 1.0, "bars": 0, "run": null}, {"name": "갭 안에서 반등", "n": 663, "share": 0.0393, "rec": 1.0, "fake": 1.0, "bars": 0, "run": null}, {"name": "0~0.25 관통", "n": 2258, "share": 0.1338, "rec": 0.9903, "fake": 0.9868, "bars": 5, "run": 7.3}, {"name": "0.25~0.5", "n": 1605, "share": 0.0951, "rec": 0.9956, "fake": 0.9839, "bars": 6, "run": 8.13}, {"name": "0.5~1.0", "n": 2302, "share": 0.1364, "rec": 0.9791, "fake": 0.9768, "bars": 8, "run": 9.18}, {"name": "1~2", "n": 2675, "share": 0.1585, "rec": 0.9664, "fake": 0.9617, "bars": 13, "run": 10.34}, {"name": "2~4", "n": 2392, "share": 0.1418, "rec": 0.9122, "fake": 0.9057, "bars": 17, "run": 13.21}, {"name": "4+", "n": 4307, "share": 0.2552, "rec": 0.7367, "fake": 0.718, "bars": 36, "run": 25.87}], "n": 16874, "gap": 57.5, "p_break": 0.9195, "p_rec": 0.9026, "p_rec_fake": 0.8921}}, "grid": [{"label": "순수 CHoCH 5m", "kind": "순수", "ch": "5m", "fvg": "—", "n": 171074, "risk": 168.0, "gross": 0.0053, "ctrl": 0.0004, "fee": 0.0535, "net": -0.0483, "win": 0.3263, "t": -11.86, "pos": 0, "nsym": 10, "net_oos": -0.0357, "gross_oos": 0.0272}, {"label": "순수 CHoCH 15m", "kind": "순수", "ch": "15m", "fvg": "—", "n": 58211, "risk": 191.0, "gross": 0.0131, "ctrl": -0.0013, "fee": 0.0457, "net": -0.0326, "win": 0.3298, "t": -5.66, "pos": 0, "nsym": 10, "net_oos": -0.0421, "gross_oos": 0.0119}, {"label": "순수 CHoCH 1h", "kind": "순수", "ch": "1h", "fvg": "—", "n": 14415, "risk": 292.0, "gross": 0.0011, "ctrl": -0.0215, "fee": 0.0294, "net": -0.0283, "win": 0.3097, "t": -1.36, "pos": 2, "nsym": 10, "net_oos": -0.0422, "gross_oos": -0.0081}, {"label": "FVG 1h → CHoCH 5m", "kind": "FVG", "ch": "5m", "fvg": "1h", "n": 45956, "risk": 105.0, "gross": 0.0028, "ctrl": 0.0118, "fee": 0.0802, "net": -0.0773, "win": 0.3331, "t": -12.09, "pos": 0, "nsym": 10, "net_oos": -0.0987, "gross_oos": -0.0037}, {"label": "FVG 1h → CHoCH 15m", "kind": "FVG", "ch": "15m", "fvg": "1h", "n": 36597, "risk": 177.0, "gross": 0.006, "ctrl": 0.0033, "fee": 0.049, "net": -0.043, "win": 0.3276, "t": -6.15, "pos": 0, "nsym": 10, "net_oos": -0.0364, "gross_oos": 0.0213}, {"label": "FVG 1h → CHoCH 1h", "kind": "FVG", "ch": "1h", "fvg": "1h", "n": 13644, "risk": 350.0, "gross": -0.0221, "ctrl": -0.0339, "fee": 0.0245, "net": -0.0466, "win": 0.2864, "t": -3.75, "pos": 0, "nsym": 10, "net_oos": -0.0404, "gross_oos": -0.0119}, {"label": "FVG 4h → CHoCH 5m", "kind": "FVG", "ch": "5m", "fvg": "4h", "n": 12350, "risk": 118.0, "gross": -0.0004, "ctrl": 0.0032, "fee": 0.0709, "net": -0.0713, "win": 0.3313, "t": -5.68, "pos": 0, "nsym": 10, "net_oos": -0.0816, "gross_oos": 0.0038}, {"label": "FVG 4h → CHoCH 15m", "kind": "FVG", "ch": "15m", "fvg": "4h", "n": 11989, "risk": 180.0, "gross": -0.0155, "ctrl": 0.0003, "fee": 0.047, "net": -0.0625, "win": 0.3215, "t": -5.42, "pos": 0, "nsym": 10, "net_oos": -0.0829, "gross_oos": -0.0266}, {"label": "FVG 4h → CHoCH 1h", "kind": "FVG", "ch": "1h", "fvg": "4h", "n": 7242, "risk": 346.0, "gross": -0.0243, "ctrl": -0.0272, "fee": 0.024, "net": -0.0483, "win": 0.2887, "t": -1.94, "pos": 1, "nsym": 10, "net_oos": -0.0579, "gross_oos": -0.0294}]};
+const NS="http://www.w3.org/2000/svg";
+const el=(t,a)=>{const e=document.createElementNS(NS,t);for(const k in a)e.setAttribute(k,a[k]);return e;};
+const cv=n=>getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+function tip(box,t,x,y,html){t.innerHTML=html;t.style.opacity=1;
+  const r=box.getBoundingClientRect(),w=t.offsetWidth;
+  t.style.left=Math.max(4,Math.min(r.width-w-4,x-w/2))+"px";t.style.top=(y-t.offsetHeight-10)+"px";}
+function hov(n,box,tp,html){
+  n.addEventListener("pointerenter",e=>tip(box,tp,e.offsetX,e.offsetY,html));
+  n.addEventListener("pointerleave",()=>tp.style.opacity=0);}
+
+/* 1. 깊이별 회복률 */
+(function(){
+ const s=document.getElementById("s1"),W=920,H=350,L=56,R=20,T=18,B=64;
+ const A=D.exc["4h_2016"].bins, Bn=D.exc["4h_144"].bins;
+ const iw=W-L-R, ih=H-T-B, n=A.length, bw=iw/n;
+ const py=v=>T+(1.02-v)/(1.02-0.40)*ih;
+ for(let v=0.4;v<=1.001;v+=0.1){
+  s.appendChild(el("line",{x1:L,x2:W-R,y1:py(v),y2:py(v),stroke:cv("--border"),"stroke-width":1}));
+  const t=el("text",{x:L-8,y:py(v)+4,"text-anchor":"end","font-size":11,fill:cv("--text-muted")});
+  t.textContent=(v*100).toFixed(0)+"%"; s.appendChild(t);}
+ const box=document.getElementById("c1"),tp=document.getElementById("t1");
+ A.forEach((d,i)=>{
+  const x0=L+i*bw;
+  const b2=Bn.find(x=>x.name===d.name);
+  [[d.rec,cv("--s1"),0.10,0.36,"7일"],[b2?b2.rec:null,cv("--s2"),0.50,0.36,"12시간"]]
+  .forEach(([v,col,off,wf,nm])=>{
+   if(v==null) return;
+   const r=el("rect",{x:x0+bw*off,y:py(v),width:bw*wf,height:Math.max(py(0.40)-py(v),1),
+     rx:2,fill:col,opacity:.92});
+   hov(r,box,tp,`<b>${d.name}</b> · ${nm}<br>회복률 <b>${(v*100).toFixed(1)}%</b>
+     · ${d.n.toLocaleString()}건 (${(d.share*100).toFixed(1)}%)<br>
+     <span style="color:${cv("--text-muted")}">가짜갭 ${d.fake!=null?(d.fake*100).toFixed(1)+"%":"—"}
+     · 회복까지 ${d.bars!=null?d.bars+"봉":"—"}</span>`);
+   s.appendChild(r);});
+  const t=el("text",{x:x0+bw/2,y:H-B+16,"text-anchor":"middle","font-size":10.5,
+    fill:cv("--text-muted"),transform:`rotate(-30 ${x0+bw/2} ${H-B+16})`});
+  t.textContent=d.name; s.appendChild(t);
+ });
+ // 가짜갭 선
+ const pts=A.filter(d=>d.fake!=null).map((d,i)=>{
+   const j=A.indexOf(d); return `${L+j*bw+bw/2},${py(d.fake)}`;});
+ s.appendChild(el("polyline",{points:pts.join(" "),fill:"none",stroke:cv("--s3"),
+   "stroke-width":2.2,"stroke-dasharray":"6 4"}));
+ const ax=el("text",{x:L+iw/2,y:H-6,"text-anchor":"middle","font-size":11.5,fill:cv("--text-secondary")});
+ ax.textContent="먼 끝 너머 관통 깊이 (갭 크기 배수)"; s.appendChild(ax);
+})();
+
+/* 2. gross vs fee */
+(function(){
+ const s=document.getElementById("s2"),W=920,H=400,L=178,R=30,T=14,B=38;
+ const G=D.grid, iw=W-L-R, rh=(H-T-B)/G.length;
+ const lo=-0.035, hi=0.095, px=v=>L+(v-lo)/(hi-lo)*iw;
+ for(let v=-0.02;v<=0.0801;v+=0.02){
+  s.appendChild(el("line",{x1:px(v),x2:px(v),y1:T,y2:H-B,stroke:cv("--border"),"stroke-width":1}));
+  const t=el("text",{x:px(v),y:H-B+18,"text-anchor":"middle","font-size":11,fill:cv("--text-muted")});
+  t.textContent=v.toFixed(2); s.appendChild(t);}
+ s.appendChild(el("line",{x1:px(0),x2:px(0),y1:T,y2:H-B,stroke:cv("--text-muted"),"stroke-width":1.4}));
+ const box=document.getElementById("c2"),tp=document.getElementById("t2");
+ G.forEach((d,i)=>{
+  const y0=T+i*rh+5, bh=rh-13;
+  const col=d.kind==="순수"?cv("--s2"):cv("--s1");
+  const lb=el("text",{x:L-10,y:y0+bh/2+4,"text-anchor":"end","font-size":12,
+    fill:cv("--text-primary")});
+  lb.textContent=d.label; s.appendChild(lb);
+  const r=el("rect",{x:Math.min(px(0),px(d.gross)),y:y0,
+    width:Math.max(Math.abs(px(d.gross)-px(0)),1.5),height:bh,rx:2,
+    fill:d.gross>=0?col:cv("--neg"),opacity:.92});
+  hov(r,box,tp,`<b>${d.label}</b> · ${d.n.toLocaleString()}건 · 1R ${d.risk}bps<br>
+    gross <b>${d.gross>=0?"+":""}${d.gross.toFixed(4)}</b> · 수수료 ${d.fee.toFixed(4)}<br>
+    순R <b>${d.net>=0?"+":""}${d.net.toFixed(4)}</b> · t ${d.t} · ${d.pos}/${d.nsym} 심볼`);
+  s.appendChild(r);
+  s.appendChild(el("line",{x1:px(d.fee),x2:px(d.fee),y1:y0-3,y2:y0+bh+3,
+    stroke:cv("--text-primary"),"stroke-width":3}));
+  const ft=el("text",{x:px(d.fee)+7,y:y0+bh/2+4,"font-size":10.5,fill:cv("--text-muted")});
+  ft.textContent=`1R ${d.risk}`; s.appendChild(ft);
+ });
+ const ax=el("text",{x:L+iw/2,y:H-3,"text-anchor":"middle","font-size":11.5,fill:cv("--text-secondary")});
+ ax.textContent="R"; s.appendChild(ax);
+})();
+
+document.getElementById("tb").innerHTML=D.grid.map(r=>{
+ const f=v=>`<td class="${v>0?"pos":"neg"}">${v>=0?"+":""}${v.toFixed(4)}</td>`;
+ return `<tr class="${r.kind==="순수"?"ctl":(r.label.includes("4h → CHoCH 15m")?"hl":"")}">
+  <td>${r.label}</td><td>${r.n.toLocaleString()}</td><td>${r.risk}</td>
+  <td>${(r.win*100).toFixed(1)}%</td>${f(r.gross)}
+  <td>${r.ctrl==null?"—":(r.ctrl>=0?"+":"")+r.ctrl.toFixed(4)}</td>
+  <td>${r.fee.toFixed(4)}</td>${f(r.net)}<td class="neg">${r.t}</td>
+  <td>${r.pos}/${r.nsym}</td>${f(r.net_oos)}</tr>`;
+}).join("");
+</script></body></html>

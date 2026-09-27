@@ -1,0 +1,500 @@
+[
+ {
+  "idx": 1,
+  "path": "claude/backtest-core-설계.md",
+  "created": "2026-08-19T10:04:28",
+  "file": "docs/experiments/001_backtest-core-설계.md"
+ },
+ {
+  "idx": 2,
+  "path": "claude/실데이터-4H-검증결과.md",
+  "created": "2026-08-19T15:05:56",
+  "file": "docs/experiments/002_실데이터-4H-검증결과.md"
+ },
+ {
+  "idx": 3,
+  "path": "claude/ATR-봉선별-검증결과.md",
+  "created": "2026-08-19T15:38:18",
+  "file": "docs/experiments/003_ATR-봉선별-검증결과.md"
+ },
+ {
+  "idx": 4,
+  "path": "claude/피보레벨-진입승률-분석.md",
+  "created": "2026-08-19T16:37:01",
+  "file": "docs/experiments/004_피보레벨-진입승률-분석.md"
+ },
+ {
+  "idx": 5,
+  "path": "claude/장대봉-CHoCH-검증결과.md",
+  "created": "2026-08-19T17:00:16",
+  "file": "docs/experiments/005_장대봉-CHoCH-검증결과.md"
+ },
+ {
+  "idx": 6,
+  "path": "claude/장대봉-합성봉-CHoCH-검증결과.md",
+  "created": "2026-08-19T17:31:22",
+  "file": "docs/experiments/006_장대봉-합성봉-CHoCH-검증결과.md"
+ },
+ {
+  "idx": 7,
+  "path": "claude/FVG-mid진입-검증결과.md",
+  "created": "2026-08-19T17:56:00",
+  "file": "docs/experiments/007_FVG-mid진입-검증결과.md"
+ },
+ {
+  "idx": 8,
+  "path": "claude/청산이벤트-거래량복귀-검증결과.md",
+  "created": "2026-08-19T18:16:26",
+  "file": "docs/experiments/008_청산이벤트-거래량복귀-검증결과.md"
+ },
+ {
+  "idx": 9,
+  "path": "claude/청산이벤트+CHoCH-결합-검증결과.md",
+  "created": "2026-08-19T18:33:23",
+  "file": "docs/experiments/009_청산이벤트+CHoCH-결합-검증결과.md"
+ },
+ {
+  "idx": 10,
+  "path": "claude/청산이벤트-트리거비교-CISD포함.md",
+  "created": "2026-08-19T18:50:03",
+  "file": "docs/experiments/010_청산이벤트-트리거비교-CISD포함.md"
+ },
+ {
+  "idx": 11,
+  "path": "claude/청산이벤트-상위컷-부호반전.md",
+  "created": "2026-08-19T19:18:54",
+  "file": "docs/experiments/011_청산이벤트-상위컷-부호반전.md"
+ },
+ {
+  "idx": 12,
+  "path": "claude/청산극단재테스트-펀딩반영-최종.md",
+  "created": "2026-08-19T19:36:19",
+  "file": "docs/experiments/012_청산극단재테스트-펀딩반영-최종.md"
+ },
+ {
+  "idx": 13,
+  "path": "claude/청산-좁힌컷-트리거3종-전면비교.md",
+  "created": "2026-08-20T03:05:40",
+  "file": "docs/experiments/013_청산-좁힌컷-트리거3종-전면비교.md"
+ },
+ {
+  "idx": 14,
+  "path": "claude/청산-되돌림지정가진입-검증결과.md",
+  "created": "2026-08-20T03:25:44",
+  "file": "docs/experiments/014_청산-되돌림지정가진입-검증결과.md"
+ },
+ {
+  "idx": 15,
+  "path": "claude/청산히트맵-설계검증.md",
+  "created": "2026-08-20T03:39:26",
+  "file": "docs/experiments/015_청산히트맵-설계검증.md"
+ },
+ {
+  "idx": 16,
+  "path": "claude/청산히트맵-수정완료-v3.md",
+  "created": "2026-08-20T04:04:24",
+  "file": "docs/experiments/016_청산히트맵-수정완료-v3.md"
+ },
+ {
+  "idx": 17,
+  "path": "claude/OKX-추가데이터-수집설계.md",
+  "created": "2026-08-20T04:32:59",
+  "file": "docs/experiments/017_OKX-추가데이터-수집설계.md"
+ },
+ {
+  "idx": 18,
+  "path": "claude/OKX-probe결과-가용성판정.md",
+  "created": "2026-08-20T04:52:04",
+  "file": "docs/experiments/018_OKX-probe결과-가용성판정.md"
+ },
+ {
+  "idx": 19,
+  "path": "claude/펀딩-실측결과-가정검증.md",
+  "created": "2026-08-20T05:04:58",
+  "file": "docs/experiments/019_펀딩-실측결과-가정검증.md"
+ },
+ {
+  "idx": 20,
+  "path": "claude/OKX-추가데이터-가용성판정.md",
+  "created": "2026-08-20T05:19:17",
+  "file": "docs/experiments/020_OKX-추가데이터-가용성판정.md"
+ },
+ {
+  "idx": 21,
+  "path": "claude/OKX-보존한계-실측-전방기록전환.md",
+  "created": "2026-08-20T12:29:32",
+  "file": "docs/experiments/021_OKX-보존한계-실측-전방기록전환.md"
+ },
+ {
+  "idx": 22,
+  "path": "claude/TRX제외-재집계-기록.md",
+  "created": "2026-08-20T12:29:57",
+  "file": "docs/experiments/022_TRX제외-재집계-기록.md"
+ },
+ {
+  "idx": 23,
+  "path": "claude/OOS검증-결과-후보3종-기각.md",
+  "created": "2026-08-20T14:29:29",
+  "file": "docs/experiments/023_OOS검증-결과-후보3종-기각.md"
+ },
+ {
+  "idx": 24,
+  "path": "claude/청산히트맵-실측검증-기각.md",
+  "created": "2026-08-20T15:14:43",
+  "file": "docs/experiments/024_청산히트맵-실측검증-기각.md"
+ },
+ {
+  "idx": 25,
+  "path": "claude/추세추종-FVG-사전등록.md",
+  "created": "2026-08-21T04:59:57",
+  "file": "docs/experiments/025_추세추종-FVG-사전등록.md"
+ },
+ {
+  "idx": 26,
+  "path": "claude/추세추종-FVG-IS결과-기각.md",
+  "created": "2026-08-21T05:13:24",
+  "file": "docs/experiments/026_추세추종-FVG-IS결과-기각.md"
+ },
+ {
+  "idx": 27,
+  "path": "claude/주말갭-사전등록-및-IS결과.md",
+  "created": "2026-09-01T14:08:50",
+  "file": "docs/experiments/027_주말갭-사전등록-및-IS결과.md"
+ },
+ {
+  "idx": 28,
+  "path": "claude/VP검증-자석은약하게-지지저항은반대.md",
+  "created": "2026-09-02T11:12:13",
+  "file": "docs/experiments/028_VP검증-자석은약하게-지지저항은반대.md"
+ },
+ {
+  "idx": 29,
+  "path": "claude/VP검증-TF별-5m15m1H4H.md",
+  "created": "2026-09-02T12:20:06",
+  "file": "docs/experiments/029_VP검증-TF별-5m15m1H4H.md"
+ },
+ {
+  "idx": 30,
+  "path": "claude/VP검증-전구간-TF별-최종.md",
+  "created": "2026-09-02T12:57:31",
+  "file": "docs/experiments/030_VP검증-전구간-TF별-최종.md"
+ },
+ {
+  "idx": 31,
+  "path": "claude/스윙센서스-5m15m1H-lb3.md",
+  "created": "2026-09-10T00:55:58",
+  "file": "docs/experiments/031_스윙센서스-5m15m1H-lb3.md"
+ },
+ {
+  "idx": 32,
+  "path": "claude/주말갭-OOS결과-기각.md",
+  "created": "2026-09-10T01:22:26",
+  "file": "docs/experiments/032_주말갭-OOS결과-기각.md"
+ },
+ {
+  "idx": 33,
+  "path": "claude/종합-트레이딩적용-우선순위.md",
+  "created": "2026-09-10T01:23:43",
+  "file": "docs/experiments/033_종합-트레이딩적용-우선순위.md"
+ },
+ {
+  "idx": 34,
+  "path": "claude/1위후보-심층검정-기각.md",
+  "created": "2026-09-10T02:26:26",
+  "file": "docs/experiments/034_1위후보-심층검정-기각.md"
+ },
+ {
+  "idx": 35,
+  "path": "claude/4항목-전면재검증-및-결합.md",
+  "created": "2026-09-10T03:08:26",
+  "file": "docs/experiments/035_4항목-전면재검증-및-결합.md"
+ },
+ {
+  "idx": 36,
+  "path": "claude/vp돌파-HTF정렬결합-기각.md",
+  "created": "2026-09-10T04:12:13",
+  "file": "docs/experiments/036_vp돌파-HTF정렬결합-기각.md"
+ },
+ {
+  "idx": 37,
+  "path": "claude/1H레그-4H정렬-사전등록.md",
+  "created": "2026-09-10T04:18:35",
+  "file": "docs/experiments/037_1H레그-4H정렬-사전등록.md"
+ },
+ {
+  "idx": 38,
+  "path": "claude/1H레그-1단계결과-기각.md",
+  "created": "2026-09-10T04:24:21",
+  "file": "docs/experiments/038_1H레그-1단계결과-기각.md"
+ },
+ {
+  "idx": 39,
+  "path": "claude/외부문헌조사-다음가설-후보.md",
+  "created": "2026-09-10T05:29:54",
+  "file": "docs/experiments/039_외부문헌조사-다음가설-후보.md"
+ },
+ {
+  "idx": 40,
+  "path": "claude/시계열추세-주간리밸런스-사전등록.md",
+  "created": "2026-09-10T08:12:59",
+  "file": "docs/experiments/040_시계열추세-주간리밸런스-사전등록.md"
+ },
+ {
+  "idx": 41,
+  "path": "claude/시계열추세-시뮬레이션결과.md",
+  "created": "2026-09-10T08:21:38",
+  "file": "docs/experiments/041_시계열추세-시뮬레이션결과.md"
+ },
+ {
+  "idx": 42,
+  "path": "claude/합성트레이더집단-풍부도사다리-결과.md",
+  "created": "2026-09-17T06:45:14",
+  "file": "docs/experiments/042_합성트레이더집단-풍부도사다리-결과.md"
+ },
+ {
+  "idx": 43,
+  "path": "claude/트레이더집단-지표별손절-재설계.md",
+  "created": "2026-09-17T11:56:03",
+  "file": "docs/experiments/043_트레이더집단-지표별손절-재설계.md"
+ },
+ {
+  "idx": 44,
+  "path": "claude/손절밀도맵-거래량실증-기각.md",
+  "created": "2026-09-17T12:59:59",
+  "file": "docs/experiments/044_손절밀도맵-거래량실증-기각.md"
+ },
+ {
+  "idx": 45,
+  "path": "claude/포지션객체-미실현손실총량-검정.md",
+  "created": "2026-09-17T14:12:06",
+  "file": "docs/experiments/045_포지션객체-미실현손실총량-검정.md"
+ },
+ {
+  "idx": 46,
+  "path": "claude/미실현손실-ICT조건변수-검정.md",
+  "created": "2026-09-17T15:46:32",
+  "file": "docs/experiments/046_미실현손실-ICT조건변수-검정.md"
+ },
+ {
+  "idx": 47,
+  "path": "claude/ICT조건변수-TF복제및시차프로파일-기각.md",
+  "created": "2026-09-17T17:19:22",
+  "file": "docs/experiments/047_ICT조건변수-TF복제및시차프로파일-기각.md"
+ },
+ {
+  "idx": 48,
+  "path": "claude/규칙적용-전수감사-및-FVG기준선.md",
+  "created": "2026-09-17T17:20:28",
+  "file": "docs/experiments/048_규칙적용-전수감사-및-FVG기준선.md"
+ },
+ {
+  "idx": 49,
+  "path": "claude/신호군3종-동일잣대-재측정.md",
+  "created": "2026-09-18T04:02:01",
+  "file": "docs/experiments/049_신호군3종-동일잣대-재측정.md"
+ },
+ {
+  "idx": 50,
+  "path": "claude/painR3-해부-TF시차용량반응독립성.md",
+  "created": "2026-09-18T04:21:27",
+  "file": "docs/experiments/050_painR3-해부-TF시차용량반응독립성.md"
+ },
+ {
+  "idx": 51,
+  "path": "claude/체결모델확정-및-painR3-3종검정.md",
+  "created": "2026-09-18T05:01:11",
+  "file": "docs/experiments/051_체결모델확정-및-painR3-3종검정.md"
+ },
+ {
+  "idx": 52,
+  "path": "claude/painR3-횡단면롱숏-IC-최종기각.md",
+  "created": "2026-09-18T05:37:50",
+  "file": "docs/experiments/052_painR3-횡단면롱숏-IC-최종기각.md"
+ },
+ {
+  "idx": 53,
+  "path": "claude/painR3-트레이더명부-및-타당성의심지점.md",
+  "created": "2026-09-18T06:10:35",
+  "file": "docs/experiments/053_painR3-트레이더명부-및-타당성의심지점.md"
+ },
+ {
+  "idx": 54,
+  "path": "claude/painR3-심층분해-집단이아니라부류.md",
+  "created": "2026-09-18T09:09:21",
+  "file": "docs/experiments/054_painR3-심층분해-집단이아니라부류.md"
+ },
+ {
+  "idx": 55,
+  "path": "claude/코드베이스-유실-및-재구축-검수.md",
+  "created": "2026-09-18T13:47:37",
+  "file": "docs/experiments/055_코드베이스-유실-및-재구축-검수.md"
+ },
+ {
+  "idx": 56,
+  "path": "claude/FVG-1R확대-3레버-기각.md",
+  "created": "2026-09-18T14:07:17",
+  "file": "docs/experiments/056_FVG-1R확대-3레버-기각.md"
+ },
+ {
+  "idx": 57,
+  "path": "claude/FVG관통-스윕CHoCH-기각-및-엣지부재.md",
+  "created": "2026-09-18T15:14:33",
+  "file": "docs/experiments/057_FVG관통-스윕CHoCH-기각-및-엣지부재.md"
+ },
+ {
+  "idx": 58,
+  "path": "claude/FVG-1R게이트-안정성검사-불안정.md",
+  "created": "2026-09-18T15:36:38",
+  "file": "docs/experiments/058_FVG-1R게이트-안정성검사-불안정.md"
+ },
+ {
+  "idx": 59,
+  "path": "claude/OKX-5분봉-수집기-사용법.md",
+  "created": "2026-09-24T14:43:22",
+  "file": "docs/experiments/059_OKX-5분봉-수집기-사용법.md"
+ },
+ {
+  "idx": 60,
+  "path": "claude/FVG-47심볼-게이트안정성-재검사.md",
+  "created": "2026-09-25T02:46:13",
+  "file": "docs/experiments/060_FVG-47심볼-게이트안정성-재검사.md"
+ },
+ {
+  "idx": 61,
+  "path": "claude/OKX-47심볼-데이터감사-및-봉인규칙.md",
+  "created": "2026-09-25T02:46:14",
+  "file": "docs/experiments/061_OKX-47심볼-데이터감사-및-봉인규칙.md"
+ },
+ {
+  "idx": 62,
+  "path": "claude/FVG-2024분할-체제변화와-최근창-워크포워드.md",
+  "created": "2026-09-25T03:00:55",
+  "file": "docs/experiments/062_FVG-2024분할-체제변화와-최근창-워크포워드.md"
+ },
+ {
+  "idx": 63,
+  "path": "claude/예전신호16종-수익곡선-변곡점.md",
+  "created": "2026-09-25T03:36:45",
+  "file": "docs/experiments/063_예전신호16종-수익곡선-변곡점.md"
+ },
+ {
+  "idx": 64,
+  "path": "claude/비용상태스위치-사전등록.md",
+  "created": "2026-09-25T05:32:52",
+  "file": "docs/experiments/064_비용상태스위치-사전등록.md"
+ },
+ {
+  "idx": 65,
+  "path": "claude/비용상태스위치-결과-기각.md",
+  "created": "2026-09-25T05:44:21",
+  "file": "docs/experiments/065_비용상태스위치-결과-기각.md"
+ },
+ {
+  "idx": 66,
+  "path": "claude/주말갭-4H정렬-CISD-사전등록.md",
+  "created": "2026-09-25T07:11:37",
+  "file": "docs/experiments/066_주말갭-4H정렬-CISD-사전등록.md"
+ },
+ {
+  "idx": 67,
+  "path": "claude/주말갭-4H정렬-CISD-결과-기각.md",
+  "created": "2026-09-25T07:30:33",
+  "file": "docs/experiments/067_주말갭-4H정렬-CISD-결과-기각.md"
+ },
+ {
+  "idx": 68,
+  "path": "claude/시계열추세-시장방향-분해.md",
+  "created": "2026-09-25T08:55:41",
+  "file": "docs/experiments/068_시계열추세-시장방향-분해.md"
+ },
+ {
+  "idx": 69,
+  "path": "claude/시계열추세-코인별-변동성.md",
+  "created": "2026-09-25T09:42:15",
+  "file": "docs/experiments/069_시계열추세-코인별-변동성.md"
+ },
+ {
+  "idx": 70,
+  "path": "claude/주봉캔들-꼬리몸통-및-TGIF-사전등록.md",
+  "created": "2026-09-25T10:01:44",
+  "file": "docs/experiments/070_주봉캔들-꼬리몸통-및-TGIF-사전등록.md"
+ },
+ {
+  "idx": 71,
+  "path": "claude/주봉캔들-꼬리몸통-및-TGIF-결과-기각.md",
+  "created": "2026-09-25T10:11:39",
+  "file": "docs/experiments/071_주봉캔들-꼬리몸통-및-TGIF-결과-기각.md"
+ },
+ {
+  "idx": 72,
+  "path": "claude/시계열추세-뒤집기보류-ATR-사전등록.md",
+  "created": "2026-09-25T14:48:54",
+  "file": "docs/experiments/072_시계열추세-뒤집기보류-ATR-사전등록.md"
+ },
+ {
+  "idx": 73,
+  "path": "claude/시계열추세-뒤집기보류-ATR-결과-기각.md",
+  "created": "2026-09-25T14:54:49",
+  "file": "docs/experiments/073_시계열추세-뒤집기보류-ATR-결과-기각.md"
+ },
+ {
+  "idx": 74,
+  "path": "claude/시계열추세-금신호-월시가-주말갭지정가-사전등록.md",
+  "created": "2026-09-25T15:03:56",
+  "file": "docs/experiments/074_시계열추세-금신호-월시가-주말갭지정가-사전등록.md"
+ },
+ {
+  "idx": 75,
+  "path": "claude/시계열추세-체결시각-168시간-지도.md",
+  "created": "2026-09-25T15:38:11",
+  "file": "docs/experiments/075_시계열추세-체결시각-168시간-지도.md"
+ },
+ {
+  "idx": 76,
+  "path": "claude/시계열추세-금신호-월시가-주말갭지정가-결과-기각.md",
+  "created": "2026-09-25T15:38:14",
+  "file": "docs/experiments/076_시계열추세-금신호-월시가-주말갭지정가-결과-기각.md"
+ },
+ {
+  "idx": 77,
+  "path": "claude/시계열추세-사이징-레버리지-사전등록.md",
+  "created": "2026-09-25T16:07:27",
+  "file": "docs/experiments/077_시계열추세-사이징-레버리지-사전등록.md"
+ },
+ {
+  "idx": 78,
+  "path": "claude/시계열추세-사이징-레버리지-결과.md",
+  "created": "2026-09-25T16:23:14",
+  "file": "docs/experiments/078_시계열추세-사이징-레버리지-결과.md"
+ },
+ {
+  "idx": 79,
+  "path": "claude/시계열추세-복리주기-사전등록.md",
+  "created": "2026-09-26T04:05:24",
+  "file": "docs/experiments/079_시계열추세-복리주기-사전등록.md"
+ },
+ {
+  "idx": 80,
+  "path": "claude/시계열추세-복리주기-결과.md",
+  "created": "2026-09-26T04:14:00",
+  "file": "docs/experiments/080_시계열추세-복리주기-결과.md"
+ },
+ {
+  "idx": 81,
+  "path": "claude/시계열추세-매월갱신-최적G-사전등록.md",
+  "created": "2026-09-26T04:21:29",
+  "file": "docs/experiments/081_시계열추세-매월갱신-최적G-사전등록.md"
+ },
+ {
+  "idx": 82,
+  "path": "claude/시계열추세-매월갱신-최적G-결과.md",
+  "created": "2026-09-26T04:27:44",
+  "file": "docs/experiments/082_시계열추세-매월갱신-최적G-결과.md"
+ },
+ {
+  "idx": 83,
+  "path": "claude/시계열추세-트레이딩방법-상세.md",
+  "created": "2026-09-26T04:27:47",
+  "file": "docs/experiments/083_시계열추세-트레이딩방법-상세.md"
+ }
+]

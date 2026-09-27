@@ -1,0 +1,286 @@
+<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1"><title>FVG 1R 레버</title>
+<style>
+ :root{color-scheme:light;--surface-0:#f6f5f2;--surface-1:#fcfcfb;--border:#e3e2dd;
+  --text-primary:#0b0b0b;--text-secondary:#52514e;--text-muted:#7a7873;
+  --s1:#2a78d6;--s2:#eb6834;--s3:#7a7873;--neg:#e34948;}
+ @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){color-scheme:dark;
+  --surface-0:#111110;--surface-1:#1a1a19;--border:#33322f;
+  --text-primary:#fff;--text-secondary:#c3c2b7;--text-muted:#928f86;
+  --s1:#3987e5;--s2:#d95926;--s3:#928f86;--neg:#e66767;}}
+ :root[data-theme="dark"]{color-scheme:dark;--surface-0:#111110;--surface-1:#1a1a19;
+  --border:#33322f;--text-primary:#fff;--text-secondary:#c3c2b7;--text-muted:#928f86;
+  --s1:#3987e5;--s2:#d95926;--s3:#928f86;--neg:#e66767;}
+ *{box-sizing:border-box}
+ body{margin:0;background:var(--surface-0);color:var(--text-primary);
+  font:15px/1.6 ui-sans-serif,system-ui,-apple-system,"Apple SD Gothic Neo","Noto Sans KR",sans-serif}
+ .wrap{max-width:960px;margin:0 auto;padding:40px 16px 72px}
+ h1{font-size:clamp(23px,4.5vw,31px);margin:0 0 8px;letter-spacing:-.02em}
+ header p{margin:0;color:var(--text-secondary);max-width:68ch}
+ .verdict{margin:22px 0 0;padding:16px 18px;border-radius:10px;background:var(--surface-1);
+  border:1px solid var(--border);border-left:3px solid var(--neg)}
+ section{margin-top:36px;background:var(--surface-1);border:1px solid var(--border);
+  border-radius:12px;padding:20px 18px}
+ h2{font-size:17px;margin:0 0 4px}
+ .sub{color:var(--text-secondary);font-size:13.5px;margin:0 0 16px;max-width:78ch}
+ .legend{display:flex;flex-wrap:wrap;gap:15px;margin:0 0 12px;font-size:13px;color:var(--text-secondary)}
+ .legend span{display:inline-flex;align-items:center;gap:6px}
+ .sw{width:14px;height:3px;border-radius:2px;display:inline-block}
+ .sw.dot{width:10px;height:10px;border-radius:50%}
+ .chart{position:relative} svg{display:block;width:100%}
+ .tip{position:absolute;pointer-events:none;opacity:0;transition:opacity .08s;background:var(--surface-1);
+  border:1px solid var(--border);border-radius:8px;padding:8px 10px;font-size:12.5px;line-height:1.5;
+  box-shadow:0 6px 20px rgba(0,0,0,.14);white-space:nowrap;z-index:5}
+ table{width:100%;border-collapse:collapse;font-size:13px;margin-top:6px}
+ th,td{text-align:right;padding:7px 8px;border-bottom:1px solid var(--border);font-variant-numeric:tabular-nums}
+ th:first-child,td:first-child{text-align:left;font-variant-numeric:normal}
+ th{color:var(--text-secondary);font-weight:600}
+ tr.hl td{background:color-mix(in srgb,var(--s1) 9%,transparent)}
+ .note{color:var(--text-muted);font-size:12.5px;margin-top:12px}
+ .neg{color:var(--neg)} .pos{color:var(--s1)}
+ .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:4px}
+ .card{background:var(--surface-0);border:1px solid var(--border);border-radius:10px;padding:14px}
+ .card .k{font-size:12.5px;color:var(--text-secondary)}
+ .card .v{font-size:clamp(19px,3.4vw,25px);font-variant-numeric:tabular-nums;letter-spacing:-.02em;margin-top:2px}
+ .card .d{font-size:12px;color:var(--text-muted);margin-top:2px}
+ @media(max-width:640px){.wrap{padding:28px 16px 56px}section{padding:16px 12px}
+  .cards{grid-template-columns:1fr}table{font-size:12px}th,td{padding:6px 4px}}
+</style></head><body><div class="wrap">
+<header>
+ <h1>FVG — 1R 을 키우면 되는가</h1>
+ <p>TF 를 올리지 않고 1R 을 키우는 세 레버(진입 깊이 · 손절 확장 · 사전 1R 게이트)를
+    192칸으로 쓸어봤다. 10심볼 OKX 5분봉 2021-04 ~ 2026-07 · TP 2R / SL 1R ·
+    측정해상도 규칙 상시 적용 · 치환 대조군 · 비용 maker 2 + 승 maker 2 / 패 taker 6 bps.</p>
+ <div class="verdict"><b>주 지표 기각. 그런데 기각의 이유가 예상과 다르다.</b><br>
+   <b>1R 을 키워도 엣지가 줄지 않는다</b> — 181칸에서 1R↔gross 상관 <b>−0.098</b>(사실상 0),
+   1R↔수수료 −0.883. 그래서 순R 이 게이트를 따라 <b>−0.038 → +0.096</b> 으로 단조 상승한다.
+   TF 사다리(1H레그)가 "1R 과 총R 이 같은 비율로 줄어" 기각됐던 것과 정반대다.<br>
+   무너지는 곳은 <b>홀드아웃</b>이다. 179칸 중 홀드아웃 전 양수가 89칸인데
+   마지막 12개월에도 양수인 칸은 <b>3칸</b>뿐이고, 평균이 +0.006 → <b>−0.097</b> 이다.</div>
+</header>
+
+<section>
+ <h2>주 지표 — 사전등록한 단 하나의 칸</h2>
+ <p class="sub">4h · mid 진입 · 손절 확장 없음 · <b>사전 1R 게이트 120bps</b>.
+    비용 산술로 정했다: 감사의 4H 는 엣지 +0.072R / 비용 0.079R 이었고,
+    1R 을 84 → 120bps 로 올리면 비용이 0.056R 로 내려간다.
+    판정 기준은 순R&gt;0 · 월 t&gt;2 · 심볼+ ≥ 7/10 · 홀드아웃도 양수, <b>넷 다</b>.</p>
+ <table>
+  <thead><tr><th>기준</th><th>결과</th><th>판정</th></tr></thead>
+  <tbody>
+   <tr><td>순R &gt; 0</td><td class="pos">+0.0810 (거래가중) / +0.0971 (월평균)</td><td class="pos">통과</td></tr>
+   <tr><td>월 클러스터 t &gt; 2</td><td>1.20</td><td class="neg">미달</td></tr>
+   <tr><td>심볼+ ≥ 7/10</td><td>6/9</td><td class="neg">미달</td></tr>
+   <tr><td>홀드아웃 12개월 양수</td><td>+0.0168 (t 0.08, 5/13월)</td><td class="neg">사실상 0</td></tr>
+  </tbody>
+ </table>
+ <p class="note">거래 1,288건 · 1R 중앙 173.6bps · 승률 37.1% · 무승부 0.5% ·
+    치환 대조군 −0.0043. <b>4개 중 1개만 통과 — 기각이다.</b></p>
+</section>
+
+<section>
+ <h2>게이트 사다리 — 기계는 정확히 예측대로 돈다</h2>
+ <p class="sub">4h · mid · 손절확장 0. 게이트를 올리면 1R 이 84 → 219bps 로 커지고
+    수수료가 0.099 → 0.029R 로 내려간다. 그런데 <b>gross 가 줄기는커녕 같이 오른다</b>
+    (+0.061 → +0.125). 순R 은 −0.038 → +0.096.</p>
+ <div class="legend">
+   <span><i class="sw" style="background:var(--s1)"></i>gross R</span>
+   <span><i class="sw" style="background:var(--s2)"></i>수수료 R</span>
+   <span><i class="sw" style="background:var(--text-primary)"></i>순 R</span>
+ </div>
+ <div class="chart" id="c1"><svg id="s1" viewBox="0 0 920 330"></svg><div class="tip" id="t1"></div></div>
+ <table>
+  <thead><tr><th>게이트</th><th>거래수</th><th>1R(bps)</th><th>gross</th><th>수수료</th>
+   <th>순R</th><th>t(월)</th><th>홀드아웃 전</th><th>t</th><th>홀드아웃 12개월</th><th>t</th></tr></thead>
+  <tbody id="tb"></tbody>
+ </table>
+ <p class="note">게이트 160 에서 <b>홀드아웃 전 t 2.45</b> 로 처음 유의해진다.
+    그런데 같은 칸의 홀드아웃 12개월이 <b>−0.2198 (t −1.25)</b> 다.
+    거래수가 4,481 → 663 으로 <b>85% 줄어</b> t 가 따라 오르지 못하는 것도 같이 본다.</p>
+</section>
+
+<section>
+ <h2>1R 을 키우면 엣지도 줄어드는가 — 아니다</h2>
+ <p class="sub">192칸 중 거래 500건 이상인 181칸. 가로축 1R 중앙(bps), 세로축 R.
+    <b>gross(파랑)는 1R 과 무관하게 평평</b>하고 <b>수수료(주황)만 쌍곡선으로 떨어진다</b>.
+    이게 <code>1H레그-1단계결과-기각</code> 과 결정적으로 다른 점이다 —
+    거기서는 TF 를 올리자 총R 이 수수료와 같은 비율(−31% / −33%)로 줄었다.</p>
+ <div class="legend">
+   <span><i class="sw dot" style="background:var(--s1)"></i>gross R (상관 −0.098)</span>
+   <span><i class="sw dot" style="background:var(--s2)"></i>수수료 R (상관 −0.883)</span>
+ </div>
+ <div class="chart" id="c2"><svg id="s2" viewBox="0 0 920 340"></svg><div class="tip" id="t2"></div></div>
+ <p class="note">1R 구간별 평균 gross: 67bps +0.062 · 89 +0.044 · 119 +0.041 · 167 +0.045 · 236 +0.037.
+    손익분기는 <b>1R ≈ 150bps</b> 부근이다.</p>
+</section>
+
+<section>
+ <h2>홀드아웃 붕괴 — 여기서 끝난다</h2>
+ <p class="sub">칸마다 (홀드아웃 전 순R, 홀드아웃 12개월 순R). 점 크기는 1R.
+    오른쪽 위 사분면에 있어야 살아남은 것인데 <b>179칸 중 3칸</b>뿐이다.</p>
+ <div class="chart" id="c3"><svg id="s3" viewBox="0 0 920 360"></svg><div class="tip" id="t3"></div></div>
+ <div class="cards">
+  <div class="card"><div class="k">홀드아웃 전 평균 순R</div><div class="v pos">+0.0064</div>
+    <div class="d">179칸 · 89칸이 양수</div></div>
+  <div class="card"><div class="k">홀드아웃 12개월 평균</div><div class="v neg">−0.0972</div>
+    <div class="d">양수는 3칸 (무작위 기대 1)</div></div>
+  <div class="card"><div class="k">두 구간 상관</div><div class="v">+0.244</div>
+    <div class="d">거의 이어지지 않는다</div></div>
+ </div>
+ <p class="note">홀드아웃은 2025-07~2026-07 이다. 이 12개월은 <b>painR3 계열에서도 똑같이 죽었다</b> —
+   횡단면 롱숏 −0.38bps · 시간청산 −1.21bps · 횡단면 IC +0.0007(t 0.57).
+   서로 독립인 신호 넷이 같은 12개월에 동시에 사라졌다는 점은 그 자체로 기록해 둘 만하다.<br>
+   <b>그런데 시장 기하 탓만은 아니다.</b> 주 지표 칸에서 치환 대조군을 그 구간 안에서만
+   다시 추첨해 보면 대조군은 +0.022 → −0.026 (−0.048) 움직인 반면
+   실측은 +0.178 → −0.132 (<b>−0.310</b>) 움직였다. 기하가 설명하는 건 15% 뿐이고
+   나머지는 FVG 고유의 붕괴다. 다만 홀드아웃 표본이 얇다(228건) —
+   <b>실패를 증명한 게 아니라 성공을 증명하지 못한 것</b>이다.</p>
+</section>
+
+<section>
+ <h2>무엇이 남았나</h2>
+ <table>
+  <thead><tr><th>확정</th><th style="text-align:left">근거</th></tr></thead>
+  <tbody>
+   <tr><td>1R 확대는 유효한 레버다</td><td style="text-align:left">
+     1R↔gross 상관 −0.098 (181칸). TF 를 올릴 때와 달리 <b>엣지가 따라 줄지 않는다</b></td></tr>
+   <tr><td>손익분기 1R ≈ 150bps</td><td style="text-align:left">
+     1R 구간별 평균 순R: 67bps −0.061 → 167bps +0.002 → 236bps +0.009</td></tr>
+   <tr><td>손절 확장은 해롭다</td><td style="text-align:left">
+     ext 0.5·1.0 은 거의 모든 칸에서 음수. 1R 을 키우되 <b>손절 위치는 구조를 지켜야</b> 한다</td></tr>
+   <tr><td>진입 깊이는 약한 레버</td><td style="text-align:left">
+     lvl 0.0(갭 경계)은 1R 이 2배지만 gross 가 그만큼 낮다. mid 가 여전히 낫다</td></tr>
+   <tr><td>새 벽은 표본이다</td><td style="text-align:left">
+     게이트 0→160 에서 순R/거래는 25배 오르지만 거래가 4,481→663 (−85%)</td></tr>
+  </tbody>
+ </table>
+</section>
+<p class="note" style="margin-top:28px">192칸 × 10심볼 · 2021-04-02 ~ 2026-07-05 · 검정 163 통과 ·
+ 코드 재구축 후 FVG 기준선을 문서와 0.03% 이내로 대조 완료</p>
+</div>
+<script>
+const D = {"ladder": [{"gate": 0, "n": 4481, "risk": 84.0, "gross": 0.0609, "fee": 0.0994, "net": -0.0384, "t": 0.24, "net_is": 0.0192, "t_is": 0.61, "net_oos": -0.0304, "t_oos": -0.37}, {"gate": 40, "n": 3871, "risk": 94.2, "gross": 0.0635, "fee": 0.075, "net": -0.0114, "t": 0.1, "net_is": 0.0244, "t_is": 0.68, "net_oos": -0.0572, "t_oos": -0.84}, {"gate": 60, "n": 3169, "risk": 108.0, "gross": 0.0694, "fee": 0.0619, "net": 0.0075, "t": -0.13, "net_is": 0.0102, "t_is": 0.27, "net_oos": -0.0561, "t_oos": -0.53}, {"gate": 80, "n": 2401, "risk": 129.4, "gross": 0.085, "fee": 0.0511, "net": 0.0338, "t": 1.14, "net_is": 0.0463, "t_is": 0.95, "net_oos": 0.083, "t_oos": 0.46}, {"gate": 120, "n": 1288, "risk": 173.6, "gross": 0.118, "fee": 0.037, "net": 0.081, "t": 1.2, "net_is": 0.1117, "t_is": 1.29, "net_oos": 0.0168, "t_oos": 0.08}, {"gate": 160, "n": 663, "risk": 219.2, "gross": 0.1252, "fee": 0.0291, "net": 0.0961, "t": 1.84, "net_is": 0.272, "t_is": 2.45, "net_oos": -0.2198, "t_oos": -1.25}], "cells": [{"tf": "1h", "risk": 86.9, "gross": 0.0323, "fee": 0.0996, "net": -0.0673, "n": 17920}, {"tf": "1h", "risk": 98.8, "gross": 0.0356, "fee": 0.0737, "net": -0.038, "n": 15391}, {"tf": "1h", "risk": 114.5, "gross": 0.0372, "fee": 0.0597, "net": -0.0225, "n": 12483}, {"tf": "1h", "risk": 133.0, "gross": 0.0403, "fee": 0.0495, "net": -0.0092, "n": 9724}, {"tf": "1h", "risk": 176.0, "gross": 0.0457, "fee": 0.0364, "net": 0.0093, "n": 5730}, {"tf": "1h", "risk": 221.1, "gross": 0.0427, "fee": 0.0289, "net": 0.0139, "n": 3487}, {"tf": "1h", "risk": 93.2, "gross": 0.0365, "fee": 0.0931, "net": -0.0566, "n": 22974}, {"tf": "1h", "risk": 104.9, "gross": 0.0309, "fee": 0.0702, "net": -0.0393, "n": 20067}, {"tf": "1h", "risk": 121.6, "gross": 0.0328, "fee": 0.0571, "net": -0.0243, "n": 16638}, {"tf": "1h", "risk": 141.3, "gross": 0.0322, "fee": 0.0473, "net": -0.0151, "n": 13267}, {"tf": "1h", "risk": 184.2, "gross": 0.0216, "fee": 0.0353, "net": -0.0137, "n": 8384}, {"tf": "1h", "risk": 230.5, "gross": 0.0234, "fee": 0.0279, "net": -0.0046, "n": 5353}, {"tf": "1h", "risk": 99.3, "gross": 0.0243, "fee": 0.0884, "net": -0.0641, "n": 27408}, {"tf": "1h", "risk": 110.6, "gross": 0.0261, "fee": 0.0674, "net": -0.0413, "n": 24293}, {"tf": "1h", "risk": 126.8, "gross": 0.0169, "fee": 0.0552, "net": -0.0384, "n": 20474}, {"tf": "1h", "risk": 148.5, "gross": 0.0198, "fee": 0.0458, "net": -0.0261, "n": 16629}, {"tf": "1h", "risk": 192.5, "gross": 0.0127, "fee": 0.0341, "net": -0.0213, "n": 10902}, {"tf": "1h", "risk": 237.9, "gross": 0.0125, "fee": 0.0273, "net": -0.0148, "n": 7381}, {"tf": "1h", "risk": 110.7, "gross": 0.0202, "fee": 0.0806, "net": -0.0603, "n": 34265}, {"tf": "1h", "risk": 122.2, "gross": 0.0226, "fee": 0.0625, "net": -0.0398, "n": 30991}, {"tf": "1h", "risk": 139.3, "gross": 0.0145, "fee": 0.0516, "net": -0.0371, "n": 26819}, {"tf": "1h", "risk": 159.4, "gross": 0.0083, "fee": 0.0433, "net": -0.0349, "n": 22530}, {"tf": "1h", "risk": 208.0, "gross": 0.0037, "fee": 0.0322, "net": -0.0285, "n": 15593}, {"tf": "1h", "risk": 253.8, "gross": -0.0051, "fee": 0.0259, "net": -0.031, "n": 11165}, {"tf": "1h", "risk": 78.3, "gross": 0.0359, "fee": 0.1095, "net": -0.0736, "n": 11079}, {"tf": "1h", "risk": 90.6, "gross": 0.0382, "fee": 0.0791, "net": -0.0409, "n": 9212}, {"tf": "1h", "risk": 105.5, "gross": 0.0345, "fee": 0.0639, "net": -0.0294, "n": 7196}, {"tf": "1h", "risk": 123.7, "gross": 0.047, "fee": 0.0526, "net": -0.0056, "n": 5341}, {"tf": "1h", "risk": 167.4, "gross": 0.0705, "fee": 0.0381, "net": 0.0325, "n": 2835}, {"tf": "1h", "risk": 209.9, "gross": 0.048, "fee": 0.03, "net": 0.018, "n": 1521}, {"tf": "1h", "risk": 85.1, "gross": 0.0263, "fee": 0.1015, "net": -0.0752, "n": 16692}, {"tf": "1h", "risk": 97.2, "gross": 0.0262, "fee": 0.0749, "net": -0.0486, "n": 14256}, {"tf": "1h", "risk": 113.1, "gross": 0.0347, "fee": 0.0604, "net": -0.0258, "n": 11486}, {"tf": "1h", "risk": 131.8, "gross": 0.0274, "fee": 0.0502, "net": -0.0227, "n": 8856}, {"tf": "1h", "risk": 174.5, "gross": 0.0314, "fee": 0.0369, "net": -0.0056, "n": 5135}, {"tf": "1h", "risk": 219.6, "gross": 0.0532, "fee": 0.0291, "net": 0.0241, "n": 3083}, {"tf": "1h", "risk": 91.2, "gross": 0.0291, "fee": 0.0948, "net": -0.0657, "n": 21580}, {"tf": "1h", "risk": 103.0, "gross": 0.024, "fee": 0.0712, "net": -0.0472, "n": 18764}, {"tf": "1h", "risk": 119.5, "gross": 0.0168, "fee": 0.058, "net": -0.0412, "n": 15452}, {"tf": "1h", "risk": 139.4, "gross": 0.017, "fee": 0.048, "net": -0.031, "n": 12238}, {"tf": "1h", "risk": 182.4, "gross": 0.0071, "fee": 0.0358, "net": -0.0287, "n": 7616}, {"tf": "1h", "risk": 227.5, "gross": 0.0065, "fee": 0.0283, "net": -0.0218, "n": 4796}, {"tf": "1h", "risk": 103.0, "gross": 0.0138, "fee": 0.0857, "net": -0.0719, "n": 29533}, {"tf": "1h", "risk": 114.6, "gross": 0.0128, "fee": 0.0658, "net": -0.0529, "n": 26344}, {"tf": "1h", "risk": 130.3, "gross": 0.0014, "fee": 0.0542, "net": -0.0528, "n": 22441}, {"tf": "1h", "risk": 150.6, "gross": -0.0002, "fee": 0.0453, "net": -0.0455, "n": 18485}, {"tf": "1h", "risk": 197.6, "gross": -0.0, "fee": 0.0335, "net": -0.0335, "n": 12309}, {"tf": "1h", "risk": 242.6, "gross": -0.0145, "fee": 0.0269, "net": -0.0414, "n": 8494}, {"tf": "1h", "risk": 68.7, "gross": 0.033, "fee": 0.1218, "net": -0.0888, "n": 4783}, {"tf": "1h", "risk": 79.6, "gross": 0.0269, "fee": 0.0871, "net": -0.0602, "n": 3822}, {"tf": "1h", "risk": 94.9, "gross": 0.0336, "fee": 0.0698, "net": -0.0361, "n": 2794}, {"tf": "1h", "risk": 112.3, "gross": 0.0707, "fee": 0.0566, "net": 0.0141, "n": 1895}, {"tf": "1h", "risk": 158.3, "gross": 0.1771, "fee": 0.0392, "net": 0.1379, "n": 717}, {"tf": "1h", "risk": 76.7, "gross": 0.0265, "fee": 0.1117, "net": -0.0852, "n": 10153}, {"tf": "1h", "risk": 88.9, "gross": 0.0243, "fee": 0.0804, "net": -0.0561, "n": 8371}, {"tf": "1h", "risk": 103.3, "gross": 0.0171, "fee": 0.0649, "net": -0.0478, "n": 6491}, {"tf": "1h", "risk": 122.2, "gross": 0.0219, "fee": 0.0535, "net": -0.0317, "n": 4756}, {"tf": "1h", "risk": 164.8, "gross": 0.0516, "fee": 0.0387, "net": 0.0129, "n": 2462}, {"tf": "1h", "risk": 209.2, "gross": 0.0337, "fee": 0.0304, "net": 0.0033, "n": 1248}, {"tf": "1h", "risk": 83.4, "gross": 0.0184, "fee": 0.1036, "net": -0.0852, "n": 15564}, {"tf": "1h", "risk": 95.4, "gross": 0.0115, "fee": 0.0762, "net": -0.0647, "n": 13196}, {"tf": "1h", "risk": 111.6, "gross": 0.014, "fee": 0.0614, "net": -0.0475, "n": 10532}, {"tf": "1h", "risk": 130.1, "gross": 0.0078, "fee": 0.051, "net": -0.0431, "n": 8053}, {"tf": "1h", "risk": 172.4, "gross": 0.0061, "fee": 0.0375, "net": -0.0314, "n": 4579}, {"tf": "1h", "risk": 216.9, "gross": 0.0352, "fee": 0.0294, "net": 0.0058, "n": 2697}, {"tf": "1h", "risk": 95.1, "gross": 0.0243, "fee": 0.0913, "net": -0.067, "n": 24433}, {"tf": "1h", "risk": 106.6, "gross": 0.0198, "fee": 0.0694, "net": -0.0496, "n": 21478}, {"tf": "1h", "risk": 122.2, "gross": 0.0112, "fee": 0.0568, "net": -0.0456, "n": 17920}, {"tf": "1h", "risk": 144.1, "gross": 0.0113, "fee": 0.0471, "net": -0.0358, "n": 14335}, {"tf": "1h", "risk": 187.9, "gross": 0.0011, "fee": 0.0349, "net": -0.0338, "n": 9132}, {"tf": "1h", "risk": 231.7, "gross": 0.009, "fee": 0.0279, "net": -0.0189, "n": 6032}, {"tf": "1h", "risk": 66.2, "gross": 0.0193, "fee": 0.1249, "net": -0.1056, "n": 4192}, {"tf": "1h", "risk": 77.8, "gross": 0.0202, "fee": 0.0888, "net": -0.0687, "n": 3323}, {"tf": "1h", "risk": 92.6, "gross": 0.0038, "fee": 0.0713, "net": -0.0675, "n": 2372}, {"tf": "1h", "risk": 111.4, "gross": 0.0458, "fee": 0.0576, "net": -0.0118, "n": 1527}, {"tf": "1h", "risk": 159.4, "gross": 0.0992, "fee": 0.0402, "net": 0.059, "n": 514}, {"tf": "1h", "risk": 74.9, "gross": 0.0189, "fee": 0.1144, "net": -0.0955, "n": 9250}, {"tf": "1h", "risk": 87.2, "gross": 0.0208, "fee": 0.0818, "net": -0.0609, "n": 7580}, {"tf": "1h", "risk": 101.4, "gross": 0.0175, "fee": 0.0659, "net": -0.0484, "n": 5822}, {"tf": "1h", "risk": 119.7, "gross": 0.005, "fee": 0.0546, "net": -0.0496, "n": 4211}, {"tf": "1h", "risk": 162.5, "gross": 0.0342, "fee": 0.0394, "net": -0.0052, "n": 2106}, {"tf": "1h", "risk": 207.7, "gross": 0.03, "fee": 0.0309, "net": -0.0009, "n": 1034}, {"tf": "1h", "risk": 87.3, "gross": 0.0122, "fee": 0.0989, "net": -0.0867, "n": 18989}, {"tf": "1h", "risk": 99.4, "gross": 0.0074, "fee": 0.0737, "net": -0.0663, "n": 16333}, {"tf": "1h", "risk": 115.8, "gross": 0.0017, "fee": 0.0598, "net": -0.0581, "n": 13267}, {"tf": "1h", "risk": 135.6, "gross": 0.0101, "fee": 0.0493, "net": -0.0393, "n": 10333}, {"tf": "1h", "risk": 176.7, "gross": -0.0031, "fee": 0.0368, "net": -0.0398, "n": 6228}, {"tf": "1h", "risk": 222.1, "gross": -0.0021, "fee": 0.029, "net": -0.0311, "n": 3762}, {"tf": "4h", "risk": 118.7, "gross": 0.0664, "fee": 0.0755, "net": -0.0091, "n": 9259}, {"tf": "4h", "risk": 128.6, "gross": 0.0675, "fee": 0.0604, "net": 0.0072, "n": 8513}, {"tf": "4h", "risk": 144.4, "gross": 0.0715, "fee": 0.05, "net": 0.0215, "n": 7450}, {"tf": "4h", "risk": 163.7, "gross": 0.0702, "fee": 0.0423, "net": 0.028, "n": 6336}, {"tf": "4h", "risk": 202.2, "gross": 0.0626, "fee": 0.0324, "net": 0.0302, "n": 4534}, {"tf": "4h", "risk": 249.9, "gross": 0.0752, "fee": 0.026, "net": 0.0492, "n": 3216}, {"tf": "4h", "risk": 134.2, "gross": 0.0647, "fee": 0.0685, "net": -0.0039, "n": 10388}, {"tf": "4h", "risk": 144.3, "gross": 0.0684, "fee": 0.0555, "net": 0.0128, "n": 9683}, {"tf": "4h", "risk": 159.7, "gross": 0.0666, "fee": 0.0467, "net": 0.0199, "n": 8666}, {"tf": "4h", "risk": 179.1, "gross": 0.0671, "fee": 0.0398, "net": 0.0273, "n": 7573}, {"tf": "4h", "risk": 221.7, "gross": 0.0586, "fee": 0.0305, "net": 0.0282, "n": 5662}, {"tf": "4h", "risk": 262.0, "gross": 0.0551, "fee": 0.025, "net": 0.0301, "n": 4303}, {"tf": "4h", "risk": 149.9, "gross": 0.0381, "fee": 0.064, "net": -0.0259, "n": 11282}, {"tf": "4h", "risk": 160.3, "gross": 0.0378, "fee": 0.0518, "net": -0.014, "n": 10576}, {"tf": "4h", "risk": 174.0, "gross": 0.0399, "fee": 0.0442, "net": -0.0043, "n": 9658}, {"tf": "4h", "risk": 193.8, "gross": 0.0266, "fee": 0.0379, "net": -0.0113, "n": 8567}, {"tf": "4h", "risk": 239.5, "gross": 0.0288, "fee": 0.0289, "net": -0.0001, "n": 6590}, {"tf": "4h", "risk": 280.6, "gross": 0.0118, "fee": 0.0239, "net": -0.0122, "n": 5191}, {"tf": "4h", "risk": 178.6, "gross": 0.018, "fee": 0.0559, "net": -0.0379, "n": 12477}, {"tf": "4h", "risk": 189.9, "gross": 0.0144, "fee": 0.0463, "net": -0.032, "n": 11837}, {"tf": "4h", "risk": 204.9, "gross": 0.0135, "fee": 0.0398, "net": -0.0263, "n": 11003}, {"tf": "4h", "risk": 224.3, "gross": 0.0125, "fee": 0.0345, "net": -0.0219, "n": 10042}, {"tf": "4h", "risk": 271.4, "gross": 0.0081, "fee": 0.0268, "net": -0.0187, "n": 8142}, {"tf": "4h", "risk": 317.6, "gross": 0.0075, "fee": 0.022, "net": -0.0145, "n": 6646}, {"tf": "4h", "risk": 100.8, "gross": 0.0694, "fee": 0.0862, "net": -0.0168, "n": 7243}, {"tf": "4h", "risk": 111.0, "gross": 0.0766, "fee": 0.0668, "net": 0.0098, "n": 6485}, {"tf": "4h", "risk": 126.7, "gross": 0.0735, "fee": 0.055, "net": 0.0185, "n": 5485}, {"tf": "4h", "risk": 142.5, "gross": 0.0687, "fee": 0.0464, "net": 0.0223, "n": 4512}, {"tf": "4h", "risk": 187.3, "gross": 0.0938, "fee": 0.0345, "net": 0.0593, "n": 2900}, {"tf": "4h", "risk": 232.0, "gross": 0.0645, "fee": 0.0275, "net": 0.037, "n": 1861}, {"tf": "4h", "risk": 116.7, "gross": 0.067, "fee": 0.0765, "net": -0.0095, "n": 8845}, {"tf": "4h", "risk": 126.6, "gross": 0.0665, "fee": 0.0611, "net": 0.0054, "n": 8110}, {"tf": "4h", "risk": 142.2, "gross": 0.0694, "fee": 0.0506, "net": 0.0188, "n": 7075}, {"tf": "4h", "risk": 161.6, "gross": 0.0732, "fee": 0.0426, "net": 0.0305, "n": 5986}, {"tf": "4h", "risk": 199.3, "gross": 0.0598, "fee": 0.0327, "net": 0.0271, "n": 4248}, {"tf": "4h", "risk": 246.7, "gross": 0.0797, "fee": 0.0261, "net": 0.0536, "n": 2985}, {"tf": "4h", "risk": 132.0, "gross": 0.0484, "fee": 0.0696, "net": -0.0212, "n": 9953}, {"tf": "4h", "risk": 141.7, "gross": 0.0506, "fee": 0.0564, "net": -0.0058, "n": 9263}, {"tf": "4h", "risk": 156.7, "gross": 0.0447, "fee": 0.0475, "net": -0.0028, "n": 8264}, {"tf": "4h", "risk": 177.2, "gross": 0.048, "fee": 0.0403, "net": 0.0077, "n": 7192}, {"tf": "4h", "risk": 218.7, "gross": 0.0462, "fee": 0.0308, "net": 0.0154, "n": 5344}, {"tf": "4h", "risk": 258.9, "gross": 0.0321, "fee": 0.0253, "net": 0.0068, "n": 4023}, {"tf": "4h", "risk": 160.7, "gross": 0.0205, "fee": 0.0608, "net": -0.0402, "n": 11485}, {"tf": "4h", "risk": 171.4, "gross": 0.019, "fee": 0.0496, "net": -0.0306, "n": 10817}, {"tf": "4h", "risk": 186.2, "gross": 0.0169, "fee": 0.0425, "net": -0.0256, "n": 9983}, {"tf": "4h", "risk": 206.2, "gross": 0.0159, "fee": 0.0364, "net": -0.0206, "n": 8944}, {"tf": "4h", "risk": 250.1, "gross": 0.0148, "fee": 0.0282, "net": -0.0134, "n": 7093}, {"tf": "4h", "risk": 295.8, "gross": 0.0039, "fee": 0.0231, "net": -0.0192, "n": 5643}, {"tf": "4h", "risk": 84.0, "gross": 0.0609, "fee": 0.0994, "net": -0.0384, "n": 4481}, {"tf": "4h", "risk": 94.2, "gross": 0.0635, "fee": 0.075, "net": -0.0114, "n": 3871}, {"tf": "4h", "risk": 108.0, "gross": 0.0694, "fee": 0.0619, "net": 0.0075, "n": 3169}, {"tf": "4h", "risk": 129.4, "gross": 0.085, "fee": 0.0511, "net": 0.0338, "n": 2401}, {"tf": "4h", "risk": 173.6, "gross": 0.118, "fee": 0.037, "net": 0.081, "n": 1288}, {"tf": "4h", "risk": 219.2, "gross": 0.1252, "fee": 0.0291, "net": 0.0961, "n": 663}, {"tf": "4h", "risk": 99.1, "gross": 0.0563, "fee": 0.088, "net": -0.0317, "n": 6858}, {"tf": "4h", "risk": 109.5, "gross": 0.061, "fee": 0.0679, "net": -0.0069, "n": 6111}, {"tf": "4h", "risk": 125.2, "gross": 0.0589, "fee": 0.0558, "net": 0.0031, "n": 5147}, {"tf": "4h", "risk": 141.2, "gross": 0.0651, "fee": 0.047, "net": 0.0181, "n": 4211}, {"tf": "4h", "risk": 185.7, "gross": 0.0974, "fee": 0.0348, "net": 0.0626, "n": 2681}, {"tf": "4h", "risk": 232.2, "gross": 0.0907, "fee": 0.0275, "net": 0.0632, "n": 1698}, {"tf": "4h", "risk": 114.1, "gross": 0.0486, "fee": 0.0778, "net": -0.0292, "n": 8416}, {"tf": "4h", "risk": 124.0, "gross": 0.0438, "fee": 0.062, "net": -0.0182, "n": 7692}, {"tf": "4h", "risk": 140.6, "gross": 0.0382, "fee": 0.0515, "net": -0.0133, "n": 6679}, {"tf": "4h", "risk": 159.0, "gross": 0.0345, "fee": 0.0434, "net": -0.0089, "n": 5625}, {"tf": "4h", "risk": 197.5, "gross": 0.0255, "fee": 0.0332, "net": -0.0077, "n": 3957}, {"tf": "4h", "risk": 245.0, "gross": 0.0551, "fee": 0.0265, "net": 0.0286, "n": 2759}, {"tf": "4h", "risk": 142.5, "gross": 0.0282, "fee": 0.0662, "net": -0.038, "n": 10393}, {"tf": "4h", "risk": 153.0, "gross": 0.0243, "fee": 0.0535, "net": -0.0292, "n": 9699}, {"tf": "4h", "risk": 167.1, "gross": 0.0261, "fee": 0.0454, "net": -0.0193, "n": 8809}, {"tf": "4h", "risk": 187.1, "gross": 0.0133, "fee": 0.039, "net": -0.0257, "n": 7763}, {"tf": "4h", "risk": 233.0, "gross": 0.014, "fee": 0.0296, "net": -0.0156, "n": 5876}, {"tf": "4h", "risk": 275.1, "gross": 0.0053, "fee": 0.0244, "net": -0.0191, "n": 4569}, {"tf": "4h", "risk": 66.7, "gross": 0.134, "fee": 0.1229, "net": 0.0111, "n": 1321}, {"tf": "4h", "risk": 79.1, "gross": 0.1402, "fee": 0.0872, "net": 0.0531, "n": 1027}, {"tf": "4h", "risk": 93.5, "gross": 0.206, "fee": 0.0686, "net": 0.1374, "n": 665}, {"tf": "4h", "risk": 82.9, "gross": 0.0919, "fee": 0.1004, "net": -0.0085, "n": 4222}, {"tf": "4h", "risk": 93.2, "gross": 0.0913, "fee": 0.0754, "net": 0.0159, "n": 3626}, {"tf": "4h", "risk": 106.9, "gross": 0.1051, "fee": 0.0619, "net": 0.0432, "n": 2949}, {"tf": "4h", "risk": 128.4, "gross": 0.1183, "fee": 0.051, "net": 0.0673, "n": 2215}, {"tf": "4h", "risk": 172.0, "gross": 0.1393, "fee": 0.037, "net": 0.1023, "n": 1170}, {"tf": "4h", "risk": 217.2, "gross": 0.1914, "fee": 0.0289, "net": 0.1625, "n": 606}, {"tf": "4h", "risk": 97.5, "gross": 0.06, "fee": 0.0892, "net": -0.0293, "n": 6519}, {"tf": "4h", "risk": 108.3, "gross": 0.0648, "fee": 0.0685, "net": -0.0037, "n": 5785}, {"tf": "4h", "risk": 123.9, "gross": 0.0634, "fee": 0.0563, "net": 0.0072, "n": 4855}, {"tf": "4h", "risk": 140.4, "gross": 0.0636, "fee": 0.0473, "net": 0.0163, "n": 3947}, {"tf": "4h", "risk": 184.1, "gross": 0.0968, "fee": 0.035, "net": 0.0618, "n": 2490}, {"tf": "4h", "risk": 231.5, "gross": 0.098, "fee": 0.0277, "net": 0.0703, "n": 1521}, {"tf": "4h", "risk": 127.0, "gross": 0.0424, "fee": 0.0719, "net": -0.0295, "n": 9141}, {"tf": "4h", "risk": 136.7, "gross": 0.0389, "fee": 0.0581, "net": -0.0192, "n": 8458}, {"tf": "4h", "risk": 151.6, "gross": 0.035, "fee": 0.0487, "net": -0.0137, "n": 7496}, {"tf": "4h", "risk": 172.3, "gross": 0.0271, "fee": 0.0413, "net": -0.0142, "n": 6454}, {"tf": "4h", "risk": 214.7, "gross": 0.0345, "fee": 0.0314, "net": 0.0031, "n": 4725}, {"tf": "4h", "risk": 255.3, "gross": 0.0169, "fee": 0.0257, "net": -0.0088, "n": 3492}], "corr": {"gross": -0.098, "fee": -0.883, "net": 0.402}, "hold": [{"x": -0.0397, "y": -0.1646, "risk": 87.0, "n": 17920}, {"x": -0.0142, "y": -0.1325, "risk": 99.0, "n": 15391}, {"x": -0.0015, "y": -0.1129, "risk": 114.0, "n": 12483}, {"x": 0.0108, "y": -0.1056, "risk": 133.0, "n": 9724}, {"x": 0.0284, "y": -0.1021, "risk": 176.0, "n": 5730}, {"x": 0.0221, "y": -0.0489, "risk": 221.0, "n": 3487}, {"x": -0.0355, "y": -0.1323, "risk": 93.0, "n": 22974}, {"x": -0.0211, "y": -0.111, "risk": 105.0, "n": 20067}, {"x": -0.0092, "y": -0.0883, "risk": 122.0, "n": 16638}, {"x": -0.0005, "y": -0.0835, "risk": 141.0, "n": 13267}, {"x": 0.001, "y": -0.0929, "risk": 184.0, "n": 8384}, {"x": 0.007, "y": -0.0767, "risk": 230.0, "n": 5353}, {"x": -0.048, "y": -0.1233, "risk": 99.0, "n": 27408}, {"x": -0.0274, "y": -0.0968, "risk": 111.0, "n": 24293}, {"x": -0.024, "y": -0.0996, "risk": 127.0, "n": 20474}, {"x": -0.0144, "y": -0.0798, "risk": 148.0, "n": 16629}, {"x": -0.0139, "y": -0.0605, "risk": 193.0, "n": 10902}, {"x": -0.009, "y": -0.0465, "risk": 238.0, "n": 7381}, {"x": -0.0493, "y": -0.101, "risk": 111.0, "n": 34265}, {"x": -0.0282, "y": -0.0859, "risk": 122.0, "n": 30991}, {"x": -0.0247, "y": -0.0895, "risk": 139.0, "n": 26819}, {"x": -0.0212, "y": -0.096, "risk": 159.0, "n": 22530}, {"x": -0.018, "y": -0.0804, "risk": 208.0, "n": 15593}, {"x": -0.0228, "y": -0.075, "risk": 254.0, "n": 11165}, {"x": -0.0564, "y": -0.1342, "risk": 78.0, "n": 11079}, {"x": -0.0298, "y": -0.085, "risk": 91.0, "n": 9212}, {"x": -0.0202, "y": -0.0697, "risk": 105.0, "n": 7196}, {"x": 0.0071, "y": -0.072, "risk": 124.0, "n": 5341}, {"x": 0.0475, "y": -0.0579, "risk": 167.0, "n": 2835}, {"x": 0.0266, "y": -0.164, "risk": 210.0, "n": 1521}, {"x": -0.0604, "y": -0.1266, "risk": 85.0, "n": 16692}, {"x": -0.0339, "y": -0.1065, "risk": 97.0, "n": 14256}, {"x": -0.0138, "y": -0.0768, "risk": 113.0, "n": 11486}, {"x": -0.0075, "y": -0.0957, "risk": 132.0, "n": 8856}, {"x": 0.0106, "y": -0.0951, "risk": 175.0, "n": 5135}, {"x": 0.0438, "y": -0.0836, "risk": 220.0, "n": 3083}, {"x": -0.053, "y": -0.111, "risk": 91.0, "n": 21580}, {"x": -0.0377, "y": -0.0844, "risk": 103.0, "n": 18764}, {"x": -0.0341, "y": -0.0717, "risk": 120.0, "n": 15452}, {"x": -0.0247, "y": -0.0608, "risk": 139.0, "n": 12238}, {"x": -0.0232, "y": -0.0628, "risk": 182.0, "n": 7616}, {"x": -0.0142, "y": -0.0674, "risk": 227.0, "n": 4796}, {"x": -0.0611, "y": -0.1117, "risk": 103.0, "n": 29533}, {"x": -0.0446, "y": -0.086, "risk": 115.0, "n": 26344}, {"x": -0.042, "y": -0.0986, "risk": 130.0, "n": 22441}, {"x": -0.0365, "y": -0.0859, "risk": 151.0, "n": 18485}, {"x": -0.028, "y": -0.062, "risk": 198.0, "n": 12309}, {"x": -0.0373, "y": -0.0642, "risk": 243.0, "n": 8494}, {"x": -0.0582, "y": -0.1945, "risk": 69.0, "n": 4783}, {"x": -0.0429, "y": -0.1367, "risk": 80.0, "n": 3822}, {"x": -0.0245, "y": -0.091, "risk": 95.0, "n": 2794}, {"x": 0.0322, "y": -0.1156, "risk": 112.0, "n": 1895}, {"x": -0.0603, "y": -0.1734, "risk": 77.0, "n": 10153}, {"x": -0.0415, "y": -0.1153, "risk": 89.0, "n": 8371}, {"x": -0.0273, "y": -0.1433, "risk": 103.0, "n": 6491}, {"x": -0.0139, "y": -0.1243, "risk": 122.0, "n": 4756}, {"x": 0.0296, "y": -0.1026, "risk": 165.0, "n": 2462}, {"x": -0.0004, "y": -0.0433, "risk": 209.0, "n": 1248}, {"x": -0.0638, "y": -0.1599, "risk": 83.0, "n": 15564}, {"x": -0.0448, "y": -0.1434, "risk": 95.0, "n": 13196}, {"x": -0.0341, "y": -0.1055, "risk": 112.0, "n": 10532}, {"x": -0.0269, "y": -0.123, "risk": 130.0, "n": 8053}, {"x": -0.0184, "y": -0.1122, "risk": 172.0, "n": 4579}, {"x": 0.0235, "y": -0.0998, "risk": 217.0, "n": 2697}, {"x": -0.0529, "y": -0.1183, "risk": 95.0, "n": 24433}, {"x": -0.038, "y": -0.0962, "risk": 107.0, "n": 21478}, {"x": -0.0324, "y": -0.1021, "risk": 122.0, "n": 17920}, {"x": -0.0273, "y": -0.0754, "risk": 144.0, "n": 14335}, {"x": -0.0298, "y": -0.0512, "risk": 188.0, "n": 9132}, {"x": -0.0177, "y": -0.0226, "risk": 232.0, "n": 6032}, {"x": -0.072, "y": -0.2201, "risk": 66.0, "n": 4192}, {"x": -0.0448, "y": -0.1635, "risk": 78.0, "n": 3323}, {"x": -0.0345, "y": -0.1989, "risk": 93.0, "n": 2372}, {"x": 0.0267, "y": -0.2073, "risk": 111.0, "n": 1527}, {"x": -0.07, "y": -0.1851, "risk": 75.0, "n": 9250}, {"x": -0.0502, "y": -0.104, "risk": 87.0, "n": 7580}, {"x": -0.0354, "y": -0.1037, "risk": 101.0, "n": 5822}, {"x": -0.0363, "y": -0.1152, "risk": 120.0, "n": 4211}, {"x": 0.0307, "y": -0.246, "risk": 162.0, "n": 2106}, {"x": 0.0297, "y": -0.2859, "risk": 208.0, "n": 1034}, {"x": -0.0706, "y": -0.1443, "risk": 87.0, "n": 18989}, {"x": -0.0571, "y": -0.1025, "risk": 99.0, "n": 16333}, {"x": -0.0526, "y": -0.0816, "risk": 116.0, "n": 13267}, {"x": -0.0351, "y": -0.0592, "risk": 136.0, "n": 10333}, {"x": -0.0363, "y": -0.0546, "risk": 177.0, "n": 6228}, {"x": -0.0296, "y": -0.0415, "risk": 222.0, "n": 3762}, {"x": 0.0255, "y": -0.1279, "risk": 119.0, "n": 9259}, {"x": 0.0388, "y": -0.1076, "risk": 129.0, "n": 8513}, {"x": 0.0535, "y": -0.099, "risk": 144.0, "n": 7450}, {"x": 0.059, "y": -0.0941, "risk": 164.0, "n": 6336}, {"x": 0.0674, "y": -0.1311, "risk": 202.0, "n": 4534}, {"x": 0.0925, "y": -0.1482, "risk": 250.0, "n": 3216}, {"x": 0.0207, "y": -0.0894, "risk": 134.0, "n": 10388}, {"x": 0.0351, "y": -0.0684, "risk": 144.0, "n": 9683}, {"x": 0.0444, "y": -0.0723, "risk": 160.0, "n": 8666}, {"x": 0.05, "y": -0.0608, "risk": 179.0, "n": 7573}, {"x": 0.0495, "y": -0.0596, "risk": 222.0, "n": 5662}, {"x": 0.065, "y": -0.1175, "risk": 262.0, "n": 4303}, {"x": -0.0026, "y": -0.1078, "risk": 150.0, "n": 11282}, {"x": 0.004, "y": -0.0807, "risk": 160.0, "n": 10576}, {"x": 0.0154, "y": -0.0787, "risk": 174.0, "n": 9658}, {"x": 0.0144, "y": -0.1109, "risk": 194.0, "n": 8567}, {"x": 0.0234, "y": -0.0954, "risk": 239.0, "n": 6590}, {"x": 0.0159, "y": -0.1324, "risk": 281.0, "n": 5191}, {"x": -0.009, "y": -0.1392, "risk": 179.0, "n": 12477}, {"x": -0.0065, "y": -0.1249, "risk": 190.0, "n": 11837}, {"x": -0.0006, "y": -0.1231, "risk": 205.0, "n": 11003}, {"x": 0.0089, "y": -0.1405, "risk": 224.0, "n": 10042}, {"x": 0.01, "y": -0.1326, "risk": 271.0, "n": 8142}, {"x": 0.0145, "y": -0.1332, "risk": 318.0, "n": 6646}, {"x": 0.0211, "y": -0.1436, "risk": 101.0, "n": 7243}, {"x": 0.0436, "y": -0.1114, "risk": 111.0, "n": 6485}, {"x": 0.0566, "y": -0.1234, "risk": 127.0, "n": 5485}, {"x": 0.0623, "y": -0.1429, "risk": 143.0, "n": 4512}, {"x": 0.093, "y": -0.0995, "risk": 187.0, "n": 2900}, {"x": 0.0894, "y": -0.2375, "risk": 232.0, "n": 1861}, {"x": 0.023, "y": -0.1202, "risk": 117.0, "n": 8845}, {"x": 0.0326, "y": -0.0931, "risk": 127.0, "n": 8110}, {"x": 0.0468, "y": -0.0859, "risk": 142.0, "n": 7075}, {"x": 0.0589, "y": -0.0795, "risk": 162.0, "n": 5986}, {"x": 0.0596, "y": -0.1086, "risk": 199.0, "n": 4248}, {"x": 0.0864, "y": -0.0991, "risk": 247.0, "n": 2985}, {"x": 0.0026, "y": -0.1037, "risk": 132.0, "n": 9953}, {"x": 0.0128, "y": -0.0732, "risk": 142.0, "n": 9263}, {"x": 0.0187, "y": -0.0828, "risk": 157.0, "n": 8264}, {"x": 0.0267, "y": -0.066, "risk": 177.0, "n": 7192}, {"x": 0.0376, "y": -0.0746, "risk": 219.0, "n": 5344}, {"x": 0.0378, "y": -0.1224, "risk": 259.0, "n": 4023}, {"x": -0.0173, "y": -0.1208, "risk": 161.0, "n": 11485}, {"x": -0.0089, "y": -0.11, "risk": 171.0, "n": 10817}, {"x": -0.0042, "y": -0.1062, "risk": 186.0, "n": 9983}, {"x": 0.0042, "y": -0.116, "risk": 206.0, "n": 8944}, {"x": 0.0052, "y": -0.0873, "risk": 250.0, "n": 7093}, {"x": 0.0048, "y": -0.1179, "risk": 296.0, "n": 5643}, {"x": -0.0037, "y": -0.1509, "risk": 84.0, "n": 4481}, {"x": 0.0223, "y": -0.1286, "risk": 94.0, "n": 3871}, {"x": 0.0435, "y": -0.1185, "risk": 108.0, "n": 3169}, {"x": 0.067, "y": -0.1014, "risk": 129.0, "n": 2401}, {"x": 0.1396, "y": -0.1992, "risk": 174.0, "n": 1288}, {"x": 0.1487, "y": -0.1282, "risk": 219.0, "n": 663}, {"x": -0.0077, "y": -0.1115, "risk": 99.0, "n": 6858}, {"x": 0.0135, "y": -0.0795, "risk": 110.0, "n": 6111}, {"x": 0.0266, "y": -0.0843, "risk": 125.0, "n": 5147}, {"x": 0.0474, "y": -0.0934, "risk": 141.0, "n": 4211}, {"x": 0.0781, "y": -0.0065, "risk": 186.0, "n": 2681}, {"x": 0.0838, "y": -0.0318, "risk": 232.0, "n": 1698}, {"x": -0.0107, "y": -0.0922, "risk": 114.0, "n": 8416}, {"x": -0.0047, "y": -0.0666, "risk": 124.0, "n": 7692}, {"x": 0.002, "y": -0.0701, "risk": 141.0, "n": 6679}, {"x": 0.0074, "y": -0.0723, "risk": 159.0, "n": 5625}, {"x": 0.0151, "y": -0.0963, "risk": 198.0, "n": 3957}, {"x": 0.0547, "y": -0.0839, "risk": 245.0, "n": 2759}, {"x": -0.0209, "y": -0.0981, "risk": 142.0, "n": 10393}, {"x": -0.0173, "y": -0.0729, "risk": 153.0, "n": 9699}, {"x": -0.0094, "y": -0.0564, "risk": 167.0, "n": 8809}, {"x": -0.0129, "y": -0.0749, "risk": 187.0, "n": 7763}, {"x": -0.0035, "y": -0.0644, "risk": 233.0, "n": 5876}, {"x": -0.0033, "y": -0.0834, "risk": 275.0, "n": 4569}, {"x": 0.016, "y": -0.0022, "risk": 67.0, "n": 1321}, {"x": 0.0715, "y": 0.0259, "risk": 79.0, "n": 1027}, {"x": 0.1356, "y": 0.1725, "risk": 94.0, "n": 665}, {"x": 0.0116, "y": -0.0737, "risk": 83.0, "n": 4222}, {"x": 0.0343, "y": -0.0477, "risk": 93.0, "n": 3626}, {"x": 0.0706, "y": -0.0523, "risk": 107.0, "n": 2949}, {"x": 0.0862, "y": -0.002, "risk": 128.0, "n": 2215}, {"x": 0.128, "y": -0.051, "risk": 172.0, "n": 1170}, {"x": 0.1852, "y": -0.0588, "risk": 217.0, "n": 606}, {"x": -0.0058, "y": -0.1078, "risk": 97.0, "n": 6519}, {"x": 0.0136, "y": -0.066, "risk": 108.0, "n": 5785}, {"x": 0.0238, "y": -0.055, "risk": 124.0, "n": 4855}, {"x": 0.0289, "y": -0.0399, "risk": 140.0, "n": 3947}, {"x": 0.0762, "y": -0.0021, "risk": 184.0, "n": 2490}, {"x": 0.0741, "y": 0.0428, "risk": 232.0, "n": 1521}, {"x": -0.0072, "y": -0.1066, "risk": 127.0, "n": 9141}, {"x": -0.0027, "y": -0.0786, "risk": 137.0, "n": 8458}, {"x": 0.0049, "y": -0.0835, "risk": 152.0, "n": 7496}, {"x": 0.0018, "y": -0.0764, "risk": 172.0, "n": 6454}, {"x": 0.0198, "y": -0.0656, "risk": 215.0, "n": 4725}, {"x": 0.0175, "y": -0.1171, "risk": 255.0, "n": 3492}], "hold_stat": {"n": 179, "pos_is": 89, "both": 3, "mean_is": 0.0064, "mean_oos": -0.0972, "corr": 0.244}};
+const NS="http://www.w3.org/2000/svg";
+const el=(t,a)=>{const e=document.createElementNS(NS,t);for(const k in a)e.setAttribute(k,a[k]);return e;};
+const cv=n=>getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+function tip(box,t,x,y,html){t.innerHTML=html;t.style.opacity=1;
+  const r=box.getBoundingClientRect(),w=t.offsetWidth;
+  t.style.left=Math.max(4,Math.min(r.width-w-4,x-w/2))+"px";t.style.top=(y-t.offsetHeight-10)+"px";}
+function hov(node,box,tp,html){
+  node.addEventListener("pointerenter",e=>tip(box,tp,e.offsetX,e.offsetY,html));
+  node.addEventListener("pointerleave",()=>tp.style.opacity=0);}
+
+/* 1. 게이트 사다리 */
+(function(){
+ const s=document.getElementById("s1"),W=920,H=330,L=58,R=108,T=18,B=48;
+ const iw=W-L-R, ih=H-T-B, P=D.ladder, n=P.length;
+ const px=i=>L+i/(n-1)*iw, py=v=>T+(0.14-v)/(0.14+0.06)*ih;
+ for(let v=-0.06;v<=0.1401;v+=0.04){
+  s.appendChild(el("line",{x1:L,x2:W-R,y1:py(v),y2:py(v),stroke:cv("--border"),"stroke-width":1}));
+  const t=el("text",{x:L-8,y:py(v)+4,"text-anchor":"end","font-size":11,fill:cv("--text-muted")});
+  t.textContent=v.toFixed(2); s.appendChild(t);}
+ s.appendChild(el("line",{x1:L,x2:W-R,y1:py(0),y2:py(0),stroke:cv("--text-muted"),"stroke-width":1.4}));
+ P.forEach((p,i)=>{
+  const t=el("text",{x:px(i),y:H-B+17,"text-anchor":"middle","font-size":11,fill:cv("--text-muted")});
+  t.textContent=p.gate; s.appendChild(t);
+  const t2=el("text",{x:px(i),y:H-B+32,"text-anchor":"middle","font-size":10,fill:cv("--text-muted")});
+  t2.textContent=p.n.toLocaleString()+"건"; s.appendChild(t2);});
+ const ax=el("text",{x:L+iw/2,y:H-4,"text-anchor":"middle","font-size":11.5,fill:cv("--text-secondary")});
+ ax.textContent="사전 1R 게이트 (bps)"; s.appendChild(ax);
+ const box=document.getElementById("c1"),tp=document.getElementById("t1");
+ [["gross",cv("--s1"),"gross R"],["fee",cv("--s2"),"수수료 R"],["net",cv("--text-primary"),"순 R"]]
+ .forEach(([k,col,nm])=>{
+  s.appendChild(el("path",{d:P.map((p,i)=>`${i?"L":"M"}${px(i)},${py(p[k])}`).join(" "),
+    fill:"none",stroke:col,"stroke-width":2.4,"stroke-linejoin":"round"}));
+  P.forEach((p,i)=>{const c=el("circle",{cx:px(i),cy:py(p[k]),r:4.5,fill:col});
+   hov(c,box,tp,`<b>게이트 ${p.gate}bps</b> · ${p.n.toLocaleString()}건 · 1R ${p.risk}bps<br>
+    ${nm} <b>${p[k]>=0?"+":""}${p[k].toFixed(4)}</b><br>
+    <span style="color:${cv("--text-muted")}">순R t(월) ${p.t.toFixed(2)} ·
+    홀드아웃 ${p.net_oos>=0?"+":""}${p.net_oos.toFixed(3)}</span>`);
+   s.appendChild(c);});
+  const last=P[n-1];
+  const lt=el("text",{x:W-R+8,y:py(last[k])+4,"font-size":12,fill:col,"font-weight":600});
+  lt.textContent=nm; s.appendChild(lt);});
+})();
+
+/* 2. 1R vs gross/fee */
+(function(){
+ const s=document.getElementById("s2"),W=920,H=340,L=58,R=24,T=16,B=46;
+ const iw=W-L-R, ih=H-T-B;
+ const xs=D.cells.map(c=>c.risk), hi=Math.max(...xs);
+ const px=v=>L+Math.min(v,320)/320*iw, py=v=>T+(0.20-v)/(0.20+0.02)*ih;
+ for(let v=0;v<=0.201;v+=0.05){
+  s.appendChild(el("line",{x1:L,x2:W-R,y1:py(v),y2:py(v),stroke:cv("--border"),"stroke-width":1}));
+  const t=el("text",{x:L-8,y:py(v)+4,"text-anchor":"end","font-size":11,fill:cv("--text-muted")});
+  t.textContent=v.toFixed(2); s.appendChild(t);}
+ s.appendChild(el("line",{x1:L,x2:W-R,y1:py(0),y2:py(0),stroke:cv("--text-muted"),"stroke-width":1.4}));
+ for(let v=50;v<=300;v+=50){
+  const t=el("text",{x:px(v),y:H-B+18,"text-anchor":"middle","font-size":11,fill:cv("--text-muted")});
+  t.textContent=v; s.appendChild(t);}
+ const ax=el("text",{x:L+iw/2,y:H-6,"text-anchor":"middle","font-size":11.5,fill:cv("--text-secondary")});
+ ax.textContent="1R 중앙값 (bps)"; s.appendChild(ax);
+ const box=document.getElementById("c2"),tp=document.getElementById("t2");
+ D.cells.forEach(c=>{
+  [["gross",cv("--s1")],["fee",cv("--s2")]].forEach(([k,col])=>{
+   const n=el("circle",{cx:px(c.risk),cy:py(c[k]),r:3.4,fill:col,opacity:.5});
+   hov(n,box,tp,`<b>${c.tf}</b> · 1R ${c.risk}bps · ${c.n.toLocaleString()}건<br>
+     gross ${c.gross>=0?"+":""}${c.gross.toFixed(4)} · 수수료 ${c.fee.toFixed(4)}<br>
+     순R <b>${c.net>=0?"+":""}${c.net.toFixed(4)}</b>`);
+   s.appendChild(n);});});
+ // 추세선 (단순 최소제곱)
+ const fit=(k)=>{const X=D.cells.map(c=>c.risk),Y=D.cells.map(c=>c[k]);
+  const mx=X.reduce((a,b)=>a+b)/X.length,my=Y.reduce((a,b)=>a+b)/Y.length;
+  let num=0,den=0;X.forEach((x,i)=>{num+=(x-mx)*(Y[i]-my);den+=(x-mx)**2});
+  const b=num/den;return x=>my+b*(x-mx);};
+ [["gross",cv("--s1")],["fee",cv("--s2")]].forEach(([k,col])=>{
+  const f=fit(k);
+  s.appendChild(el("line",{x1:px(60),y1:py(f(60)),x2:px(300),y2:py(f(300)),
+    stroke:col,"stroke-width":2.2,"stroke-dasharray":"6 4"}));});
+})();
+
+/* 3. 홀드아웃 산점 */
+(function(){
+ const s=document.getElementById("s3"),W=920,H=360,L=62,R=24,T=16,B=48;
+ const iw=W-L-R, ih=H-T-B, lo=-0.45, hi=0.45;
+ const px=v=>L+(Math.max(lo,Math.min(hi,v))-lo)/(hi-lo)*iw;
+ const py=v=>T+(hi-Math.max(lo,Math.min(hi,v)))/(hi-lo)*ih;
+ // 우상 사분면 강조
+ s.appendChild(el("rect",{x:px(0),y:T,width:W-R-px(0),height:py(0)-T,
+   fill:cv("--s1"),opacity:.06}));
+ for(let v=-0.4;v<=0.401;v+=0.2){
+  s.appendChild(el("line",{x1:L,x2:W-R,y1:py(v),y2:py(v),stroke:cv("--border"),"stroke-width":1}));
+  s.appendChild(el("line",{x1:px(v),x2:px(v),y1:T,y2:H-B,stroke:cv("--border"),"stroke-width":1}));
+  const t=el("text",{x:L-8,y:py(v)+4,"text-anchor":"end","font-size":11,fill:cv("--text-muted")});
+  t.textContent=v.toFixed(1); s.appendChild(t);
+  const t2=el("text",{x:px(v),y:H-B+18,"text-anchor":"middle","font-size":11,fill:cv("--text-muted")});
+  t2.textContent=v.toFixed(1); s.appendChild(t2);}
+ s.appendChild(el("line",{x1:L,x2:W-R,y1:py(0),y2:py(0),stroke:cv("--text-muted"),"stroke-width":1.4}));
+ s.appendChild(el("line",{x1:px(0),x2:px(0),y1:T,y2:H-B,stroke:cv("--text-muted"),"stroke-width":1.4}));
+ const ax=el("text",{x:L+iw/2,y:H-6,"text-anchor":"middle","font-size":11.5,fill:cv("--text-secondary")});
+ ax.textContent="홀드아웃 전 순R"; s.appendChild(ax);
+ const ay=el("text",{x:14,y:T+ih/2,"font-size":11.5,fill:cv("--text-secondary"),
+   transform:`rotate(-90 14 ${T+ih/2})`,"text-anchor":"middle"});
+ ay.textContent="홀드아웃 12개월 순R"; s.appendChild(ay);
+ const box=document.getElementById("c3"),tp=document.getElementById("t3");
+ D.hold.forEach(p=>{
+  const good=p.x>0&&p.y>0;
+  const n=el("circle",{cx:px(p.x),cy:py(p.y),r:3+Math.min(p.risk,300)/120,
+    fill:good?cv("--s1"):cv("--neg"),opacity:good?.95:.38});
+  hov(n,box,tp,`1R ${p.risk}bps · ${p.n.toLocaleString()}건<br>
+    홀드아웃 전 <b>${p.x>=0?"+":""}${p.x.toFixed(4)}</b><br>
+    홀드아웃 12개월 <b>${p.y>=0?"+":""}${p.y.toFixed(4)}</b>`);
+  s.appendChild(n);});
+ const lbl=el("text",{x:px(0.30),y:py(0.33),"font-size":12,fill:cv("--s1"),"font-weight":600,
+   "text-anchor":"middle"});
+ lbl.textContent="살아남은 칸 3 / 179"; s.appendChild(lbl);
+})();
+
+document.getElementById("tb").innerHTML=D.ladder.map(r=>{
+ const f=v=>`<td class="${v>0?"pos":"neg"}">${v>=0?"+":""}${v.toFixed(4)}</td>`;
+ return `<tr class="${r.gate===120?"hl":""}"><td>${r.gate}</td><td>${r.n.toLocaleString()}</td>
+  <td>${r.risk}</td>${f(r.gross)}<td>${r.fee.toFixed(4)}</td>${f(r.net)}
+  <td class="${Math.abs(r.t)>2?"":"neg"}">${r.t.toFixed(2)}</td>
+  ${f(r.net_is)}<td class="${Math.abs(r.t_is)>2?"pos":"neg"}">${r.t_is.toFixed(2)}</td>
+  ${f(r.net_oos)}<td class="${Math.abs(r.t_oos)>2?"":"neg"}">${r.t_oos.toFixed(2)}</td></tr>`;
+}).join("");
+</script></body></html>

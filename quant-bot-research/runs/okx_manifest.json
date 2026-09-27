@@ -1,0 +1,942 @@
+{
+ "BTC": {
+  "done": true,
+  "oldest": 1617281400000,
+  "rows": 576465,
+  "reason": "목표 도달",
+  "seconds": 221.2,
+  "instId": "BTC-USDT-SWAP",
+  "updated": "2026-09-24 14:51:41+00:00",
+  "final": {
+   "sym": "BTC",
+   "ok": true,
+   "rows": 576465,
+   "start": "2021-04-02 00:00:00+00:00",
+   "end": "2026-09-24 14:40:00+00:00",
+   "gaps": 0,
+   "max_gap": 0,
+   "bad_ohlc": 0,
+   "mb": 10.4
+  }
+ },
+ "ETH": {
+  "done": true,
+  "oldest": 1617281700000,
+  "rows": 576466,
+  "reason": "목표 도달",
+  "seconds": 215.7,
+  "instId": "ETH-USDT-SWAP",
+  "updated": "2026-09-24 14:55:17+00:00",
+  "final": {
+   "sym": "ETH",
+   "ok": true,
+   "rows": 576466,
+   "start": "2021-04-02 00:00:00+00:00",
+   "end": "2026-09-24 14:45:00+00:00",
+   "gaps": 0,
+   "max_gap": 0,
+   "bad_ohlc": 0,
+   "mb": 10.3
+  }
+ },
+ "SOL": {
+  "done": true,
+  "oldest": 1617282000000,
+  "rows": 576467,
+  "reason": "목표 도달",
+  "seconds": 219.2,
+  "instId": "SOL-USDT-SWAP",
+  "updated": "2026-09-24 14:58:56+00:00",
+  "final": {
+   "sym": "SOL",
+   "ok": true,
+   "rows": 576467,
+   "start": "2021-04-02 00:00:00+00:00",
+   "end": "2026-09-24 14:50:00+00:00",
+   "gaps": 0,
+   "max_gap": 0,
+   "bad_ohlc": 0,
+   "mb": 8.7
+  }
+ },
+ "XRP": {
+  "done": true,
+  "oldest": 1617282000000,
+  "rows": 576467,
+  "reason": "목표 도달",
+  "seconds": 232.8,
+  "instId": "XRP-USDT-SWAP",
+  "updated": "2026-09-24 15:02:49+00:00",
+  "final": {
+   "sym": "XRP",
+   "ok": true,
+   "rows": 576467,
+   "start": "2021-04-02 00:00:00+00:00",
+   "end": "2026-09-24 14:50:00+00:00",
+   "gaps": 0,
+   "max_gap": 0,
+   "bad_ohlc": 0,
+   "mb": 8.4
+  }
+ },
+ "DOGE": {
+  "done": true,
+  "oldest": 1617282300000,
+  "rows": 576468,
+  "reason": "목표 도달",
+  "seconds": 220.9,
+  "instId": "DOGE-USDT-SWAP",
+  "updated": "2026-09-24 15:06:30+00:00",
+  "final": {
+   "sym": "DOGE",
+   "ok": true,
+   "rows": 576468,
+   "start": "2021-04-02 00:00:00+00:00",
+   "end": "2026-09-24 14:55:00+00:00",
+   "gaps": 0,
+   "max_gap": 0,
+   "bad_ohlc": 0,
+   "mb": 8.6
+  }
+ },
+ "NEAR": {
+  "done": true,
+  "oldest": 1617282600000,
+  "rows": 576469,
+  "reason": "목표 도달",
+  "seconds": 225.6,
+  "instId": "NEAR-USDT-SWAP",
+  "updated": "2026-09-24 15:10:15+00:00",
+  "final": {
+   "sym": "NEAR",
+   "ok": true,
+   "rows": 576469,
+   "start": "2021-04-02 00:00:00+00:00",
+   "end": "2026-09-24 15:00:00+00:00",
+   "gaps": 0,
+   "max_gap": 0,
+   "bad_ohlc": 0,
+   "mb": 7.4
+  }
+ },
+ "LTC": {
+  "done": true,
+  "oldest": 1617282900000,
+  "rows": 576470,
+  "reason": "목표 도달",
+  "seconds": 216.7,
+  "instId": "LTC-USDT-SWAP",
+  "updated": "2026-09-24 15:13:52+00:00",
+  "final": {
+   "sym": "LTC",
+   "ok": true,
+   "rows": 576470,
+   "start": "2021-04-02 00:00:00+00:00",
+   "end": "2026-09-24 15:05:00+00:00",
+   "gaps": 0,
+   "max_gap": 0,
+   "bad_ohlc": 0,
+   "mb": 7.5
+  }
+ },
+ "UNI": {
+  "done": true,
+  "oldest": 1617282900000,
+  "rows": 576470,
+  "reason": "목표 도달",
+  "seconds": 221.7,
+  "instId": "UNI-USDT-SWAP",
+  "updated": "2026-09-24 15:17:34+00:00",
+  "final": {
+   "sym": "UNI",
+   "ok": true,
+   "rows": 576470,
+   "start": "2021-04-02 00:00:00+00:00",
+   "end": "2026-09-24 15:05:00+00:00",
+   "gaps": 0,
+   "max_gap": 0,
+   "bad_ohlc": 0,
+   "mb": 7.7
+  }
+ },
+ "BCH": {
+  "done": true,
+  "oldest": 1617283200000,
+  "rows": 576471,
+  "reason": "목표 도달",
+  "seconds": 216.6,
+  "instId": "BCH-USDT-SWAP",
+  "updated": "2026-09-24 15:21:10+00:00",
+  "final": {
+   "sym": "BCH",
+   "ok": true,
+   "rows": 576471,
+   "start": "2021-04-02 00:00:00+00:00",
+   "end": "2026-09-24 15:10:00+00:00",
+   "gaps": 0,
+   "max_gap": 0,
+   "bad_ohlc": 0,
+   "mb": 7.6
+  }
+ },
+ "FIL": {
+  "done": true,
+  "oldest": 1617283500000,
+  "rows": 576472,
+  "reason": "목표 도달",
+  "seconds": 242.2,
+  "instId": "FIL-USDT-SWAP",
+  "updated": "2026-09-24 15:25:13+00:00",
+  "final": {
+   "sym": "FIL",
+   "ok": true,
+   "rows": 576472,
+   "start": "2021-04-02 00:00:00+00:00",
+   "end": "2026-09-24 15:15:00+00:00",
+   "gaps": 0,
+   "max_gap": 0,
+   "bad_ohlc": 0,
+   "mb": 8.2
+  }
+ },
+ "ADA": {
+  "done": true,
+  "oldest": 1617283800000,
+  "rows": 576473,
+  "reason": "목표 도달",
+  "seconds": 216.8,
+  "instId": "ADA-USDT-SWAP",
+  "updated": "2026-09-24 15:28:49+00:00",
+  "final": {
+   "sym": "ADA",
+   "ok": true,
+   "rows": 576473,
+   "start": "2021-04-02 00:00:00+00:00",
+   "end": "2026-09-24 15:20:00+00:00",
+   "gaps": 0,
+   "max_gap": 0,
+   "bad_ohlc": 0,
+   "mb": 8.1
+  }
+ },
+ "ETC": {
+  "done": true,
+  "oldest": 1617283800000,
+  "rows": 576473,
+  "reason": "목표 도달",
+  "seconds": 216.0,
+  "instId": "ETC-USDT-SWAP",
+  "updated": "2026-09-24 15:32:25+00:00",
+  "final": {
+   "sym": "ETC",
+   "ok": true,
+   "rows": 576473,
+   "start": "2021-04-02 00:00:00+00:00",
+   "end": "2026-09-24 15:20:00+00:00",
+   "gaps": 0,
+   "max_gap": 0,
+   "bad_ohlc": 0,
+   "mb": 7.2
+  }
+ },
+ "AAVE": {
+  "done": true,
+  "oldest": 1617284100000,
+  "rows": 576474,
+  "reason": "목표 도달",
+  "seconds": 216.4,
+  "instId": "AAVE-USDT-SWAP",
+  "updated": "2026-09-24 15:36:02+00:00",
+  "final": {
+   "sym": "AAVE",
+   "ok": true,
+   "rows": 576474,
+   "start": "2021-04-02 00:00:00+00:00",
+   "end": "2026-09-24 15:25:00+00:00",
+   "gaps": 0,
+   "max_gap": 0,
+   "bad_ohlc": 0,
+   "mb": 8.1
+  }
+ },
+ "AVAX": {
+  "done": true,
+  "oldest": 1617284400000,
+  "rows": 576475,
+  "reason": "목표 도달",
+  "seconds": 216.2,
+  "instId": "AVAX-USDT-SWAP",
+  "updated": "2026-09-24 15:39:38+00:00",
+  "final": {
+   "sym": "AVAX",
+   "ok": true,
+   "rows": 576475,
+   "start": "2021-04-02 00:00:00+00:00",
+   "end": "2026-09-24 15:30:00+00:00",
+   "gaps": 0,
+   "max_gap": 0,
+   "bad_ohlc": 0,
+   "mb": 8.0
+  }
+ },
+ "LINK": {
+  "done": true,
+  "oldest": 1617284400000,
+  "rows": 576475,
+  "reason": "목표 도달",
+  "seconds": 215.8,
+  "instId": "LINK-USDT-SWAP",
+  "updated": "2026-09-24 15:43:14+00:00",
+  "final": {
+   "sym": "LINK",
+   "ok": true,
+   "rows": 576475,
+   "start": "2021-04-02 00:00:00+00:00",
+   "end": "2026-09-24 15:30:00+00:00",
+   "gaps": 0,
+   "max_gap": 0,
+   "bad_ohlc": 0,
+   "mb": 8.1
+  }
+ },
+ "XLM": {
+  "done": true,
+  "oldest": 1617284700000,
+  "rows": 576476,
+  "reason": "목표 도달",
+  "seconds": 220.0,
+  "instId": "XLM-USDT-SWAP",
+  "updated": "2026-09-24 15:46:54+00:00",
+  "final": {
+   "sym": "XLM",
+   "ok": true,
+   "rows": 576476,
+   "start": "2021-04-02 00:00:00+00:00",
+   "end": "2026-09-24 15:35:00+00:00",
+   "gaps": 0,
+   "max_gap": 0,
+   "bad_ohlc": 0,
+   "mb": 7.6
+  }
+ },
+ "DOT": {
+  "done": true,
+  "oldest": 1617285000000,
+  "rows": 576477,
+  "reason": "목표 도달",
+  "seconds": 216.5,
+  "instId": "DOT-USDT-SWAP",
+  "updated": "2026-09-24 15:50:30+00:00",
+  "final": {
+   "sym": "DOT",
+   "ok": true,
+   "rows": 576477,
+   "start": "2021-04-02 00:00:00+00:00",
+   "end": "2026-09-24 15:40:00+00:00",
+   "gaps": 0,
+   "max_gap": 0,
+   "bad_ohlc": 0,
+   "mb": 7.5
+  }
+ },
+ "CRV": {
+  "done": true,
+  "oldest": 1617285300000,
+  "rows": 576478,
+  "reason": "목표 도달",
+  "seconds": 215.6,
+  "instId": "CRV-USDT-SWAP",
+  "updated": "2026-09-24 15:54:06+00:00",
+  "final": {
+   "sym": "CRV",
+   "ok": true,
+   "rows": 576478,
+   "start": "2021-04-02 00:00:00+00:00",
+   "end": "2026-09-24 15:45:00+00:00",
+   "gaps": 0,
+   "max_gap": 0,
+   "bad_ohlc": 0,
+   "mb": 7.9
+  }
+ },
+ "TRX": {
+  "done": true,
+  "oldest": 1617285300000,
+  "rows": 576478,
+  "reason": "목표 도달",
+  "seconds": 216.3,
+  "instId": "TRX-USDT-SWAP",
+  "updated": "2026-09-24 15:57:42+00:00",
+  "final": {
+   "sym": "TRX",
+   "ok": true,
+   "rows": 576478,
+   "start": "2021-04-02 00:00:00+00:00",
+   "end": "2026-09-24 15:45:00+00:00",
+   "gaps": 0,
+   "max_gap": 0,
+   "bad_ohlc": 0,
+   "mb": 7.1
+  }
+ },
+ "ATOM": {
+  "done": true,
+  "oldest": 1617285600000,
+  "rows": 576479,
+  "reason": "목표 도달",
+  "seconds": 219.0,
+  "instId": "ATOM-USDT-SWAP",
+  "updated": "2026-09-24 16:01:21+00:00",
+  "final": {
+   "sym": "ATOM",
+   "ok": true,
+   "rows": 576479,
+   "start": "2021-04-02 00:00:00+00:00",
+   "end": "2026-09-24 15:50:00+00:00",
+   "gaps": 0,
+   "max_gap": 0,
+   "bad_ohlc": 0,
+   "mb": 7.4
+  }
+ },
+ "COMP": {
+  "done": true,
+  "oldest": 1617285900000,
+  "rows": 576480,
+  "reason": "목표 도달",
+  "seconds": 217.8,
+  "instId": "COMP-USDT-SWAP",
+  "updated": "2026-09-24 16:04:59+00:00",
+  "final": {
+   "sym": "COMP",
+   "ok": true,
+   "rows": 576480,
+   "start": "2021-04-02 00:00:00+00:00",
+   "end": "2026-09-24 15:55:00+00:00",
+   "gaps": 0,
+   "max_gap": 0,
+   "bad_ohlc": 0,
+   "mb": 7.1
+  }
+ },
+ "ALGO": {
+  "done": true,
+  "oldest": 1617285900000,
+  "rows": 576480,
+  "reason": "목표 도달",
+  "seconds": 223.5,
+  "instId": "ALGO-USDT-SWAP",
+  "updated": "2026-09-24 16:08:42+00:00",
+  "final": {
+   "sym": "ALGO",
+   "ok": true,
+   "rows": 576480,
+   "start": "2021-04-02 00:00:00+00:00",
+   "end": "2026-09-24 15:55:00+00:00",
+   "gaps": 0,
+   "max_gap": 0,
+   "bad_ohlc": 0,
+   "mb": 7.0
+  }
+ },
+ "TRB": {
+  "done": true,
+  "oldest": 1617286200000,
+  "rows": 576481,
+  "reason": "목표 도달",
+  "seconds": 219.5,
+  "instId": "TRB-USDT-SWAP",
+  "updated": "2026-09-24 16:12:22+00:00",
+  "final": {
+   "sym": "TRB",
+   "ok": true,
+   "rows": 576481,
+   "start": "2021-04-02 00:00:00+00:00",
+   "end": "2026-09-24 16:00:00+00:00",
+   "gaps": 0,
+   "max_gap": 0,
+   "bad_ohlc": 0,
+   "mb": 7.0
+  }
+ },
+ "CFX": {
+  "done": true,
+  "oldest": 1617286500000,
+  "rows": 576482,
+  "reason": "목표 도달",
+  "seconds": 224.0,
+  "instId": "CFX-USDT-SWAP",
+  "updated": "2026-09-24 16:16:06+00:00",
+  "final": {
+   "sym": "CFX",
+   "ok": true,
+   "rows": 576482,
+   "start": "2021-04-02 00:00:00+00:00",
+   "end": "2026-09-24 16:05:00+00:00",
+   "gaps": 0,
+   "max_gap": 0,
+   "bad_ohlc": 0,
+   "mb": 7.7
+  }
+ },
+ "IOST": {
+  "done": true,
+  "oldest": 1617286800000,
+  "rows": 576483,
+  "reason": "목표 도달",
+  "seconds": 213.6,
+  "instId": "IOST-USDT-SWAP",
+  "updated": "2026-09-24 16:19:39+00:00",
+  "final": {
+   "sym": "IOST",
+   "ok": true,
+   "rows": 576483,
+   "start": "2021-04-02 00:00:00+00:00",
+   "end": "2026-09-24 16:10:00+00:00",
+   "gaps": 0,
+   "max_gap": 0,
+   "bad_ohlc": 0,
+   "mb": 6.6
+  }
+ },
+ "CHZ": {
+  "done": true,
+  "oldest": 1617286800000,
+  "rows": 576483,
+  "reason": "목표 도달",
+  "seconds": 217.0,
+  "instId": "CHZ-USDT-SWAP",
+  "updated": "2026-09-24 16:23:16+00:00",
+  "final": {
+   "sym": "CHZ",
+   "ok": true,
+   "rows": 576483,
+   "start": "2021-04-02 00:00:00+00:00",
+   "end": "2026-09-24 16:10:00+00:00",
+   "gaps": 0,
+   "max_gap": 0,
+   "bad_ohlc": 0,
+   "mb": 8.0
+  }
+ },
+ "EGLD": {
+  "done": true,
+  "oldest": 1617287100000,
+  "rows": 576484,
+  "reason": "목표 도달",
+  "seconds": 213.9,
+  "instId": "EGLD-USDT-SWAP",
+  "updated": "2026-09-24 16:26:50+00:00",
+  "final": {
+   "sym": "EGLD",
+   "ok": true,
+   "rows": 576484,
+   "start": "2021-04-02 00:00:00+00:00",
+   "end": "2026-09-24 16:15:00+00:00",
+   "gaps": 0,
+   "max_gap": 0,
+   "bad_ohlc": 0,
+   "mb": 6.9
+  }
+ },
+ "SUSHI": {
+  "done": true,
+  "oldest": 1617287400000,
+  "rows": 576485,
+  "reason": "목표 도달",
+  "seconds": 215.7,
+  "instId": "SUSHI-USDT-SWAP",
+  "updated": "2026-09-24 16:30:26+00:00",
+  "final": {
+   "sym": "SUSHI",
+   "ok": true,
+   "rows": 576485,
+   "start": "2021-04-02 00:00:00+00:00",
+   "end": "2026-09-24 16:20:00+00:00",
+   "gaps": 0,
+   "max_gap": 0,
+   "bad_ohlc": 0,
+   "mb": 7.6
+  }
+ },
+ "SNX": {
+  "done": true,
+  "oldest": 1617287700000,
+  "rows": 576486,
+  "reason": "목표 도달",
+  "seconds": 221.9,
+  "instId": "SNX-USDT-SWAP",
+  "updated": "2026-09-24 16:34:08+00:00",
+  "final": {
+   "sym": "SNX",
+   "ok": true,
+   "rows": 576486,
+   "start": "2021-04-02 00:00:00+00:00",
+   "end": "2026-09-24 16:25:00+00:00",
+   "gaps": 0,
+   "max_gap": 0,
+   "bad_ohlc": 0,
+   "mb": 7.0
+  }
+ },
+ "MANA": {
+  "done": true,
+  "oldest": 1617287700000,
+  "rows": 576486,
+  "reason": "목표 도달",
+  "seconds": 213.9,
+  "instId": "MANA-USDT-SWAP",
+  "updated": "2026-09-24 16:37:42+00:00",
+  "final": {
+   "sym": "MANA",
+   "ok": true,
+   "rows": 576486,
+   "start": "2021-04-02 00:00:00+00:00",
+   "end": "2026-09-24 16:25:00+00:00",
+   "gaps": 0,
+   "max_gap": 0,
+   "bad_ohlc": 0,
+   "mb": 7.2
+  }
+ },
+ "IOTA": {
+  "done": true,
+  "oldest": 1617288000000,
+  "rows": 576487,
+  "reason": "목표 도달",
+  "seconds": 216.0,
+  "instId": "IOTA-USDT-SWAP",
+  "updated": "2026-09-24 16:41:18+00:00",
+  "final": {
+   "sym": "IOTA",
+   "ok": true,
+   "rows": 576487,
+   "start": "2021-04-02 00:00:00+00:00",
+   "end": "2026-09-24 16:30:00+00:00",
+   "gaps": 0,
+   "max_gap": 0,
+   "bad_ohlc": 0,
+   "mb": 6.7
+  }
+ },
+ "GRT": {
+  "done": true,
+  "oldest": 1617288300000,
+  "rows": 576488,
+  "reason": "목표 도달",
+  "seconds": 216.3,
+  "instId": "GRT-USDT-SWAP",
+  "updated": "2026-09-24 16:44:54+00:00",
+  "final": {
+   "sym": "GRT",
+   "ok": true,
+   "rows": 576488,
+   "start": "2021-04-02 00:00:00+00:00",
+   "end": "2026-09-24 16:35:00+00:00",
+   "gaps": 0,
+   "max_gap": 0,
+   "bad_ohlc": 0,
+   "mb": 7.1
+  }
+ },
+ "ZIL": {
+  "done": true,
+  "oldest": 1617288300000,
+  "rows": 576488,
+  "reason": "목표 도달",
+  "seconds": 218.6,
+  "instId": "ZIL-USDT-SWAP",
+  "updated": "2026-09-24 16:48:33+00:00",
+  "final": {
+   "sym": "ZIL",
+   "ok": true,
+   "rows": 576488,
+   "start": "2021-04-02 00:00:00+00:00",
+   "end": "2026-09-24 16:35:00+00:00",
+   "gaps": 0,
+   "max_gap": 0,
+   "bad_ohlc": 0,
+   "mb": 6.7
+  }
+ },
+ "1INCH": {
+  "done": true,
+  "oldest": 1617288600000,
+  "rows": 576489,
+  "reason": "목표 도달",
+  "seconds": 216.3,
+  "instId": "1INCH-USDT-SWAP",
+  "updated": "2026-09-24 16:52:09+00:00",
+  "final": {
+   "sym": "1INCH",
+   "ok": true,
+   "rows": 576489,
+   "start": "2021-04-02 00:00:00+00:00",
+   "end": "2026-09-24 16:40:00+00:00",
+   "gaps": 0,
+   "max_gap": 0,
+   "bad_ohlc": 0,
+   "mb": 7.5
+  }
+ },
+ "THETA": {
+  "done": true,
+  "oldest": 1617288900000,
+  "rows": 576490,
+  "reason": "목표 도달",
+  "seconds": 214.0,
+  "instId": "THETA-USDT-SWAP",
+  "updated": "2026-09-24 16:55:43+00:00",
+  "final": {
+   "sym": "THETA",
+   "ok": true,
+   "rows": 576490,
+   "start": "2021-04-02 00:00:00+00:00",
+   "end": "2026-09-24 16:45:00+00:00",
+   "gaps": 0,
+   "max_gap": 0,
+   "bad_ohlc": 0,
+   "mb": 7.2
+  }
+ },
+ "NEO": {
+  "done": true,
+  "oldest": 1617289200000,
+  "rows": 576491,
+  "reason": "목표 도달",
+  "seconds": 220.3,
+  "instId": "NEO-USDT-SWAP",
+  "updated": "2026-09-24 16:59:23+00:00",
+  "final": {
+   "sym": "NEO",
+   "ok": true,
+   "rows": 576491,
+   "start": "2021-04-02 00:00:00+00:00",
+   "end": "2026-09-24 16:50:00+00:00",
+   "gaps": 0,
+   "max_gap": 0,
+   "bad_ohlc": 0,
+   "mb": 7.3
+  }
+ },
+ "YFI": {
+  "done": true,
+  "oldest": 1617289200000,
+  "rows": 576491,
+  "reason": "목표 도달",
+  "seconds": 220.2,
+  "instId": "YFI-USDT-SWAP",
+  "updated": "2026-09-24 17:03:04+00:00",
+  "final": {
+   "sym": "YFI",
+   "ok": true,
+   "rows": 576491,
+   "start": "2021-04-02 00:00:00+00:00",
+   "end": "2026-09-24 16:50:00+00:00",
+   "gaps": 0,
+   "max_gap": 0,
+   "bad_ohlc": 0,
+   "mb": 7.8
+  }
+ },
+ "BAT": {
+  "done": true,
+  "oldest": 1617289500000,
+  "rows": 576492,
+  "reason": "목표 도달",
+  "seconds": 216.6,
+  "instId": "BAT-USDT-SWAP",
+  "updated": "2026-09-24 17:06:40+00:00",
+  "final": {
+   "sym": "BAT",
+   "ok": true,
+   "rows": 576492,
+   "start": "2021-04-02 00:00:00+00:00",
+   "end": "2026-09-24 16:55:00+00:00",
+   "gaps": 0,
+   "max_gap": 0,
+   "bad_ohlc": 0,
+   "mb": 6.5
+  }
+ },
+ "ONT": {
+  "done": true,
+  "oldest": 1617289800000,
+  "rows": 576493,
+  "reason": "목표 도달",
+  "seconds": 220.9,
+  "instId": "ONT-USDT-SWAP",
+  "updated": "2026-09-24 17:10:21+00:00",
+  "final": {
+   "sym": "ONT",
+   "ok": true,
+   "rows": 576493,
+   "start": "2021-04-02 00:00:00+00:00",
+   "end": "2026-09-24 17:00:00+00:00",
+   "gaps": 0,
+   "max_gap": 0,
+   "bad_ohlc": 0,
+   "mb": 6.6
+  }
+ },
+ "XTZ": {
+  "done": true,
+  "oldest": 1617290100000,
+  "rows": 576494,
+  "reason": "목표 도달",
+  "seconds": 215.8,
+  "instId": "XTZ-USDT-SWAP",
+  "updated": "2026-09-24 17:13:57+00:00",
+  "final": {
+   "sym": "XTZ",
+   "ok": true,
+   "rows": 576494,
+   "start": "2021-04-02 00:00:00+00:00",
+   "end": "2026-09-24 17:05:00+00:00",
+   "gaps": 0,
+   "max_gap": 0,
+   "bad_ohlc": 0,
+   "mb": 7.3
+  }
+ },
+ "MASK": {
+  "done": true,
+  "oldest": 1617290100000,
+  "rows": 576494,
+  "reason": "목표 도달",
+  "seconds": 217.9,
+  "instId": "MASK-USDT-SWAP",
+  "updated": "2026-09-24 17:17:35+00:00",
+  "final": {
+   "sym": "MASK",
+   "ok": true,
+   "rows": 576494,
+   "start": "2021-04-02 00:00:00+00:00",
+   "end": "2026-09-24 17:05:00+00:00",
+   "gaps": 0,
+   "max_gap": 0,
+   "bad_ohlc": 0,
+   "mb": 7.0
+  }
+ },
+ "KSM": {
+  "done": true,
+  "oldest": 1617290400000,
+  "rows": 576495,
+  "reason": "목표 도달",
+  "seconds": 215.9,
+  "instId": "KSM-USDT-SWAP",
+  "updated": "2026-09-24 17:21:11+00:00",
+  "final": {
+   "sym": "KSM",
+   "ok": true,
+   "rows": 576495,
+   "start": "2021-04-02 00:00:00+00:00",
+   "end": "2026-09-24 17:10:00+00:00",
+   "gaps": 0,
+   "max_gap": 0,
+   "bad_ohlc": 0,
+   "mb": 6.9
+  }
+ },
+ "QTUM": {
+  "done": true,
+  "oldest": 1617290700000,
+  "rows": 576496,
+  "reason": "목표 도달",
+  "seconds": 221.2,
+  "instId": "QTUM-USDT-SWAP",
+  "updated": "2026-09-24 17:24:52+00:00",
+  "final": {
+   "sym": "QTUM",
+   "ok": true,
+   "rows": 576496,
+   "start": "2021-04-02 00:00:00+00:00",
+   "end": "2026-09-24 17:15:00+00:00",
+   "gaps": 0,
+   "max_gap": 0,
+   "bad_ohlc": 0,
+   "mb": 6.7
+  }
+ },
+ "ZRX": {
+  "done": true,
+  "oldest": 1617290700000,
+  "rows": 576496,
+  "reason": "목표 도달",
+  "seconds": 216.4,
+  "instId": "ZRX-USDT-SWAP",
+  "updated": "2026-09-24 17:28:28+00:00",
+  "final": {
+   "sym": "ZRX",
+   "ok": true,
+   "rows": 576496,
+   "start": "2021-04-02 00:00:00+00:00",
+   "end": "2026-09-24 17:15:00+00:00",
+   "gaps": 0,
+   "max_gap": 0,
+   "bad_ohlc": 0,
+   "mb": 6.6
+  }
+ },
+ "RSR": {
+  "done": true,
+  "oldest": 1617291000000,
+  "rows": 576497,
+  "reason": "목표 도달",
+  "seconds": 221.9,
+  "instId": "RSR-USDT-SWAP",
+  "updated": "2026-09-24 17:32:10+00:00",
+  "final": {
+   "sym": "RSR",
+   "ok": true,
+   "rows": 576497,
+   "start": "2021-04-02 00:00:00+00:00",
+   "end": "2026-09-24 17:20:00+00:00",
+   "gaps": 0,
+   "max_gap": 0,
+   "bad_ohlc": 0,
+   "mb": 7.2
+  }
+ },
+ "UMA": {
+  "done": true,
+  "oldest": 1617291300000,
+  "rows": 576498,
+  "reason": "목표 도달",
+  "seconds": 218.3,
+  "instId": "UMA-USDT-SWAP",
+  "updated": "2026-09-24 17:35:48+00:00",
+  "final": {
+   "sym": "UMA",
+   "ok": true,
+   "rows": 576498,
+   "start": "2021-04-02 00:00:00+00:00",
+   "end": "2026-09-24 17:25:00+00:00",
+   "gaps": 0,
+   "max_gap": 0,
+   "bad_ohlc": 0,
+   "mb": 6.9
+  }
+ },
+ "BAND": {
+  "done": true,
+  "oldest": 1617291600000,
+  "rows": 576499,
+  "reason": "목표 도달",
+  "seconds": 218.6,
+  "instId": "BAND-USDT-SWAP",
+  "updated": "2026-09-24 17:39:27+00:00",
+  "final": {
+   "sym": "BAND",
+   "ok": true,
+   "rows": 576499,
+   "start": "2021-04-02 00:00:00+00:00",
+   "end": "2026-09-24 17:30:00+00:00",
+   "gaps": 0,
+   "max_gap": 0,
+   "bad_ohlc": 0,
+   "mb": 6.7
+  }
+ }
+}
