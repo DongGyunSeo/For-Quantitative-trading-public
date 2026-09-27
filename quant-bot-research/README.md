@@ -245,5 +245,5 @@ python examples/tsmom_size_report.py         # → out/tsmom_sizing.html (다른
 
 ## 저자 · 라이선스
 
-- 저자: DongGyunSeo ([@LiriliLari1a](https://github.com/LiriliLari1a))
+- 저자: [DongGyunSeo](https://github.com/DongGyunSeo)
 - 라이선스: [MIT](LICENSE)
